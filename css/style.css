@@ -43,10 +43,11 @@ body {
 
 .logo {
   display: block;
-  width: 200px;
-  height: 147px;
+  width: 190px;
+  height: 142px;
   max-height: none;
   object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.45));
 }
 
 .header-text {
