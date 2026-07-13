@@ -75,8 +75,10 @@ body {
 .site-menu a {
   color: white;
   text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .site-menu a:hover,
