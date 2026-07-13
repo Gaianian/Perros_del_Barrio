@@ -43,8 +43,8 @@ body {
 
 .logo {
   display: block;
-  width: 170px;
-  height: 125px;
+  width: 200px;
+  height: 147px;
   max-height: none;
   object-fit: contain;
 }
