@@ -46,6 +46,7 @@ body {
   height: auto;
   max-height: 110px;
   object-fit: contain;
+  padding: 0px 0px;
 }
 
 .header-text {
