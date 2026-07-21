@@ -64,6 +64,7 @@ body {
 
 .header-text h1 {
   color:#997392;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.22);
   margin: 0;
   font-family: "Comic Sans MS";
   font-variant: small-caps;
@@ -74,6 +75,7 @@ body {
 }
 
 .header-text p {
+  color: #f4f1e8;
   margin: 8px 0 0;
   font-family: "Dancing Script", cursive;
   font-size: 1.55rem;
