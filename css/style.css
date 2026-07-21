@@ -227,22 +227,27 @@ body {
   .header-text {
     grid-column: 2;
     grid-row: 1;
-
     text-align: center;
     white-space: normal;
     padding: 0;
   }
 
+  .header-text h1 {
+    font-size: 1.15rem;
+  }
+
+  .header-text p {
+    font-size: 0.8rem;
+  }
+
   .site-menu {
     grid-column: 3;
     grid-row: 1;
-
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2px;
   }
-}
 
   .menu-item {
     width: 42px;
@@ -252,19 +257,6 @@ body {
   .menu-item img {
     width: 30px;
     height: 30px;
-  }
-
-  .header-text {
-    white-space: normal;
-    padding-bottom: 2px;
-  }
-
-  .header-text h1 {
-    font-size: 1.15rem;
-  }
-
-  .header-text p {
-    font-size: 0.8rem;
   }
 }
 
