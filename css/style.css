@@ -17,11 +17,13 @@ body {
   background: #f5f5f5;
 }
 
-/* Header */
+/* =========================
+   HEADER
+   ========================= */
 
 .site-header {
   display: grid;
-  grid-template-columns: 180px 1fr 220px;
+  grid-template-columns: 200px 1fr 240px;
   align-items: center;
   gap: 20px;
 
@@ -31,8 +33,11 @@ body {
 
   background: #2f6573;
   color: white;
+
   flex: 0 0 auto;
 }
+
+/* Logo */
 
 .logo-area {
   display: flex;
@@ -45,10 +50,12 @@ body {
   display: block;
   width: 180px;
   height: 140px;
-  max-height: none;
   object-fit: contain;
+
   filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.45));
 }
+
+/* Title and subtitle */
 
 .header-text {
   text-align: center;
@@ -66,28 +73,114 @@ body {
   font-size: 0.95rem;
 }
 
+/* =========================
+   ICON MENU
+   ========================= */
+
 .site-menu {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 22px;
+  gap: 20px;
 }
 
-.site-menu a {
-  color: white;
+/* Each icon is a separate clickable menu button */
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 54px;
+  height: 54px;
+
+  border-radius: 50%;
   text-decoration: none;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.35rem;
-  font-weight: 600;
+
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Hide the text labels but keep them in the HTML */
+
+.menu-item span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
   white-space: nowrap;
+  clip-path: inset(50%);
 }
 
-.site-menu a:hover,
-.site-menu a:focus {
-  text-decoration: underline;
+/* Make all menu icons the same size */
+
+.menu-item img {
+  display: block;
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+
+  transition: transform 0.25s ease;
 }
 
-/* ArcGIS application */
+/* Hover and keyboard focus */
+
+.menu-item:hover,
+.menu-item:focus-visible {
+  background-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.28);
+  outline: none;
+}
+
+.menu-item:hover img,
+.menu-item:focus-visible img {
+  animation: menu-bounce 0.45s ease;
+}
+
+/* Slightly different circle color for each item */
+
+.menu-home:hover,
+.menu-home:focus-visible {
+  background-color: rgba(225, 164, 32, 0.3);
+}
+
+.menu-help:hover,
+.menu-help:focus-visible {
+  background-color: rgba(153, 115, 146, 0.35);
+}
+
+.menu-about:hover,
+.menu-about:focus-visible {
+  background-color: rgba(138, 158, 147, 0.4);
+}
+
+/* Bounce animation */
+
+@keyframes menu-bounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  40% {
+    transform: translateY(-7px) scale(1.08);
+  }
+
+  70% {
+    transform: translateY(-2px) scale(1.04);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================
+   ARCGIS APPLICATION
+   ========================= */
 
 .app-container {
   flex: 1 1 auto;
@@ -102,13 +195,18 @@ body {
   border: 0;
 }
 
-/* Tablet and phone layout */
+/* =========================
+   TABLET AND PHONE
+   ========================= */
 
 @media (max-width: 750px) {
   .site-header {
     grid-template-columns: auto 1fr;
-    gap: 8px 14px;
-    padding: 8px 12px;
+    grid-template-rows: auto auto;
+    gap: 6px 12px;
+
+    height: auto;
+    padding: 7px 12px;
   }
 
   .logo-area {
@@ -117,23 +215,30 @@ body {
   }
 
   .logo {
-    width: 65px;
-    max-height: 60px;
+    width: 72px;
+    height: 62px;
   }
 
   .site-menu {
     grid-column: 2;
     grid-row: 1;
-    gap: 12px;
+    gap: 8px;
   }
 
-  .site-menu a {
-    font-size: 0.8rem;
+  .menu-item {
+    width: 42px;
+    height: 42px;
+  }
+
+  .menu-item img {
+    width: 30px;
+    height: 30px;
   }
 
   .header-text {
     grid-column: 1 / -1;
     grid-row: 2;
+
     white-space: normal;
     padding-bottom: 2px;
   }
@@ -144,5 +249,46 @@ body {
 
   .header-text p {
     font-size: 0.8rem;
+  }
+}
+
+/* Very small phones */
+
+@media (max-width: 400px) {
+  .site-header {
+    padding: 6px 8px;
+  }
+
+  .logo {
+    width: 62px;
+    height: 54px;
+  }
+
+  .site-menu {
+    gap: 5px;
+  }
+
+  .menu-item {
+    width: 38px;
+    height: 38px;
+  }
+
+  .menu-item img {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+/* Respect users who disable animation */
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-item,
+  .menu-item img {
+    transition: none;
+  }
+
+  .menu-item:hover img,
+  .menu-item:focus-visible img {
+    animation: none;
   }
 }
