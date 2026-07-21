@@ -64,9 +64,10 @@ body {
 
 .header-text h1 {
   margin: 0;
-  font-family: "Comic Sans MS", cursive;
+  font-family: "Comic Sans MS";
+  font-variant: small-caps;
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.05;
   letter-spacing: 0.03em;
 }
@@ -74,7 +75,7 @@ body {
 .header-text p {
   margin: 8px 0 0;
   font-family: "Dancing Script", cursive;
-  font-size: 1.25rem;
+  font-size: 1.55rem;
 }
 
 /* =========================
