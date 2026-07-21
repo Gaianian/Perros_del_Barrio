@@ -79,31 +79,35 @@ body {
 
 .site-menu {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
+
+  gap: 2px;
 }
 
-/* Each icon is a separate clickable menu button */
+/* Each separate menu button */
 
 .menu-item {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 54px;
-  height: 54px;
+  width: 52px;
+  height: 52px;
 
   border-radius: 50%;
   text-decoration: none;
 
+  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.4));
+
   transition:
-    background-color 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    filter 0.2s ease;
 }
 
-/* Hide the text labels but keep them in the HTML */
+/* Keep labels available for screen readers but hide them visually */
 
 .menu-item span {
   position: absolute;
@@ -116,67 +120,45 @@ body {
   clip-path: inset(50%);
 }
 
-/* Make all menu icons the same size */
+/* Consistent icon size */
 
 .menu-item img {
   display: block;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
-
-  transition: transform 0.25s ease;
 }
 
-/* Hover and keyboard focus */
+/* Enlarge instead of bounce */
 
 .menu-item:hover,
 .menu-item:focus-visible {
+  transform: scale(1.18);
   background-color: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.28);
+  filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.5));
   outline: none;
 }
 
-.menu-item:hover img,
-.menu-item:focus-visible img {
-  animation: menu-bounce 0.45s ease;
-}
-
-/* Slightly different circle color for each item */
+/* Optional individual hover colors */
 
 .menu-home:hover,
 .menu-home:focus-visible {
-  background-color: rgba(225, 164, 32, 0.3);
+  background-color: rgba(225, 164, 32, 0.35);
+}
+
+.menu-support:hover,
+.menu-support:focus-visible {
+  background-color: rgba(153, 115, 146, 0.38);
 }
 
 .menu-help:hover,
 .menu-help:focus-visible {
-  background-color: rgba(153, 115, 146, 0.35);
-}
-
-.menu-about:hover,
-.menu-about:focus-visible {
-  background-color: rgba(138, 158, 147, 0.4);
+  background-color: rgba(138, 158, 147, 0.42);
 }
 
 /* Bounce animation */
 
-@keyframes menu-bounce {
-  0% {
-    transform: translateY(0) scale(1);
-  }
 
-  40% {
-    transform: translateY(-7px) scale(1.08);
-  }
-
-  70% {
-    transform: translateY(-2px) scale(1.04);
-  }
-
-  100% {
-    transform: translateY(0) scale(1);
-  }
-}
 
 /* =========================
    ARCGIS APPLICATION
