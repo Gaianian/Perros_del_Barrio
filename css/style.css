@@ -52,7 +52,7 @@ body {
   height: 140px;
   object-fit: contain;
 
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.45));
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
 }
 
 /* Title and subtitle */
@@ -84,7 +84,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  gap: 2px;
+  gap: 1px;
   position: relative;
 }
 
@@ -97,8 +97,8 @@ body {
   align-items: center;
   justify-content: center;
 
-  width: 44px;
-  height: 44px;
+  width: 34px;
+  height: 34px;
 
   background: #2f6573;
   border: 1px solid #1f1f1f;
@@ -133,7 +133,7 @@ body {
 
   padding: 2px 4px;
 
-  color: #2f6573;
+  color: white;
   background: #2f6573;
   border: 1px solid #2f6573;
   border-radius: 4px;
