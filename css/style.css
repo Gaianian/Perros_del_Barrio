@@ -83,7 +83,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  gap: 2px;
+  gap: 0px;
 }
 
 /* Each separate menu button */
@@ -93,10 +93,10 @@ body {
   align-items: center;
   justify-content: center;
 
-  width: 52px;
-  height: 52px;
+  width: 46px;
+  height: 46px;
 
-  border-radius: 50%;
+  border-radius: 0%;
   text-decoration: none;
 
   filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.4));
