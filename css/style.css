@@ -62,7 +62,7 @@ body {
   white-space: nowrap;
 }
 
-.header-text h1 
+.header-text h1 {
   color:#580F41;
   margin: 0;
   font-family: "Comic Sans MS";
