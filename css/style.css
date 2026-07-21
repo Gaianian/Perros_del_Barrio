@@ -64,9 +64,11 @@ body {
 
 .header-text h1 {
   margin: 0;
-  font-size: 10rem;
+  font-family: "Dancing Script", cursive;
+  font-size: 3rem;
+  font-weight: 600;
   line-height: 1.05;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.03em;
 }
 
 .header-text p {
