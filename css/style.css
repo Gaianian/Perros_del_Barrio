@@ -77,86 +77,107 @@ body {
    ICON MENU
    ========================= */
 
+/* Vertical icon menu */
+
 .site-menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-
-  gap: 0px;
+  align-items: flex-end;
+  gap: 2px;
+  position: relative;
 }
 
-/* Each separate menu button */
+/* Individual square button */
 
 .menu-item {
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 46px;
-  height: 46px;
+  width: 54px;
+  height: 54px;
 
-  border-radius: 0%;
+  background: white;
+  border: 1px solid #1f1f1f;
+  border-radius: 2px;
+
   text-decoration: none;
 
-  filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.4));
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.35);
 
   transition:
     transform 0.2s ease,
-    background-color 0.2s ease,
-    filter 0.2s ease;
+    box-shadow 0.2s ease;
 }
 
-/* Keep labels available for screen readers but hide them visually */
-
-.menu-item span {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  white-space: nowrap;
-  clip-path: inset(50%);
-}
-
-/* Consistent icon size */
+/* Icon size */
 
 .menu-item img {
   display: block;
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   object-fit: contain;
+
+  transition: transform 0.2s ease;
 }
 
-/* Enlarge instead of bounce */
+/* Hidden label */
+
+.menu-item span {
+  position: absolute;
+  right: 64px;
+  top: 50%;
+
+  padding: 6px 10px;
+
+  color: #2f6573;
+  background: white;
+  border: 1px solid #2f6573;
+  border-radius: 4px;
+
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  white-space: nowrap;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-50%) translateX(8px);
+
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+/* Icon enlarges on hover */
 
 .menu-item:hover,
 .menu-item:focus-visible {
-  transform: scale(1.18);
-  background-color: rgba(255, 255, 255, 0.18);
-  filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.5));
+  z-index: 5;
+  transform: scale(1.12);
+  box-shadow: 0 5px 11px rgba(0, 0, 0, 0.5);
   outline: none;
 }
 
-/* Optional individual hover colors */
-
-.menu-home:hover,
-.menu-home:focus-visible {
-  background-color: rgba(225, 164, 32, 0.35);
+.menu-item:hover img,
+.menu-item:focus-visible img {
+  transform: scale(1.08);
 }
 
-.menu-support:hover,
-.menu-support:focus-visible {
-  background-color: rgba(153, 115, 146, 0.38);
-}
+/* Show the menu name */
 
-.menu-help:hover,
-.menu-help:focus-visible {
-  background-color: rgba(138, 158, 147, 0.42);
+.menu-item:hover span,
+.menu-item:focus-visible span {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
 }
-
-/* Bounce animation */
 
 
 
