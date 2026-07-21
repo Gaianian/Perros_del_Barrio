@@ -63,14 +63,14 @@ body {
 }
 
 .header-text h1 {
-  color:#580F41;
+  color:#997392;
   margin: 0;
   font-family: "Comic Sans MS";
   font-variant: small-caps;
   font-size: 3rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.05;
-  letter-spacing: 0.9em;
+  letter-spacing: 0.2em;
 }
 
 .header-text p {
