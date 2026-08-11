@@ -1,116 +1,140 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
 
-  const pawMenu = document.getElementById("pawMenu");
-  const pawButton = document.getElementById("pawMenuButton");
+    const pawMenu =
+      document.getElementById("pawMenu");
 
-  if (!pawMenu || !pawButton) {
-    return;
-  }
-
-
-  function setMenuState(open) {
-
-    pawMenu.classList.toggle("open", open);
-
-    pawButton.setAttribute(
-      "aria-expanded",
-      open ? "true" : "false"
-    );
-
-    pawButton.setAttribute(
-      "aria-label",
-      open ? "Cerrar menú" : "Abrir menú"
-    );
-
-  }
+    const pawButton =
+      document.getElementById("pawMenuButton");
 
 
-  function toggleMenu(event) {
-
-    event.stopPropagation();
-
-    const isOpen =
-      pawMenu.classList.contains("open");
-
-    setMenuState(!isOpen);
-
-  }
+    if (!pawMenu || !pawButton) {
+      return;
+    }
 
 
-  /* Click / tap center pad */
+    function setMenuState(open) {
 
-  pawButton.addEventListener(
-    "click",
-    toggleMenu
-  );
-
-
-  /* Keyboard */
-
-  pawButton.addEventListener(
-    "keydown",
-    function (event) {
-
-      if (
-        event.key === "Enter" ||
-        event.key === " "
-      ) {
-
-        event.preventDefault();
-
-        toggleMenu(event);
-
-      }
+      pawMenu.classList.toggle(
+        "open",
+        open
+      );
 
 
-      if (event.key === "Escape") {
+      pawButton.setAttribute(
+        "aria-expanded",
+        open ? "true" : "false"
+      );
 
-        setMenuState(false);
 
-      }
+      pawButton.setAttribute(
+        "aria-label",
+        open
+          ? "Cerrar menú"
+          : "Abrir menú"
+      );
 
     }
-  );
 
 
-  /* Clicking inside the menu should not
-     immediately trigger outside-click close */
 
-  pawMenu.addEventListener(
-    "click",
-    function (event) {
+    function toggleMenu(event) {
 
       event.stopPropagation();
 
-    }
-  );
+      const isOpen =
+        pawMenu.classList.contains(
+          "open"
+        );
 
-
-  /* Click elsewhere to close */
-
-  document.addEventListener(
-    "click",
-    function () {
-
-      setMenuState(false);
+      setMenuState(!isOpen);
 
     }
-  );
 
 
-  /* Escape closes from anywhere */
 
-  document.addEventListener(
-    "keydown",
-    function (event) {
+    /* Click or tap center paw */
 
-      if (event.key === "Escape") {
+    pawButton.addEventListener(
+      "click",
+      toggleMenu
+    );
+
+
+
+    /* Keyboard */
+
+    pawButton.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+
+          event.preventDefault();
+
+          toggleMenu(event);
+
+        }
+
+
+        if (event.key === "Escape") {
+
+          setMenuState(false);
+
+        }
+
+      }
+    );
+
+
+
+    /*
+      Prevent clicks on toe links from
+      triggering the outside-click listener.
+    */
+
+    pawMenu.addEventListener(
+      "click",
+      function (event) {
+
+        event.stopPropagation();
+
+      }
+    );
+
+
+
+    /* Click elsewhere closes menu */
+
+    document.addEventListener(
+      "click",
+      function () {
 
         setMenuState(false);
 
       }
+    );
 
-    }
-  );
 
-});
+
+    /* Escape closes menu */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (event.key === "Escape") {
+
+          setMenuState(false);
+
+        }
+
+      }
+    );
+
+  }
+);
