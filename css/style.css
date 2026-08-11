@@ -423,31 +423,37 @@ body {
   /* Menu */
 
   .site-menu {
-    grid-column: 3;
-    grid-row: 1;
+  grid-column: 3;
+  grid-row: 1;
 
-    justify-content: flex-end;
-  }
+  justify-content: flex-end;
+  align-items: center;
 
-  .paw-menu {
-    width: 90px;
-    height: 100px;
-  }
+  overflow: visible;
+}
 
-  .paw-menu-svg {
-    width: 155px;
-    height: 155px;
+.paw-menu {
+  width: 55px;
+  height: 70px;
+}
 
-    right: -4px;
-  }
+.paw-menu-svg {
+  width: 88px;
+  height: 88px;
 
-  .toe text {
-    font-size: 17px;
-  }
+  right: -8px;
+  top: 50%;
 
-  .paw-label-small {
-    font-size: 13px;
-  }
+  transform: translateY(-50%);
+}
+
+.toe text {
+  font-size: 17px;
+}
+
+.paw-label-small {
+  font-size: 13px;
+}
 
 }
 
@@ -483,25 +489,25 @@ body {
     font-size: 1rem;
   }
 
-  .paw-menu {
-    width: 78px;
-    height: 92px;
-  }
+ .paw-menu {
+  width: 48px;
+  height: 62px;
+}
 
-  .paw-menu-svg {
-    width: 140px;
-    height: 140px;
+.paw-menu-svg {
+  width: 80px;
+  height: 80px;
 
-    right: -5px;
-  }
+  right: -9px;
+}
 
-  .toe text {
-    font-size: 16px;
-  }
+.toe text {
+  font-size: 16px;
+}
 
-  .paw-label-small {
-    font-size: 12px;
-  }
+.paw-label-small {
+  font-size: 12px;
+}
 
 }
 
