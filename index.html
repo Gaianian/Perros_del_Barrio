@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -39,14 +38,13 @@
     href="/Perros_del_Barrio/css/style.css"
   >
 
-
   <!-- Facebook / social preview -->
 
   <meta property="og:title" content="Perros del Barrio">
 
   <meta
     property="og:description"
-    content="Explora, encuentre y reporte <br>perros comunitarios en Cuenca."
+    content="Explora, encuentre y reporte perros comunitarios en Cuenca."
   >
 
   <meta
@@ -69,50 +67,37 @@
     name="description"
     content="Encuentre y reporte perros comunitarios en Cuenca."
   >
-
 </head>
 
 
 <body>
 
-
-  <!-- =========================
-       HEADER
-       ========================= -->
-
   <header class="site-header">
-
 
     <!-- LOGO -->
 
     <div class="logo-area">
-
       <img
         src="images/Logo.png"
         alt="Logo de Perros del Barrio"
         class="logo"
       >
-
     </div>
 
 
-    <!-- TITLE -->
+    <!-- TITLE + TAGLINE -->
 
     <div class="header-text">
-
       <h1>Perros del Barrio</h1>
 
       <p>
         Explora, encuentre y reporte <br>
         perros comunitarios en Cuenca
       </p>
-
     </div>
 
 
-    <!-- =========================
-         PAW MENU
-         ========================= -->
+    <!-- PAW MENU -->
 
     <nav
       class="site-menu"
@@ -131,66 +116,95 @@
           aria-label="Menú principal"
         >
 
-
-          <!-- =========================
+          <!-- ===================================
                CURVED LABEL PATHS
-               Invisible paths used only
-               to position curved text
-               ========================= -->
+               each one wraps its own toe
+               =================================== -->
 
           <defs>
 
-            <!-- PARTICIPA -->
+            <!-- top-left toe -->
+            <path
+              id="comoPath"
+              d="M68 101
+                 A31 42 0 0 1 130 101"
+            />
+
+            <!-- top-right toe -->
             <path
               id="participaPath"
-              d="M54 91
-                 C68 48 114 41 137 67"
+              d="M185 101
+                 A31 42 0 0 1 247 101"
             />
 
-            <!-- DONAR -->
-            <path
-              id="donarPath"
-              d="M178 67
-                 C203 41 248 49 263 91"
-            />
-
-
-            <!-- REPORTAR -->
+            <!-- lower-left toe: first line -->
             <path
               id="reportarPath"
-              d="M26 141
-                 C22 112 38 91 61 82"
+              d="M29 153
+                 A29 40 -28 0 1 80 127"
             />
 
-            <!-- AVISTAMIENTO -->
+            <!-- lower-left toe: second line -->
             <path
               id="avistamientoPath"
-              d="M21 160
-                 C18 121 39 91 70 77"
+              d="M24 164
+                 A34 46 -28 0 1 86 132"
             />
 
-
-            <!-- SOBRE -->
+            <!-- lower-right toe: first line -->
             <path
               id="sobrePath"
-              d="M258 82
-                 C282 91 298 112 294 141"
+              d="M240 127
+                 A29 40 28 0 1 291 153"
             />
 
-            <!-- NOSOTROS -->
+            <!-- lower-right toe: second line -->
             <path
               id="nosotrosPath"
-              d="M249 77
-                 C281 91 302 121 299 160"
+              d="M234 132
+                 A34 46 28 0 1 296 164"
             />
 
           </defs>
 
 
+          <!-- ===================================
+               CÓMO USAR
+               =================================== -->
 
-          <!-- =========================
-               PARTICIPA TOE
-               ========================= -->
+          <a
+            href="#"
+            class="paw-item paw-como"
+            aria-label="Cómo usar"
+          >
+
+            <g class="toe">
+
+              <ellipse
+                cx="99"
+                cy="110"
+                rx="27"
+                ry="37"
+              />
+
+              <text class="toe-label">
+                <textPath
+                  href="#comoPath"
+                  startOffset="50%"
+                  text-anchor="middle"
+                >
+                  Cómo usar
+                </textPath>
+              </text>
+
+            </g>
+
+          </a>
+
+
+          <!-- ===================================
+               PARTICIPA
+               =================================== -->
 
           <a
             href="#"
@@ -201,14 +215,13 @@
             <g class="toe">
 
               <ellipse
-                cx="99"
-                cy="104"
+                cx="216"
+                cy="110"
                 rx="27"
                 ry="37"
               />
 
               <text class="toe-label">
-
                 <textPath
                   href="#participaPath"
                   startOffset="50%"
@@ -216,7 +229,6 @@
                 >
                   Participa
                 </textPath>
-
               </text>
 
             </g>
@@ -224,47 +236,9 @@
           </a>
 
 
-
-          <!-- =========================
-               DONAR TOE
-               ========================= -->
-
-          <a
-            href="#"
-            class="paw-item paw-donar"
-            aria-label="Donar"
-          >
-
-            <g class="toe">
-
-              <ellipse
-                cx="216"
-                cy="104"
-                rx="27"
-                ry="37"
-              />
-
-              <text class="toe-label">
-
-                <textPath
-                  href="#donarPath"
-                  startOffset="50%"
-                  text-anchor="middle"
-                >
-                  Donar
-                </textPath>
-
-              </text>
-
-            </g>
-
-          </a>
-
-
-
-          <!-- =========================
-               REPORTAR AVISTAMIENTO TOE
-               ========================= -->
+          <!-- ===================================
+               REPORTAR AVISTAMIENTO
+               =================================== -->
 
           <a
             href="#"
@@ -276,15 +250,13 @@
 
               <ellipse
                 cx="56"
-                cy="162"
+                cy="168"
                 rx="25"
                 ry="35"
-                transform="rotate(-28 56 162)"
+                transform="rotate(-28 56 168)"
               />
 
-
-              <text class="toe-label toe-label-small">
-
+              <text class="toe-label">
                 <textPath
                   href="#reportarPath"
                   startOffset="50%"
@@ -292,12 +264,9 @@
                 >
                   Reportar
                 </textPath>
-
               </text>
 
-
-              <text class="toe-label toe-label-small">
-
+              <text class="toe-label">
                 <textPath
                   href="#avistamientoPath"
                   startOffset="50%"
@@ -305,7 +274,6 @@
                 >
                   avistamiento
                 </textPath>
-
               </text>
 
             </g>
@@ -313,10 +281,9 @@
           </a>
 
 
-
-          <!-- =========================
-               SOBRE NOSOTROS TOE
-               ========================= -->
+          <!-- ===================================
+               SOBRE NOSOTROS
+               =================================== -->
 
           <a
             href="#"
@@ -328,15 +295,13 @@
 
               <ellipse
                 cx="264"
-                cy="162"
+                cy="168"
                 rx="25"
                 ry="35"
-                transform="rotate(28 264 162)"
+                transform="rotate(28 264 168)"
               />
 
-
-              <text class="toe-label toe-label-small">
-
+              <text class="toe-label">
                 <textPath
                   href="#sobrePath"
                   startOffset="50%"
@@ -344,12 +309,9 @@
                 >
                   Sobre
                 </textPath>
-
               </text>
 
-
-              <text class="toe-label toe-label-small">
-
+              <text class="toe-label">
                 <textPath
                   href="#nosotrosPath"
                   startOffset="50%"
@@ -357,7 +319,6 @@
                 >
                   nosotros
                 </textPath>
-
               </text>
 
             </g>
@@ -365,10 +326,9 @@
           </a>
 
 
-
-          <!-- =========================
+          <!-- ===================================
                MAIN PAW PAD
-               ========================= -->
+               =================================== -->
 
           <g
             class="paw-center"
@@ -379,46 +339,38 @@
             aria-label="Abrir menú"
           >
 
-
             <path
               d="
-                M91 225
-                C92 188 110 158 133 147
-                C146 141 173 141 187 147
-                C210 158 228 188 229 225
-                C230 249 212 261 191 256
-                C172 251 148 251 129 256
-                C108 261 90 249 91 225
+                M91 229
+                C92 192 110 162 133 151
+                C146 145 173 145 187 151
+                C210 162 228 192 229 229
+                C230 253 212 265 191 260
+                C172 255 148 255 129 260
+                C108 265 90 253 91 229
                 Z
               "
             />
 
-
             <!-- curved menu marks -->
 
             <g class="paw-lines">
-
-              <path d="M137 190 Q160 182 183 190" />
-
-              <path d="M133 204 Q160 195 187 204" />
-
-              <path d="M138 218 Q160 211 182 218" />
-
+              <path d="M137 193 Q160 185 183 193" />
+              <path d="M133 207 Q160 198 187 207" />
+              <path d="M138 221 Q160 214 182 221" />
             </g>
 
-
-            <!-- INICIO INSIDE PAW -->
+            <!-- INICIO -->
 
             <text
               class="paw-home-label"
               x="160"
-              y="244"
+              y="248"
             >
               Inicio
             </text>
 
           </g>
-
 
         </svg>
 
@@ -429,10 +381,7 @@
   </header>
 
 
-
-  <!-- =========================
-       ARCGIS APPLICATION
-       ========================= -->
+  <!-- ARCGIS APPLICATION -->
 
   <main class="app-container">
 
@@ -447,9 +396,7 @@
   </main>
 
 
-
   <script src="/Perros_del_Barrio/js/paw-menu.js"></script>
-
 
 </body>
 
