@@ -1,3 +1,7 @@
+/* =========================================
+   GLOBAL
+   ========================================= */
+
 * {
   box-sizing: border-box;
 }
@@ -13,13 +17,15 @@ body {
 body {
   display: flex;
   flex-direction: column;
+
   font-family: Arial, sans-serif;
   background: #f5f5f5;
 }
 
-/* =========================
+
+/* =========================================
    HEADER
-   ========================= */
+   ========================================= */
 
 .site-header {
   display: grid;
@@ -29,33 +35,47 @@ body {
 
   width: 100%;
   height: 140px;
-  padding: 30 20px;
+  padding: 0 20px;
 
   background: #2f6573;
   color: white;
 
   flex: 0 0 auto;
+
+  position: relative;
+  z-index: 100;
 }
 
-/* Logo */
+
+/* =========================================
+   LOGO
+   ========================================= */
 
 .logo-area {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
   height: 100%;
 }
 
 .logo {
   display: block;
+
   width: 180px;
   height: 140px;
+
   object-fit: contain;
 
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(
+    0 6px 12px rgba(0, 0, 0, 0.35)
+  );
 }
 
-/* Title and subtitle */
+
+/* =========================================
+   TITLE + SUBTITLE
+   ========================================= */
 
 .header-text {
   text-align: center;
@@ -63,247 +83,483 @@ body {
 }
 
 .header-text h1 {
-  color:#997392;
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.22);
   margin: 0;
-  font-family: "Comic Sans MS";
+
+  color: #997392;
+
+  font-family: "Comic Sans MS", cursive;
   font-variant: small-caps;
   font-size: 3rem;
   font-weight: 600;
   line-height: 1.05;
   letter-spacing: 0.2em;
+
+  text-shadow:
+    0 2px 3px rgba(0, 0, 0, 0.22);
 }
 
 .header-text p {
-  color: #f4f1e8;
   margin: 8px 0 0;
+
+  color: #f4f1e8;
+
   font-family: "Dancing Script", cursive;
   font-size: 1.55rem;
 }
 
-/* =========================
-   ICON MENU
-   ========================= */
 
-/* Vertical icon menu */
+/* =========================================
+   PAW MENU POSITION IN HEADER
+   ========================================= */
 
 .site-menu {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 1px;
-  position: relative;
-}
-
-/* Individual square button */
-
-.menu-item {
-  position: relative;
-
-  display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: center;
 
-  width: 34px;
-  height: 34px;
+  height: 100%;
 
-  background: #2f6573;
-  border: 1px solid #1f1f1f;
-  border-radius: 2px;
+  position: relative;
 
-  text-decoration: none;
-
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.35);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  overflow: visible;
 }
 
-/* Icon size */
 
-.menu-item img {
+/* =========================================
+   PAW MENU CONTAINER
+   ========================================= */
+
+.paw-menu {
+  position: relative;
+
+  width: 74px;
+  height: 74px;
+
+  overflow: visible;
+
+  transition:
+    width 0.35s ease,
+    height 0.35s ease;
+}
+
+
+/*
+   When open, give the paw enough room
+   for the four toes and their labels.
+*/
+
+.paw-menu.open {
+  width: 215px;
+  height: 205px;
+}
+
+
+/* =========================================
+   SVG
+   ========================================= */
+
+.paw-menu-svg {
   display: block;
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
 
-  transition: transform 0.2s ease;
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
 }
 
-/* Hidden label */
 
-.menu-item span {
-  position: absolute;
-  right: 54px;
-  top: 50%;
+/* =========================================
+   CENTER PAW PAD
+   ========================================= */
 
-  padding: 2px 4px;
+.paw-center {
+  fill: #927a98;
 
-  color: white;
-  background: #2f6573;
-  border: 1px solid #2f6573;
-  border-radius: 4px;
+  cursor: pointer;
 
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.05rem;
-  font-weight: 600;
-  white-space: nowrap;
+  transform-origin: 130px 180px;
 
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-50%) translateX(8px);
-
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.25);
+  filter:
+    drop-shadow(
+      0 3px 5px rgba(0, 0, 0, 0.32)
+    );
 
   transition:
-    opacity 0.2s ease,
-    transform 0.2s ease,
-    visibility 0.2s ease;
+    transform 0.22s ease,
+    fill 0.22s ease,
+    filter 0.22s ease;
 }
 
-/* Icon enlarges on hover */
 
-.menu-item:hover,
-.menu-item:focus-visible {
-  z-index: 5;
-  transform: scale(1.12);
-  box-shadow: 0 5px 11px rgba(0, 0, 0, 0.5);
+.paw-center:hover,
+.paw-center:focus-visible {
+  fill: #04768a;
+
+  transform: scale(1.06);
+
+  filter:
+    drop-shadow(
+      0 5px 8px rgba(0, 0, 0, 0.4)
+    );
+
   outline: none;
 }
 
-.menu-item:hover img,
-.menu-item:focus-visible img {
-  transform: scale(1.08);
+
+/* =========================================
+   HAMBURGER LINES INSIDE CENTER PAD
+   ========================================= */
+
+.paw-lines {
+  stroke: #ffffff;
+  stroke-width: 5;
+  stroke-linecap: round;
+
+  pointer-events: none;
 }
 
-/* Show the menu name */
 
-.menu-item:hover span,
-.menu-item:focus-visible span {
+/* =========================================
+   TOE LINKS
+   ========================================= */
+
+.paw-item {
+  fill: #927a98;
+
+  cursor: pointer;
+
+  text-decoration: none;
+}
+
+
+/*
+   Closed position.
+
+   The toes start collapsed inward
+   toward the main paw pad.
+*/
+
+.toe {
+  opacity: 0;
+
+  transform:
+    translateY(70px)
+    scale(0.2);
+
+  transform-origin: center;
+
+  pointer-events: none;
+
+  transition:
+    transform 0.38s ease,
+    opacity 0.24s ease,
+    fill 0.2s ease;
+}
+
+
+/* =========================================
+   TOE LABELS
+   ========================================= */
+
+.toe text {
+  fill: #f4f1e8;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  text-anchor: middle;
+
+  paint-order: stroke;
+
+  stroke: #2f6573;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.2s ease;
+}
+
+
+/* =========================================
+   OPEN PAW MENU
+   ========================================= */
+
+.paw-menu.open .toe {
   opacity: 1;
-  visibility: visible;
-  transform: translateY(-50%) translateX(0);
+
+  transform:
+    translateY(0)
+    scale(1);
+
+  pointer-events: auto;
 }
 
 
+/*
+   All labels appear immediately
+   when the paw opens.
+*/
 
-/* =========================
+.paw-menu.open .toe text {
+  opacity: 1;
+}
+
+
+/* =========================================
+   STAGGERED TOE ANIMATION
+   ========================================= */
+
+.paw-home .toe {
+  transition-delay: 0.02s;
+}
+
+.paw-about .toe {
+  transition-delay: 0.07s;
+}
+
+.paw-join .toe {
+  transition-delay: 0.12s;
+}
+
+.paw-help .toe {
+  transition-delay: 0.17s;
+}
+
+
+/* =========================================
+   TOE HOVER / KEYBOARD FOCUS
+   ========================================= */
+
+.paw-menu.open .paw-item:hover .toe,
+.paw-menu.open .paw-item:focus-visible .toe {
+  fill: #04768a;
+
+  transform: scale(1.13);
+}
+
+
+/*
+   Slight label movement gives a
+   little extra feedback without
+   hiding/revealing the label.
+*/
+
+.paw-menu.open .paw-item:hover text,
+.paw-menu.open .paw-item:focus-visible text {
+  transform: translateY(-3px);
+}
+
+
+.paw-item:focus-visible {
+  outline: none;
+}
+
+
+/* =========================================
+   OPTIONAL OPEN-STATE CENTER PAD
+   ========================================= */
+
+.paw-menu.open .paw-center {
+  fill: #997392;
+}
+
+
+/* =========================================
    ARCGIS APPLICATION
-   ========================= */
+   ========================================= */
 
 .app-container {
   flex: 1 1 auto;
+
   width: 100%;
+
   min-height: 0;
 }
 
 .app-container iframe {
   display: block;
+
   width: 100%;
   height: 100%;
+
   border: 0;
 }
 
-/* =========================
-   TABLET AND PHONE
-   ========================= */
+
+/* =========================================
+   TABLET + PHONE
+   ========================================= */
 
 @media (max-width: 750px) {
-  .site-header {
-    grid-template-columns: 70px 1fr 56px;
-    grid-template-rows: 1fr;
-    align-items: center;
-    gap: 8px;
 
-    height: 130px;
-    padding: 0 10px;
+  .site-header {
+    grid-template-columns: 82px 1fr 72px;
+    grid-template-rows: 1fr;
+
+    align-items: center;
+
+    gap: 6px;
+
+    height: 125px;
+
+    padding: 0 8px;
   }
+
+
+  /* -------------------------
+     MOBILE LOGO
+     ------------------------- */
 
   .logo-area {
     grid-column: 1;
     grid-row: 1;
+
+    justify-content: flex-start;
   }
 
   .logo {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 105px;
   }
+
+
+  /* -------------------------
+     MOBILE TITLE
+     ------------------------- */
 
   .header-text {
     grid-column: 2;
     grid-row: 1;
+
     text-align: center;
+
     white-space: normal;
-    padding: 0;
+
+    padding: 0 3px;
   }
 
   .header-text h1 {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
+
+    line-height: 1.05;
+
+    letter-spacing: 0.08em;
   }
 
   .header-text p {
-    font-size: 1.2rem;
+    margin-top: 5px;
+
+    font-size: 1.15rem;
+
+    line-height: 1.05;
   }
+
+
+  /* -------------------------
+     MOBILE MENU POSITION
+     ------------------------- */
 
   .site-menu {
     grid-column: 3;
     grid-row: 1;
-    flex-direction: column;
+
     justify-content: center;
     align-items: center;
-    gap: 0px;
+
+    overflow: visible;
   }
 
-  .menu-item {
-    width: 42px;
-    height: 42px;
+
+  /* -------------------------
+     MOBILE PAW
+     ------------------------- */
+
+  .paw-menu {
+    width: 62px;
+    height: 62px;
   }
 
-  .menu-item img {
-    width: 30px;
-    height: 30px;
+  .paw-menu.open {
+    width: 175px;
+    height: 170px;
   }
+
+  .toe text {
+    font-size: 18px;
+  }
+
 }
 
-/* Very small phones */
+
+/* =========================================
+   VERY SMALL PHONES
+   ========================================= */
 
 @media (max-width: 400px) {
+
   .site-header {
-    padding: 6px 8px;
+    grid-template-columns: 66px 1fr 60px;
+
+    height: 112px;
+
+    padding: 0 5px;
+
+    gap: 3px;
   }
 
   .logo {
-    width: 62px;
+    width: 78px;
+    height: 85px;
+  }
+
+  .header-text h1 {
+    font-size: 1.2rem;
+
+    letter-spacing: 0.05em;
+  }
+
+  .header-text p {
+    font-size: 1rem;
+  }
+
+  .paw-menu {
+    width: 54px;
     height: 54px;
   }
 
-  .site-menu {
-    gap: 5px;
+  .paw-menu.open {
+    width: 160px;
+    height: 155px;
   }
 
-  .menu-item {
-    width: 38px;
-    height: 38px;
+  .toe text {
+    font-size: 18px;
   }
 
-  .menu-item img {
-    width: 27px;
-    height: 27px;
-  }
 }
 
-/* Respect users who disable animation */
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .menu-item,
-  .menu-item img {
+
+  .paw-menu,
+  .paw-center,
+  .toe,
+  .toe text {
     transition: none;
   }
 
-  .menu-item:hover img,
-  .menu-item:focus-visible img {
-    animation: none;
-  }
 }
