@@ -29,7 +29,7 @@ body {
 
 .site-header {
   display: grid;
-  grid-template-columns: 200px 1fr 240px;
+  grid-template-columns: 200px 1fr 220px;
   align-items: center;
   gap: 20px;
 
@@ -43,7 +43,7 @@ body {
   flex: 0 0 auto;
 
   position: relative;
-  z-index: 100;
+  z-index: 1000;
 }
 
 
@@ -55,26 +55,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-
   height: 100%;
 }
 
 .logo {
   display: block;
-
   width: 180px;
   height: 140px;
-
   object-fit: contain;
 
-  filter: drop-shadow(
-    0 6px 12px rgba(0, 0, 0, 0.35)
-  );
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
 }
 
 
 /* =========================================
-   TITLE + SUBTITLE
+   TITLE + TAGLINE
    ========================================= */
 
 .header-text {
@@ -83,9 +78,9 @@ body {
 }
 
 .header-text h1 {
-  margin: 0;
-
   color: #997392;
+
+  margin: 0;
 
   font-family: "Comic Sans MS", cursive;
   font-variant: small-caps;
@@ -94,14 +89,13 @@ body {
   line-height: 1.05;
   letter-spacing: 0.2em;
 
-  text-shadow:
-    0 2px 3px rgba(0, 0, 0, 0.22);
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.22);
 }
 
 .header-text p {
-  margin: 8px 0 0;
-
   color: #f4f1e8;
+
+  margin: 8px 0 0;
 
   font-family: "Dancing Script", cursive;
   font-size: 1.55rem;
@@ -109,48 +103,36 @@ body {
 
 
 /* =========================================
-   PAW MENU POSITION IN HEADER
+   PAW MENU AREA
    ========================================= */
 
 .site-menu {
+  position: relative;
+
   display: flex;
   justify-content: flex-end;
   align-items: center;
 
   height: 100%;
 
-  position: relative;
-
   overflow: visible;
-}
-
-
-/* =========================================
-   PAW MENU CONTAINER
-   ========================================= */
-
-.paw-menu {
-  position: relative;
-
-  width: 74px;
-  height: 74px;
-
-  overflow: visible;
-
-  transition:
-    width 0.35s ease,
-    height 0.35s ease;
 }
 
 
 /*
-   When open, give the paw enough room
-   for the four toes and their labels.
+  Important:
+  the paw menu uses a fixed SVG coordinate
+  system and does NOT shrink the whole SVG
+  down into a tiny closed-state box.
 */
 
-.paw-menu.open {
-  width: 215px;
-  height: 205px;
+.paw-menu {
+  position: relative;
+
+  width: 190px;
+  height: 130px;
+
+  overflow: visible;
 }
 
 
@@ -161,15 +143,21 @@ body {
 .paw-menu-svg {
   display: block;
 
-  width: 100%;
-  height: 100%;
+  width: 190px;
+  height: 180px;
+
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  transform: translateY(-50%);
 
   overflow: visible;
 }
 
 
 /* =========================================
-   CENTER PAW PAD
+   MAIN PAW PAD
    ========================================= */
 
 .paw-center {
@@ -177,12 +165,8 @@ body {
 
   cursor: pointer;
 
-  transform-origin: 130px 180px;
-
-  filter:
-    drop-shadow(
-      0 3px 5px rgba(0, 0, 0, 0.32)
-    );
+  transform-box: fill-box;
+  transform-origin: center;
 
   transition:
     transform 0.22s ease,
@@ -190,17 +174,13 @@ body {
     filter 0.22s ease;
 }
 
-
 .paw-center:hover,
 .paw-center:focus-visible {
-  fill: #04768a;
+  fill: #997392;
 
   transform: scale(1.06);
 
-  filter:
-    drop-shadow(
-      0 5px 8px rgba(0, 0, 0, 0.4)
-    );
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
 
   outline: none;
 }
@@ -226,56 +206,63 @@ body {
 .paw-item {
   fill: #927a98;
 
-  cursor: pointer;
-
   text-decoration: none;
+
+  cursor: pointer;
 }
 
 
 /*
-   Closed position.
+  CLOSED STATE
 
-   The toes start collapsed inward
-   toward the main paw pad.
+  The toes are invisible and pulled inward
+  toward the center pad.
 */
 
 .toe {
   opacity: 0;
 
-  transform:
-    translateY(70px)
-    scale(0.2);
-
+  transform-box: fill-box;
   transform-origin: center;
+
+  transform: translateY(55px) scale(0.25);
 
   pointer-events: none;
 
   transition:
-    transform 0.38s ease,
-    opacity 0.24s ease,
-    fill 0.2s ease;
+    transform 0.34s ease,
+    opacity 0.22s ease,
+    fill 0.18s ease;
 }
 
 
 /* =========================================
-   TOE LABELS
+   OPEN STATE
+   ========================================= */
+
+.paw-menu.open .toe {
+  opacity: 1;
+
+  transform: translateY(0) scale(1);
+
+  pointer-events: auto;
+}
+
+
+/* =========================================
+   LABELS
    ========================================= */
 
 .toe text {
   fill: #f4f1e8;
 
-  font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
-
-  font-size: 17px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 16px;
   font-weight: 700;
 
   text-anchor: middle;
 
   paint-order: stroke;
-
   stroke: #2f6573;
   stroke-width: 3px;
   stroke-linejoin: round;
@@ -285,29 +272,13 @@ body {
   pointer-events: none;
 
   transition:
-    opacity 0.25s ease,
-    transform 0.2s ease;
-}
-
-
-/* =========================================
-   OPEN PAW MENU
-   ========================================= */
-
-.paw-menu.open .toe {
-  opacity: 1;
-
-  transform:
-    translateY(0)
-    scale(1);
-
-  pointer-events: auto;
+    opacity 0.2s ease,
+    transform 0.18s ease;
 }
 
 
 /*
-   All labels appear immediately
-   when the paw opens.
+  All labels show as soon as the paw opens.
 */
 
 .paw-menu.open .toe text {
@@ -315,62 +286,52 @@ body {
 }
 
 
+/* Slightly smaller for long label */
+
+.paw-label-small {
+  font-size: 14px;
+}
+
+
 /* =========================================
-   STAGGERED TOE ANIMATION
+   STAGGERED OPENING
    ========================================= */
 
 .paw-home .toe {
   transition-delay: 0.02s;
 }
 
-.paw-about .toe {
-  transition-delay: 0.07s;
-}
-
 .paw-join .toe {
-  transition-delay: 0.12s;
+  transition-delay: 0.06s;
 }
 
 .paw-help .toe {
-  transition-delay: 0.17s;
+  transition-delay: 0.10s;
+}
+
+.paw-about .toe {
+  transition-delay: 0.14s;
 }
 
 
 /* =========================================
-   TOE HOVER / KEYBOARD FOCUS
+   TOE HOVER / FOCUS
    ========================================= */
 
 .paw-menu.open .paw-item:hover .toe,
 .paw-menu.open .paw-item:focus-visible .toe {
   fill: #04768a;
 
-  transform: scale(1.13);
+  transform: scale(1.12);
 }
-
-
-/*
-   Slight label movement gives a
-   little extra feedback without
-   hiding/revealing the label.
-*/
 
 .paw-menu.open .paw-item:hover text,
 .paw-menu.open .paw-item:focus-visible text {
   transform: translateY(-3px);
 }
 
-
 .paw-item:focus-visible {
   outline: none;
-}
-
-
-/* =========================================
-   OPTIONAL OPEN-STATE CENTER PAD
-   ========================================= */
-
-.paw-menu.open .paw-center {
-  fill: #997392;
 }
 
 
@@ -403,7 +364,7 @@ body {
 @media (max-width: 750px) {
 
   .site-header {
-    grid-template-columns: 82px 1fr 72px;
+    grid-template-columns: 82px 1fr 90px;
     grid-template-rows: 1fr;
 
     align-items: center;
@@ -416,15 +377,11 @@ body {
   }
 
 
-  /* -------------------------
-     MOBILE LOGO
-     ------------------------- */
+  /* Logo */
 
   .logo-area {
     grid-column: 1;
     grid-row: 1;
-
-    justify-content: flex-start;
   }
 
   .logo {
@@ -433,9 +390,7 @@ body {
   }
 
 
-  /* -------------------------
-     MOBILE TITLE
-     ------------------------- */
+  /* Header text */
 
   .header-text {
     grid-column: 2;
@@ -465,37 +420,33 @@ body {
   }
 
 
-  /* -------------------------
-     MOBILE MENU POSITION
-     ------------------------- */
+  /* Menu */
 
   .site-menu {
     grid-column: 3;
     grid-row: 1;
 
-    justify-content: center;
-    align-items: center;
-
-    overflow: visible;
+    justify-content: flex-end;
   }
-
-
-  /* -------------------------
-     MOBILE PAW
-     ------------------------- */
 
   .paw-menu {
-    width: 62px;
-    height: 62px;
+    width: 90px;
+    height: 100px;
   }
 
-  .paw-menu.open {
-    width: 175px;
-    height: 170px;
+  .paw-menu-svg {
+    width: 155px;
+    height: 155px;
+
+    right: -4px;
   }
 
   .toe text {
-    font-size: 18px;
+    font-size: 17px;
+  }
+
+  .paw-label-small {
+    font-size: 13px;
   }
 
 }
@@ -508,7 +459,7 @@ body {
 @media (max-width: 400px) {
 
   .site-header {
-    grid-template-columns: 66px 1fr 60px;
+    grid-template-columns: 66px 1fr 78px;
 
     height: 112px;
 
@@ -533,17 +484,23 @@ body {
   }
 
   .paw-menu {
-    width: 54px;
-    height: 54px;
+    width: 78px;
+    height: 92px;
   }
 
-  .paw-menu.open {
-    width: 160px;
-    height: 155px;
+  .paw-menu-svg {
+    width: 140px;
+    height: 140px;
+
+    right: -5px;
   }
 
   .toe text {
-    font-size: 18px;
+    font-size: 16px;
+  }
+
+  .paw-label-small {
+    font-size: 12px;
   }
 
 }
@@ -555,7 +512,6 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
 
-  .paw-menu,
   .paw-center,
   .toe,
   .toe text {
