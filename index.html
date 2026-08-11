@@ -1,100 +1,346 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Perros del Barrio</title>
 
-  <link rel="icon" type="image/png" href="favicon.PNG">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google fonts -->
+
   <link
-  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap"
-  rel="stylesheet"
->
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
 
-  <link rel="stylesheet" href="/Perros_del_Barrio/css/style.css">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
-  <!-- Facebook / social preview -->
-  <meta property="og:title" content="Perros del Barrio">
-  <meta
-    property="og:description"
-    content="Explora, encuentre y reporte <br>perros comunitarios en Cuenca."
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
   >
-  <meta
-    property="og:image"
-    content="https://gaianian.github.io/Perros_del_Barrio/Preview.PNG"
-  >
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta
-    property="og:url"
-    content="https://gaianian.github.io/Perros_del_Barrio/"
-  >
-  <meta property="og:type" content="website">
 
-  <meta
-    name="description"
-    content="Encuentre y reporte perros comunitarios en Cuenca."
+
+  <!-- Main stylesheet -->
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
   >
+
 </head>
+
 
 <body>
 
+
+  <!-- =====================================
+       HEADER
+       ===================================== -->
+
   <header class="site-header">
 
+
+    <!-- LOGO -->
+
     <div class="logo-area">
-      <img
-        src="images/Logo.png"
-        alt="Logo de Perros del Barrio"
-        class="logo"
+
+      <a
+        href="index.html"
+        aria-label="Perros del Barrio - Inicio"
       >
+
+        <img
+          class="logo"
+          src="images/logo.png"
+          alt="Perros del Barrio"
+        >
+
+      </a>
+
     </div>
+
+
+
+    <!-- TITLE + TAGLINE -->
 
     <div class="header-text">
-      <h1>Perros del Barrio</h1>
-      <p>Explora, encuentre y reporte <br>perros comunitarios en Cuenca</p>
+
+      <h1>
+        Perros del Barrio
+      </h1>
+
+      <p>
+        Hace falta una comunidad.
+      </p>
+
     </div>
 
-<nav class="site-menu" aria-label="Menú principal">
 
-  <a class="menu-item" href="#" aria-label="Home">
-    <img src="images/HomeIcon.jpg" alt="">
-    <span>Home</span>
-  </a>
 
-  <a class="menu-item" href="#" aria-label="Join Us">
-    <img src="images/doggymanhi5.PNG" alt="">
-    <span>Join Us</span>
-  </a>
+    <!-- =====================================
+         PAW NAVIGATION MENU
+         ===================================== -->
 
-  <a class="menu-item" href="#" aria-label="How to use the app">
-    <img src="images/HelpIcon.PNG" alt="">
-    <span>How to use the app</span>
-  </a>
+    <nav
+      class="site-menu"
+      aria-label="Navegación principal"
+    >
 
-</nav>
+      <div
+        class="paw-menu"
+        id="pawMenu"
+      >
 
-  <a class="menu-item menu-home" href="#">
-    <img src="images/HomeIcon.png" alt="">
-    <span>Acerca de</span>
-  </a>
 
-</nav>
+        <svg
+          class="paw-menu-svg"
+          viewBox="0 0 260 250"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-label="Menú principal"
+        >
+
+
+          <!-- =============================
+               HOME
+               ============================= -->
+
+          <a
+            href="index.html"
+            class="paw-item paw-home"
+            aria-label="Inicio"
+          >
+
+            <g class="toe">
+
+              <ellipse
+                cx="88"
+                cy="78"
+                rx="24"
+                ry="32"
+              />
+
+              <text
+                x="88"
+                y="31"
+              >
+                Inicio
+              </text>
+
+            </g>
+
+          </a>
+
+
+
+          <!-- =============================
+               ABOUT
+               ============================= -->
+
+          <a
+            href="about.html"
+            class="paw-item paw-about"
+            aria-label="Acerca de"
+          >
+
+            <g class="toe">
+
+              <ellipse
+                cx="170"
+                cy="78"
+                rx="24"
+                ry="32"
+              />
+
+              <text
+                x="170"
+                y="31"
+              >
+                Acerca
+              </text>
+
+            </g>
+
+          </a>
+
+
+
+          <!-- =============================
+               JOIN US
+               ============================= -->
+
+          <a
+            href="join.html"
+            class="paw-item paw-join"
+            aria-label="Únete"
+          >
+
+            <g class="toe">
+
+              <ellipse
+                cx="47"
+                cy="132"
+                rx="22"
+                ry="30"
+                transform="rotate(-28 47 132)"
+              />
+
+              <text
+                x="35"
+                y="184"
+              >
+                Únete
+              </text>
+
+            </g>
+
+          </a>
+
+
+
+          <!-- =============================
+               HELP
+               ============================= -->
+
+          <a
+            href="help.html"
+            class="paw-item paw-help"
+            aria-label="Ayuda"
+          >
+
+            <g class="toe">
+
+              <ellipse
+                cx="213"
+                cy="132"
+                rx="22"
+                ry="30"
+                transform="rotate(28 213 132)"
+              />
+
+              <text
+                x="222"
+                y="184"
+              >
+                Ayuda
+              </text>
+
+            </g>
+
+          </a>
+
+
+
+          <!-- =============================
+               CENTER PAW PAD
+               Click this to open/close
+               ============================= -->
+
+          <g
+            class="paw-center"
+            id="pawMenuButton"
+            role="button"
+            tabindex="0"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+          >
+
+
+            <!-- Main paw pad -->
+
+            <path
+              d="
+                M75 194
+                C76 163 92 137 110 127
+                C120 122 140 122 150 127
+                C168 137 184 163 185 194
+                C186 214 171 224 153 220
+                C137 216 123 216 107 220
+                C89 224 74 214 75 194
+                Z
+              "
+            />
+
+
+            <!-- Hamburger lines -->
+
+            <g class="paw-lines">
+
+              <line
+                x1="114"
+                y1="168"
+                x2="146"
+                y2="168"
+              />
+
+              <line
+                x1="114"
+                y1="180"
+                x2="146"
+                y2="180"
+              />
+
+              <line
+                x1="114"
+                y1="192"
+                x2="146"
+                y2="192"
+              />
+
+            </g>
+
+
+          </g>
+
+
+        </svg>
+
+
+      </div>
+
+    </nav>
+
 
   </header>
 
+
+
+  <!-- =====================================
+       ARCGIS APPLICATION
+       ===================================== -->
+
   <main class="app-container">
+
     <iframe
       src="https://experience.arcgis.com/experience/e444a62bd78e417292dcc66910450bdf?draft=true&org=GaiaSpatial"
+      title="Mapa de Perros del Barrio"
       allow="geolocation"
-      title="Aplicación Perros del Barrio"
-      allowfullscreen>
+      loading="eager"
+    >
     </iframe>
+
   </main>
 
+
+
+  <!-- =====================================
+       PAW MENU JAVASCRIPT
+       ===================================== -->
+
+  <script src="js/paw-menu.js"></script>
+
+
 </body>
+
 </html>
