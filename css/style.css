@@ -19,6 +19,7 @@ body {
   flex-direction: column;
 
   font-family: Arial, sans-serif;
+
   background: #f5f5f5;
 }
 
@@ -29,22 +30,24 @@ body {
 
 .site-header {
   display: grid;
-  grid-template-columns: 200px 1fr 150px;
+
+  grid-template-columns: 1fr 170px;
 
   align-items: center;
-  gap: 20px;
 
   width: 100%;
   height: 140px;
 
-  padding: 0 20px;
+  padding: 0 14px 0 28px;
 
   background: #2f6573;
+
   color: white;
 
   flex: 0 0 auto;
 
   position: relative;
+
   z-index: 1000;
 
   overflow: visible;
@@ -52,40 +55,17 @@ body {
 
 
 /* =========================================
-   LOGO
-   ========================================= */
-
-.logo-area {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-
-  height: 100%;
-}
-
-.logo {
-  display: block;
-
-  width: 180px;
-  height: 140px;
-
-  object-fit: contain;
-
-  filter:
-    drop-shadow(
-      0 6px 12px rgba(0, 0, 0, 0.35)
-    );
-}
-
-
-/* =========================================
-   TITLE
+   TITLE + TAGLINE
    ========================================= */
 
 .header-text {
-  text-align: center;
+  text-align: left;
+
   white-space: nowrap;
+
+  justify-self: start;
 }
+
 
 .header-text h1 {
   margin: 0;
@@ -93,17 +73,21 @@ body {
   color: #997392;
 
   font-family: "Comic Sans MS", cursive;
+
   font-variant: small-caps;
 
   font-size: 3rem;
+
   font-weight: 600;
 
   line-height: 1.05;
+
   letter-spacing: 0.2em;
 
   text-shadow:
     0 2px 3px rgba(0, 0, 0, 0.22);
 }
+
 
 .header-text p {
   margin: 8px 0 0;
@@ -111,18 +95,20 @@ body {
   color: #f4f1e8;
 
   font-family: "Dancing Script", cursive;
+
   font-size: 1.55rem;
 }
 
 
 /* =========================================
-   PAW MENU AREA
+   MENU AREA
    ========================================= */
 
 .site-menu {
   display: flex;
+
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
 
   height: 100%;
 
@@ -134,14 +120,13 @@ body {
 
 /* =========================================
    PAW CONTAINER
-   smaller overall size
    ========================================= */
 
 .paw-menu {
   position: relative;
 
-  width: 130px;
-  height: 100px;
+  width: 160px;
+  height: 130px;
 
   overflow: visible;
 }
@@ -156,19 +141,28 @@ body {
 
   position: absolute;
 
-  width: 130px;
-  height: 122px;
+  width: 160px;
+  height: 142px;
 
-  right: 0;
-  top: 50%;
+  right: -6px;
 
-  transform: translateY(-50%);
+  top: -2px;
 
   overflow: visible;
 
   transition:
-    width 0.25s ease,
-    height 0.25s ease;
+    transform 0.32s ease;
+}
+
+
+/*
+  Open state:
+  move LEFT only.
+  Do NOT scale the SVG.
+*/
+
+.paw-menu.open .paw-menu-svg {
+  transform: translateX(-72px);
 }
 
 
@@ -182,19 +176,18 @@ body {
   cursor: pointer;
 
   transform-box: fill-box;
+
   transform-origin: center;
 
   transition:
-    transform 0.22s ease,
     fill 0.22s ease,
     filter 0.22s ease;
 }
 
+
 .paw-center:hover,
 .paw-center:focus-visible {
   fill: #04768a;
-
-  transform: scale(1.05);
 
   filter:
     drop-shadow(
@@ -205,15 +198,26 @@ body {
 }
 
 
+/*
+  IMPORTANT:
+  no scale on open.
+*/
+
+.paw-menu.open .paw-center {
+  transform: none;
+}
+
+
 /* =========================================
-   CURVED MENU MARKS
+   MENU LINES
    ========================================= */
 
 .paw-lines {
   fill: none;
 
   stroke: #ffffff;
-  stroke-width: 5;
+
+  stroke-width: 6;
 
   stroke-linecap: round;
 
@@ -226,17 +230,17 @@ body {
    ========================================= */
 
 .paw-home-label {
-  fill: #ffffff;
+  fill: #f4f1e8;
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Comic Sans MS",
+    cursive;
 
-  font-size: 17px;
+  font-size: 34px;
+
   font-weight: 700;
 
-  text-anchor: middle;
+  letter-spacing: 0.5px;
 
   pointer-events: none;
 }
@@ -256,31 +260,31 @@ body {
 
 
 /* =========================================
-   CLOSED STATE
+   CLOSED TOE STATE
    ========================================= */
 
 .toe {
   opacity: 0;
 
   transform-box: fill-box;
+
   transform-origin: center;
 
   transform:
-    translateY(70px)
+    translateY(85px)
     scale(0.18);
 
   pointer-events: none;
 
   transition:
-    transform 0.38s ease,
-    opacity 0.23s ease,
+    transform 0.36s ease,
+    opacity 0.22s ease,
     fill 0.2s ease;
 }
 
 
 /* =========================================
    TOE LABELS
-   all same size
    ========================================= */
 
 .toe-label {
@@ -289,14 +293,14 @@ body {
   stroke: none;
 
   font-family:
-    "Cormorant Garamond",
-    Georgia,
-    serif;
+    "Comic Sans MS",
+    cursive;
 
   font-size: 17px;
+
   font-weight: 700;
 
-  letter-spacing: 0.15px;
+  letter-spacing: 0.1px;
 
   pointer-events: none;
 
@@ -308,7 +312,7 @@ body {
 
 
 /* =========================================
-   OPEN STATE
+   OPEN TOE STATE
    ========================================= */
 
 .paw-menu.open .toe {
@@ -320,6 +324,7 @@ body {
 
   pointer-events: auto;
 }
+
 
 .paw-menu.open .toe-label {
   opacity: 1;
@@ -348,15 +353,16 @@ body {
 
 
 /* =========================================
-   HOVER / FOCUS
+   TOE HOVER / FOCUS
    ========================================= */
 
 .paw-menu.open .paw-item:hover .toe,
 .paw-menu.open .paw-item:focus-visible .toe {
-  fill: #04768a;
+  fill: #8a9e93;
 
-  transform: scale(1.10);
+  transform: scale(1.08);
 }
+
 
 .paw-item:focus-visible {
   outline: none;
@@ -374,6 +380,7 @@ body {
 
   min-height: 0;
 }
+
 
 .app-container iframe {
   display: block;
@@ -393,32 +400,27 @@ body {
 
   .site-header {
     grid-template-columns:
-      82px
       1fr
-      50px;
+      68px;
 
-    gap: 4px;
-
-    height: 125px;
+    height: 110px;
 
     padding:
       0
       2px
       0
-      8px;
-  }
+      12px;
 
-
-  .logo {
-    width: 100px;
-    height: 105px;
+    gap: 4px;
   }
 
 
   .header-text {
+    text-align: left;
+
     white-space: normal;
 
-    padding: 0 2px;
+    padding: 0;
   }
 
 
@@ -442,37 +444,40 @@ body {
 
   .site-menu {
     justify-content: flex-end;
+    align-items: flex-start;
   }
 
 
   /*
-     Small closed paw
+    Small closed paw,
+    but larger than previous version.
   */
 
   .paw-menu {
-    width: 48px;
-    height: 68px;
+    width: 64px;
+    height: 88px;
   }
 
 
   .paw-menu-svg {
-    width: 72px;
-    height: 68px;
+    width: 94px;
+    height: 84px;
 
-    right: -10px;
+    right: -12px;
+
+    top: 2px;
   }
 
 
   /*
-     Larger when open,
-     so labels remain readable.
+    On open:
+    ONLY SHIFT LEFT.
+    No size change.
   */
 
   .paw-menu.open .paw-menu-svg {
-    width: 122px;
-    height: 114px;
-
-    right: -5px;
+    transform:
+      translateX(-68px);
   }
 
 
@@ -482,7 +487,7 @@ body {
 
 
   .paw-home-label {
-    font-size: 17px;
+    font-size: 34px;
   }
 
 }
@@ -496,25 +501,16 @@ body {
 
   .site-header {
     grid-template-columns:
-      66px
       1fr
-      44px;
+      62px;
 
-    height: 112px;
-
-    gap: 2px;
+    height: 105px;
 
     padding:
       0
       1px
       0
-      5px;
-  }
-
-
-  .logo {
-    width: 78px;
-    height: 85px;
+      8px;
   }
 
 
@@ -531,24 +527,34 @@ body {
 
 
   .paw-menu {
-    width: 44px;
-    height: 62px;
+    width: 58px;
+    height: 84px;
   }
 
 
   .paw-menu-svg {
-    width: 66px;
-    height: 62px;
+    width: 88px;
+    height: 79px;
 
-    right: -10px;
+    right: -12px;
+
+    top: 1px;
   }
 
 
   .paw-menu.open .paw-menu-svg {
-    width: 116px;
-    height: 109px;
+    transform:
+      translateX(-64px);
+  }
 
-    right: -4px;
+
+  .toe-label {
+    font-size: 17px;
+  }
+
+
+  .paw-home-label {
+    font-size: 32px;
   }
 
 }
@@ -560,10 +566,10 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
 
+  .paw-menu-svg,
   .paw-center,
   .toe,
-  .toe-label,
-  .paw-menu-svg {
+  .toe-label {
     transition: none;
   }
 
