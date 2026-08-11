@@ -19,7 +19,6 @@ body {
   flex-direction: column;
 
   font-family: Arial, sans-serif;
-
   background: #f5f5f5;
 }
 
@@ -30,11 +29,9 @@ body {
 
 .site-header {
   display: grid;
-
-  grid-template-columns: 200px 1fr 240px;
+  grid-template-columns: 200px 1fr 150px;
 
   align-items: center;
-
   gap: 20px;
 
   width: 100%;
@@ -48,7 +45,6 @@ body {
   flex: 0 0 auto;
 
   position: relative;
-
   z-index: 1000;
 
   overflow: visible;
@@ -61,7 +57,6 @@ body {
 
 .logo-area {
   display: flex;
-
   align-items: center;
   justify-content: flex-start;
 
@@ -89,7 +84,6 @@ body {
 
 .header-text {
   text-align: center;
-
   white-space: nowrap;
 }
 
@@ -99,15 +93,12 @@ body {
   color: #997392;
 
   font-family: "Comic Sans MS", cursive;
-
   font-variant: small-caps;
 
   font-size: 3rem;
-
   font-weight: 600;
 
   line-height: 1.05;
-
   letter-spacing: 0.2em;
 
   text-shadow:
@@ -120,7 +111,6 @@ body {
   color: #f4f1e8;
 
   font-family: "Dancing Script", cursive;
-
   font-size: 1.55rem;
 }
 
@@ -131,7 +121,6 @@ body {
 
 .site-menu {
   display: flex;
-
   justify-content: flex-end;
   align-items: center;
 
@@ -145,13 +134,14 @@ body {
 
 /* =========================================
    PAW CONTAINER
+   smaller overall size
    ========================================= */
 
 .paw-menu {
   position: relative;
 
-  width: 220px;
-  height: 135px;
+  width: 130px;
+  height: 100px;
 
   overflow: visible;
 }
@@ -166,21 +156,24 @@ body {
 
   position: absolute;
 
-  width: 220px;
-  height: 206px;
+  width: 130px;
+  height: 122px;
 
   right: 0;
-
   top: 50%;
 
   transform: translateY(-50%);
 
   overflow: visible;
+
+  transition:
+    width 0.25s ease,
+    height 0.25s ease;
 }
 
 
 /* =========================================
-   CENTER PAD
+   MAIN PAW PAD
    ========================================= */
 
 .paw-center {
@@ -189,7 +182,6 @@ body {
   cursor: pointer;
 
   transform-box: fill-box;
-
   transform-origin: center;
 
   transition:
@@ -197,7 +189,6 @@ body {
     fill 0.22s ease,
     filter 0.22s ease;
 }
-
 
 .paw-center:hover,
 .paw-center:focus-visible {
@@ -222,7 +213,6 @@ body {
   fill: none;
 
   stroke: #ffffff;
-
   stroke-width: 5;
 
   stroke-linecap: round;
@@ -244,7 +234,6 @@ body {
     serif;
 
   font-size: 17px;
-
   font-weight: 700;
 
   text-anchor: middle;
@@ -254,7 +243,7 @@ body {
 
 
 /* =========================================
-   TOE BUTTONS
+   TOE LINKS
    ========================================= */
 
 .paw-item {
@@ -266,19 +255,18 @@ body {
 }
 
 
-/*
+/* =========================================
    CLOSED STATE
-*/
+   ========================================= */
 
 .toe {
   opacity: 0;
 
   transform-box: fill-box;
-
   transform-origin: center;
 
   transform:
-    translateY(75px)
+    translateY(70px)
     scale(0.18);
 
   pointer-events: none;
@@ -291,7 +279,8 @@ body {
 
 
 /* =========================================
-   CURVED TOE LABELS
+   TOE LABELS
+   all same size
    ========================================= */
 
 .toe-label {
@@ -305,10 +294,9 @@ body {
     serif;
 
   font-size: 17px;
-
   font-weight: 700;
 
-  letter-spacing: 0.2px;
+  letter-spacing: 0.15px;
 
   pointer-events: none;
 
@@ -316,11 +304,6 @@ body {
 
   transition:
     opacity 0.25s ease;
-}
-
-
-.toe-label-small {
-  font-size: 13px;
 }
 
 
@@ -338,21 +321,20 @@ body {
   pointer-events: auto;
 }
 
-
 .paw-menu.open .toe-label {
   opacity: 1;
 }
 
 
 /* =========================================
-   STAGGERED OPEN
+   STAGGERED OPENING
    ========================================= */
 
-.paw-participa .toe {
+.paw-como .toe {
   transition-delay: 0.02s;
 }
 
-.paw-donar .toe {
+.paw-participa .toe {
   transition-delay: 0.07s;
 }
 
@@ -376,7 +358,6 @@ body {
   transform: scale(1.10);
 }
 
-
 .paw-item:focus-visible {
   outline: none;
 }
@@ -394,12 +375,10 @@ body {
   min-height: 0;
 }
 
-
 .app-container iframe {
   display: block;
 
   width: 100%;
-
   height: 100%;
 
   border: 0;
@@ -407,7 +386,7 @@ body {
 
 
 /* =========================================
-   PHONE
+   PHONE / TABLET
    ========================================= */
 
 @media (max-width: 750px) {
@@ -416,7 +395,7 @@ body {
     grid-template-columns:
       82px
       1fr
-      55px;
+      50px;
 
     gap: 4px;
 
@@ -424,21 +403,17 @@ body {
 
     padding:
       0
-      4px
+      2px
       0
       8px;
   }
 
-
-  /* Logo */
 
   .logo {
     width: 100px;
     height: 105px;
   }
 
-
-  /* Title */
 
   .header-text {
     white-space: normal;
@@ -465,57 +440,44 @@ body {
   }
 
 
-  /* Menu column */
-
   .site-menu {
     justify-content: flex-end;
-
-    overflow: visible;
   }
 
 
   /*
-     Closed paw is just over half
-     the desktop size.
+     Small closed paw
   */
 
   .paw-menu {
-    width: 52px;
-
-    height: 72px;
+    width: 48px;
+    height: 68px;
   }
 
 
   .paw-menu-svg {
-    width: 112px;
+    width: 72px;
+    height: 68px;
 
-    height: 105px;
-
-    right: -8px;
+    right: -10px;
   }
 
 
   /*
-     When menu opens, enlarge the SVG
-     so the labels are actually readable.
+     Larger when open,
+     so labels remain readable.
   */
 
   .paw-menu.open .paw-menu-svg {
-    width: 178px;
+    width: 122px;
+    height: 114px;
 
-    height: 167px;
-
-    right: -6px;
+    right: -5px;
   }
 
 
   .toe-label {
-    font-size: 18px;
-  }
-
-
-  .toe-label-small {
-    font-size: 13px;
+    font-size: 17px;
   }
 
 
@@ -536,7 +498,7 @@ body {
     grid-template-columns:
       66px
       1fr
-      48px;
+      44px;
 
     height: 112px;
 
@@ -544,7 +506,7 @@ body {
 
     padding:
       0
-      2px
+      1px
       0
       5px;
   }
@@ -569,27 +531,24 @@ body {
 
 
   .paw-menu {
-    width: 46px;
-
-    height: 65px;
+    width: 44px;
+    height: 62px;
   }
 
 
   .paw-menu-svg {
-    width: 100px;
+    width: 66px;
+    height: 62px;
 
-    height: 94px;
-
-    right: -9px;
+    right: -10px;
   }
 
 
   .paw-menu.open .paw-menu-svg {
-    width: 165px;
+    width: 116px;
+    height: 109px;
 
-    height: 155px;
-
-    right: -5px;
+    right: -4px;
   }
 
 }
