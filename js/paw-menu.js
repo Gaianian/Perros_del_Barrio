@@ -38,7 +38,6 @@ document.addEventListener(
     }
 
 
-
     function toggleMenu(event) {
 
       event.stopPropagation();
@@ -53,17 +52,11 @@ document.addEventListener(
     }
 
 
-
-    /* Click or tap center paw */
-
     pawButton.addEventListener(
       "click",
       toggleMenu
     );
 
-
-
-    /* Keyboard */
 
     pawButton.addEventListener(
       "keydown",
@@ -91,12 +84,6 @@ document.addEventListener(
     );
 
 
-
-    /*
-      Prevent clicks on toe links from
-      triggering the outside-click listener.
-    */
-
     pawMenu.addEventListener(
       "click",
       function (event) {
@@ -107,9 +94,6 @@ document.addEventListener(
     );
 
 
-
-    /* Click elsewhere closes menu */
-
     document.addEventListener(
       "click",
       function () {
@@ -119,9 +103,6 @@ document.addEventListener(
       }
     );
 
-
-
-    /* Escape closes menu */
 
     document.addEventListener(
       "keydown",
