@@ -38,9 +38,10 @@
     href="/Perros_del_Barrio/css/style.css"
   >
 
-  <!-- Facebook / social preview -->
-
-  <meta property="og:title" content="Perros del Barrio">
+  <meta
+    property="og:title"
+    content="Perros del Barrio"
+  >
 
   <meta
     property="og:description"
@@ -52,16 +53,25 @@
     content="https://gaianian.github.io/Perros_del_Barrio/Preview.PNG"
   >
 
-  <meta property="og:image:width" content="1200">
+  <meta
+    property="og:image:width"
+    content="1200"
+  >
 
-  <meta property="og:image:height" content="630">
+  <meta
+    property="og:image:height"
+    content="630"
+  >
 
   <meta
     property="og:url"
     content="https://gaianian.github.io/Perros_del_Barrio/"
   >
 
-  <meta property="og:type" content="website">
+  <meta
+    property="og:type"
+    content="website"
+  >
 
   <meta
     name="description"
@@ -74,30 +84,23 @@
 
   <header class="site-header">
 
-    <!-- LOGO -->
-
-    <div class="logo-area">
-      <img
-        src="images/Logo.png"
-        alt="Logo de Perros del Barrio"
-        class="logo"
-      >
-    </div>
-
-
-    <!-- TITLE + TAGLINE -->
+    <!-- LEFT: TITLE + TAGLINE -->
 
     <div class="header-text">
-      <h1>Perros del Barrio</h1>
+
+      <h1>
+        Perros del Barrio
+      </h1>
 
       <p>
         Explora, encuentre y reporte <br>
         perros comunitarios en Cuenca
       </p>
+
     </div>
 
 
-    <!-- PAW MENU -->
+    <!-- RIGHT: PAW MENU -->
 
     <nav
       class="site-menu"
@@ -111,66 +114,73 @@
 
         <svg
           class="paw-menu-svg"
-          viewBox="0 0 320 300"
+          viewBox="0 0 360 320"
           xmlns="http://www.w3.org/2000/svg"
           aria-label="Menú principal"
         >
 
-          <!-- ===================================
-               CURVED LABEL PATHS
-               each one wraps its own toe
-               =================================== -->
+          <!-- =========================
+               LABEL PATHS
+               Each path wraps its own toe
+               ========================= -->
 
           <defs>
 
-            <!-- top-left toe -->
+            <!-- CÓMO USAR -->
             <path
               id="comoPath"
-              d="M68 101
-                 A31 42 0 0 1 130 101"
+              d="M77 106
+                 A32 44 0 0 1 141 106"
             />
 
-            <!-- top-right toe -->
+            <!-- PARTICIPA -->
             <path
               id="participaPath"
-              d="M185 101
-                 A31 42 0 0 1 247 101"
+              d="M220 106
+                 A32 44 0 0 1 284 106"
             />
 
-            <!-- lower-left toe: first line -->
+            <!-- REPORTAR -->
             <path
               id="reportarPath"
-              d="M29 153
-                 A29 40 -28 0 1 80 127"
+              d="M34 177
+                 A31 43 -30 0 1 88 149"
             />
 
-            <!-- lower-left toe: second line -->
+            <!-- AVISTAMIENTO -->
             <path
               id="avistamientoPath"
-              d="M24 164
-                 A34 46 -28 0 1 86 132"
+              d="M27 190
+                 A37 50 -30 0 1 96 154"
             />
 
-            <!-- lower-right toe: first line -->
+            <!-- SOBRE -->
             <path
               id="sobrePath"
-              d="M240 127
-                 A29 40 28 0 1 291 153"
+              d="M272 149
+                 A31 43 30 0 1 326 177"
             />
 
-            <!-- lower-right toe: second line -->
+            <!-- NOSOTROS -->
             <path
               id="nosotrosPath"
-              d="M234 132
-                 A34 46 28 0 1 296 164"
+              d="M264 154
+                 A37 50 30 0 1 333 190"
+            />
+
+            <!-- INICIO UNDER PAW -->
+            <path
+              id="inicioPath"
+              d="M119 278
+                 Q180 304 241 278"
             />
 
           </defs>
 
 
-          <!-- ===================================
+          <!-- =========================
                CÓMO USAR
-               =================================== -->
+               ========================= -->
 
           <a
             href="#"
@@ -181,13 +191,14 @@
             <g class="toe">
 
               <ellipse
-                cx="99"
-                cy="110"
-                rx="27"
-                ry="37"
+                cx="109"
+                cy="118"
+                rx="28"
+                ry="39"
               />
 
               <text class="toe-label">
+
                 <textPath
                   href="#comoPath"
                   startOffset="50%"
@@ -195,6 +206,7 @@
                 >
                   Cómo usar
                 </textPath>
+
               </text>
 
             </g>
@@ -202,9 +214,9 @@
           </a>
 
 
-          <!-- ===================================
+          <!-- =========================
                PARTICIPA
-               =================================== -->
+               ========================= -->
 
           <a
             href="#"
@@ -215,13 +227,14 @@
             <g class="toe">
 
               <ellipse
-                cx="216"
-                cy="110"
-                rx="27"
-                ry="37"
+                cx="252"
+                cy="118"
+                rx="28"
+                ry="39"
               />
 
               <text class="toe-label">
+
                 <textPath
                   href="#participaPath"
                   startOffset="50%"
@@ -229,6 +242,7 @@
                 >
                   Participa
                 </textPath>
+
               </text>
 
             </g>
@@ -236,9 +250,9 @@
           </a>
 
 
-          <!-- ===================================
+          <!-- =========================
                REPORTAR AVISTAMIENTO
-               =================================== -->
+               ========================= -->
 
           <a
             href="#"
@@ -249,14 +263,15 @@
             <g class="toe">
 
               <ellipse
-                cx="56"
-                cy="168"
-                rx="25"
-                ry="35"
-                transform="rotate(-28 56 168)"
+                cx="66"
+                cy="183"
+                rx="26"
+                ry="37"
+                transform="rotate(-30 66 183)"
               />
 
               <text class="toe-label">
+
                 <textPath
                   href="#reportarPath"
                   startOffset="50%"
@@ -264,9 +279,11 @@
                 >
                   Reportar
                 </textPath>
+
               </text>
 
               <text class="toe-label">
+
                 <textPath
                   href="#avistamientoPath"
                   startOffset="50%"
@@ -274,6 +291,7 @@
                 >
                   avistamiento
                 </textPath>
+
               </text>
 
             </g>
@@ -281,9 +299,9 @@
           </a>
 
 
-          <!-- ===================================
+          <!-- =========================
                SOBRE NOSOTROS
-               =================================== -->
+               ========================= -->
 
           <a
             href="#"
@@ -294,14 +312,15 @@
             <g class="toe">
 
               <ellipse
-                cx="264"
-                cy="168"
-                rx="25"
-                ry="35"
-                transform="rotate(28 264 168)"
+                cx="294"
+                cy="183"
+                rx="26"
+                ry="37"
+                transform="rotate(30 294 183)"
               />
 
               <text class="toe-label">
+
                 <textPath
                   href="#sobrePath"
                   startOffset="50%"
@@ -309,9 +328,11 @@
                 >
                   Sobre
                 </textPath>
+
               </text>
 
               <text class="toe-label">
+
                 <textPath
                   href="#nosotrosPath"
                   startOffset="50%"
@@ -319,6 +340,7 @@
                 >
                   nosotros
                 </textPath>
+
               </text>
 
             </g>
@@ -326,9 +348,10 @@
           </a>
 
 
-          <!-- ===================================
+          <!-- =========================
                MAIN PAW PAD
-               =================================== -->
+               FIXED SIZE
+               ========================= -->
 
           <g
             class="paw-center"
@@ -341,36 +364,58 @@
 
             <path
               d="
-                M91 229
-                C92 192 110 162 133 151
-                C146 145 173 145 187 151
-                C210 162 228 192 229 229
-                C230 253 212 265 191 260
-                C172 255 148 255 129 260
-                C108 265 90 253 91 229
+                M111 235
+                C112 193 133 160 157 148
+                C171 141 191 141 205 148
+                C229 160 250 193 251 235
+                C252 260 234 274 212 268
+                C193 263 169 263 150 268
+                C128 274 110 260 111 235
                 Z
               "
             />
 
-            <!-- curved menu marks -->
+            <!-- curved menu lines -->
 
             <g class="paw-lines">
-              <path d="M137 193 Q160 185 183 193" />
-              <path d="M133 207 Q160 198 187 207" />
-              <path d="M138 221 Q160 214 182 221" />
+
+              <path
+                d="M151 195
+                   Q181 185 211 195"
+              />
+
+              <path
+                d="M147 211
+                   Q181 200 215 211"
+              />
+
+              <path
+                d="M152 227
+                   Q181 218 210 227"
+              />
+
             </g>
 
-            <!-- INICIO -->
+          </g>
 
-            <text
-              class="paw-home-label"
-              x="160"
-              y="248"
+
+          <!-- =========================
+               INICIO OUTSIDE / UNDER PAW
+               ========================= -->
+
+          <text
+            class="paw-home-label"
+          >
+
+            <textPath
+              href="#inicioPath"
+              startOffset="50%"
+              text-anchor="middle"
             >
               Inicio
-            </text>
+            </textPath>
 
-          </g>
+          </text>
 
         </svg>
 
@@ -380,8 +425,6 @@
 
   </header>
 
-
-  <!-- ARCGIS APPLICATION -->
 
   <main class="app-container">
 
