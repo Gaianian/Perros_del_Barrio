@@ -42,10 +42,7 @@
 
   <!-- Facebook / social preview -->
 
-  <meta
-    property="og:title"
-    content="Perros del Barrio"
-  >
+  <meta property="og:title" content="Perros del Barrio">
 
   <meta
     property="og:description"
@@ -57,25 +54,16 @@
     content="https://gaianian.github.io/Perros_del_Barrio/Preview.PNG"
   >
 
-  <meta
-    property="og:image:width"
-    content="1200"
-  >
+  <meta property="og:image:width" content="1200">
 
-  <meta
-    property="og:image:height"
-    content="630"
-  >
+  <meta property="og:image:height" content="630">
 
   <meta
     property="og:url"
     content="https://gaianian.github.io/Perros_del_Barrio/"
   >
 
-  <meta
-    property="og:type"
-    content="website"
-  >
+  <meta property="og:type" content="website">
 
   <meta
     name="description"
@@ -95,7 +83,7 @@
   <header class="site-header">
 
 
-    <!-- Logo -->
+    <!-- LOGO -->
 
     <div class="logo-area">
 
@@ -108,13 +96,11 @@
     </div>
 
 
-    <!-- Title and existing tagline -->
+    <!-- TITLE -->
 
     <div class="header-text">
 
-      <h1>
-        Perros del Barrio
-      </h1>
+      <h1>Perros del Barrio</h1>
 
       <p>
         Explora, encuentre y reporte <br>
@@ -122,7 +108,6 @@
       </p>
 
     </div>
-
 
 
     <!-- =========================
@@ -141,127 +126,238 @@
 
         <svg
           class="paw-menu-svg"
-          viewBox="0 0 260 250"
+          viewBox="0 0 320 300"
           xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="false"
+          aria-label="Menú principal"
         >
 
 
-          <!-- Como Usar TOE -->
+          <!-- =========================
+               CURVED LABEL PATHS
+               Invisible paths used only
+               to position curved text
+               ========================= -->
+
+          <defs>
+
+            <!-- PARTICIPA -->
+            <path
+              id="participaPath"
+              d="M54 91
+                 C68 48 114 41 137 67"
+            />
+
+            <!-- DONAR -->
+            <path
+              id="donarPath"
+              d="M178 67
+                 C203 41 248 49 263 91"
+            />
+
+
+            <!-- REPORTAR -->
+            <path
+              id="reportarPath"
+              d="M26 141
+                 C22 112 38 91 61 82"
+            />
+
+            <!-- AVISTAMIENTO -->
+            <path
+              id="avistamientoPath"
+              d="M21 160
+                 C18 121 39 91 70 77"
+            />
+
+
+            <!-- SOBRE -->
+            <path
+              id="sobrePath"
+              d="M258 82
+                 C282 91 298 112 294 141"
+            />
+
+            <!-- NOSOTROS -->
+            <path
+              id="nosotrosPath"
+              d="M249 77
+                 C281 91 302 121 299 160"
+            />
+
+          </defs>
+
+
+
+          <!-- =========================
+               PARTICIPA TOE
+               ========================= -->
 
           <a
-            class="paw-item paw-home"
             href="#"
-            aria-label="Como Usar"
-          >
-
-            <g class="toe">
-
-              <ellipse
-                cx="88"
-                cy="78"
-                rx="24"
-                ry="32"
-              />
-
-              <text
-                x="88"
-                y="31"
-              >
-                Como Usar
-              </text>
-
-            </g>
-
-          </a>
-
-
-
-          <!-- Reportar avistamiento TOE -->
-
-          <a
-            class="paw-item paw-join"
-            href="#"
-            aria-label="Reportar avistamiento"
-          >
-
-            <g class="toe">
-
-              <ellipse
-                cx="170"
-                cy="78"
-                rx="24"
-                ry="32"
-              />
-
-              <text
-                x="170"
-                y="31"
-              >
-                Reportar avistamiento
-              </text>
-
-            </g>
-
-          </a>
-
-
-
-          <!-- Sobre nosotros TOE -->
-
-          <a
-            class="paw-item paw-help"
-            href="#"
-            aria-label="Sobre nosotros"
-          >
-
-            <g class="toe">
-
-              <ellipse
-                cx="47"
-                cy="132"
-                rx="22"
-                ry="30"
-                transform="rotate(-28 47 132)"
-              />
-
-              <text
-                x="38"
-                y="183"
-                class="paw-label-small"
-              >
-                Sobre nosotros
-              </text>
-
-            </g>
-
-          </a>
-
-
-
-          <!-- Participa TOE -->
-
-          <a
-            class="paw-item paw-about"
-            href="#"
+            class="paw-item paw-participa"
             aria-label="Participa"
           >
 
             <g class="toe">
 
               <ellipse
-                cx="213"
-                cy="132"
-                rx="22"
-                ry="30"
-                transform="rotate(28 213 132)"
+                cx="99"
+                cy="104"
+                rx="27"
+                ry="37"
               />
 
-              <text
-                x="220"
-                y="183"
-              >
-                Participa
+              <text class="toe-label">
+
+                <textPath
+                  href="#participaPath"
+                  startOffset="50%"
+                  text-anchor="middle"
+                >
+                  Participa
+                </textPath>
+
+              </text>
+
+            </g>
+
+          </a>
+
+
+
+          <!-- =========================
+               DONAR TOE
+               ========================= -->
+
+          <a
+            href="#"
+            class="paw-item paw-donar"
+            aria-label="Donar"
+          >
+
+            <g class="toe">
+
+              <ellipse
+                cx="216"
+                cy="104"
+                rx="27"
+                ry="37"
+              />
+
+              <text class="toe-label">
+
+                <textPath
+                  href="#donarPath"
+                  startOffset="50%"
+                  text-anchor="middle"
+                >
+                  Donar
+                </textPath>
+
+              </text>
+
+            </g>
+
+          </a>
+
+
+
+          <!-- =========================
+               REPORTAR AVISTAMIENTO TOE
+               ========================= -->
+
+          <a
+            href="#"
+            class="paw-item paw-reportar"
+            aria-label="Reportar avistamiento"
+          >
+
+            <g class="toe">
+
+              <ellipse
+                cx="56"
+                cy="162"
+                rx="25"
+                ry="35"
+                transform="rotate(-28 56 162)"
+              />
+
+
+              <text class="toe-label toe-label-small">
+
+                <textPath
+                  href="#reportarPath"
+                  startOffset="50%"
+                  text-anchor="middle"
+                >
+                  Reportar
+                </textPath>
+
+              </text>
+
+
+              <text class="toe-label toe-label-small">
+
+                <textPath
+                  href="#avistamientoPath"
+                  startOffset="50%"
+                  text-anchor="middle"
+                >
+                  avistamiento
+                </textPath>
+
+              </text>
+
+            </g>
+
+          </a>
+
+
+
+          <!-- =========================
+               SOBRE NOSOTROS TOE
+               ========================= -->
+
+          <a
+            href="#"
+            class="paw-item paw-sobre"
+            aria-label="Sobre nosotros"
+          >
+
+            <g class="toe">
+
+              <ellipse
+                cx="264"
+                cy="162"
+                rx="25"
+                ry="35"
+                transform="rotate(28 264 162)"
+              />
+
+
+              <text class="toe-label toe-label-small">
+
+                <textPath
+                  href="#sobrePath"
+                  startOffset="50%"
+                  text-anchor="middle"
+                >
+                  Sobre
+                </textPath>
+
+              </text>
+
+
+              <text class="toe-label toe-label-small">
+
+                <textPath
+                  href="#nosotrosPath"
+                  startOffset="50%"
+                  text-anchor="middle"
+                >
+                  nosotros
+                </textPath>
+
               </text>
 
             </g>
@@ -284,39 +380,42 @@
           >
 
 
-            <!-- Main paw pad -->
-
             <path
               d="
-                M75 194
-                C76 163 92 137 110 127
-                C120 122 140 122 150 127
-                C168 137 184 163 185 194
-                C186 214 171 224 153 220
-                C137 216 123 216 107 220
-                C89 224 74 214 75 194
+                M91 225
+                C92 188 110 158 133 147
+                C146 141 173 141 187 147
+                C210 158 228 188 229 225
+                C230 249 212 261 191 256
+                C172 251 148 251 129 256
+                C108 261 90 249 91 225
                 Z
               "
             />
 
 
-            <!-- Three small menu lines -->
+            <!-- curved menu marks -->
 
             <g class="paw-lines">
 
-  <path d="M114 168 Q130 163 146 168" />
-  <path d="M111 181 Q130 175 149 181" />
-  <path d="M115 194 Q130 189 145 194" />
+              <path d="M137 190 Q160 182 183 190" />
 
-</g>
+              <path d="M133 204 Q160 195 187 204" />
+
+              <path d="M138 218 Q160 211 182 218" />
+
+            </g>
+
+
+            <!-- INICIO INSIDE PAW -->
+
             <text
-  class="paw-home-label"
-  x="130"
-  y="213"
->
-  Inicio
-</text>
-
+              class="paw-home-label"
+              x="160"
+              y="244"
+            >
+              Inicio
+            </text>
 
           </g>
 
@@ -326,7 +425,6 @@
       </div>
 
     </nav>
-
 
   </header>
 
@@ -349,8 +447,6 @@
   </main>
 
 
-
-  <!-- Paw menu behavior -->
 
   <script src="/Perros_del_Barrio/js/paw-menu.js"></script>
 
