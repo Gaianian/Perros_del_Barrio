@@ -136,7 +136,7 @@ body {
   justify-self: end;
   align-self: center;
 
-  width: 300px;
+  width: 285px;
   height: 190px;
 
   position: relative;
@@ -148,22 +148,24 @@ body {
 .paw-menu {
   position: relative;
 
-  width: 300px;
+  width: 285px;
   height: 190px;
 
   overflow: visible;
 }
 
 
+/* Slightly smaller than before */
+
 .paw-menu-svg {
   position: absolute;
 
   display: block;
 
-  width: 270px;
-  height: 234px;
+  width: 255px;
+  height: 221px;
 
-  right: 0;
+  right: 2px;
   top: 50%;
 
   transform:
@@ -264,7 +266,6 @@ svg g:focus-visible,
 
 /* =========================================
    TOES
-   ALWAYS VISIBLE ON DESKTOP
    ========================================= */
 
 .toe {
@@ -287,29 +288,34 @@ svg g:focus-visible,
 }
 
 
-/* Push toes outward */
+/* =========================================
+   TOE POSITIONS
+
+   Brought closer to the central paw,
+   but still clearly separated.
+   ========================================= */
 
 .paw-ayuda .toe {
   transform:
-    translate(-12px, -17px);
+    translate(-7px, -10px);
 }
 
 
 .paw-participa .toe {
   transform:
-    translate(12px, -17px);
+    translate(7px, -10px);
 }
 
 
 .paw-reporta .toe {
   transform:
-    translate(-19px, 2px);
+    translate(-11px, 1px);
 }
 
 
 .paw-nosotros .toe {
   transform:
-    translate(19px, 2px);
+    translate(11px, 1px);
 }
 
 
@@ -368,38 +374,38 @@ svg g:focus-visible,
 
 
 /* =========================================
-   TOE GROWTH ON HOVER
+   TOE HOVER GROWTH
    ========================================= */
 
 .paw-ayuda:hover .toe,
 .paw-ayuda:focus-visible .toe {
   transform:
-    translate(-12px, -17px)
-    scale(1.15);
+    translate(-7px, -10px)
+    scale(1.13);
 }
 
 
 .paw-participa:hover .toe,
 .paw-participa:focus-visible .toe {
   transform:
-    translate(12px, -17px)
-    scale(1.15);
+    translate(7px, -10px)
+    scale(1.13);
 }
 
 
 .paw-reporta:hover .toe,
 .paw-reporta:focus-visible .toe {
   transform:
-    translate(-19px, 2px)
-    scale(1.15);
+    translate(-11px, 1px)
+    scale(1.13);
 }
 
 
 .paw-nosotros:hover .toe,
 .paw-nosotros:focus-visible .toe {
   transform:
-    translate(19px, 2px)
-    scale(1.15);
+    translate(11px, 1px)
+    scale(1.13);
 }
 
 
@@ -457,29 +463,42 @@ svg g:focus-visible,
 
 /* =========================================
    FILTER PILL
+
+   Sits across header/app boundary.
+   Shifted left toward the photo panel.
+
+   IMPORTANT:
+   pointer-events:none lets the real
+   ArcGIS filter underneath receive
+   the mouse click.
    ========================================= */
 
 .pdb-filter-pill {
   position: absolute;
 
-  left: 46.7%;
-  top: -9px;
+  left: 45.2%;
+
+  /*
+    Pull it upward so it overlaps
+    the bottom edge of the header.
+  */
+  top: -13px;
 
   transform:
     translateX(-50%);
 
-  z-index: 100;
+  z-index: 2000;
 
   display: block;
 
   padding:
     8px
-    18px
+    19px
     9px;
 
   border-radius: 20px;
 
-  background-color: #927a98 !important;
+  background: #927a98 !important;
 
   color: #ffffff !important;
 
@@ -498,10 +517,6 @@ svg g:focus-visible,
   box-shadow:
     0 3px 7px rgba(0, 0, 0, 0.3);
 
-  /*
-    The underlying ArcGIS filter
-    receives the click.
-  */
   pointer-events: none;
 }
 
@@ -539,20 +554,27 @@ svg g:focus-visible,
 
 
   .site-menu {
-    width: 260px;
+    width: 250px;
     height: 180px;
   }
 
 
   .paw-menu {
-    width: 260px;
+    width: 250px;
     height: 180px;
   }
 
 
   .paw-menu-svg {
-    width: 250px;
-    height: 217px;
+    width: 238px;
+    height: 206px;
+  }
+
+
+  .pdb-filter-pill {
+    left: 44.8%;
+
+    top: -12px;
   }
 
 }
@@ -560,9 +582,6 @@ svg g:focus-visible,
 
 /* =========================================
    PHONE
-
-   CLOSED/OPEN BEHAVIOR CAN BE DEALT WITH
-   SEPARATELY WHEN WE WORK ON PHONE.
    ========================================= */
 
 @media (max-width: 750px) {
