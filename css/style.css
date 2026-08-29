@@ -127,8 +127,7 @@ body {
 
 
 /* =========================================
-   DESKTOP PAW MENU
-   ALWAYS OPEN
+   PAW MENU
    ========================================= */
 
 .site-menu {
@@ -156,10 +155,6 @@ body {
 }
 
 
-/* =========================================
-   PAW SIZE
-   ========================================= */
-
 .paw-menu-svg {
   position: absolute;
 
@@ -182,10 +177,15 @@ body {
    MAIN PAW
    ========================================= */
 
+.paw-home-link {
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+
 .paw-center {
   fill: #927a98;
-
-  cursor: default;
 
   transform-box: fill-box;
   transform-origin: center;
@@ -195,17 +195,26 @@ body {
       0 4px 6px rgba(0, 0, 0, 0.35)
     );
 
-  outline: none;
+  transition:
+    fill 0.2s ease,
+    filter 0.2s ease;
 }
 
 
-.paw-center:focus,
-.paw-center:focus-visible,
-.paw-center:active,
-svg g:focus,
-svg g:focus-visible,
-.paw-menu-svg *:focus {
-  outline: none !important;
+.paw-home-link:hover .paw-center,
+.paw-home-link:focus-visible .paw-center {
+  fill: #8a9e93;
+
+  filter:
+    drop-shadow(
+      0 7px 10px rgba(0, 0, 0, 0.45)
+    );
+}
+
+
+.paw-home-link:focus,
+.paw-home-link:focus-visible {
+  outline: none;
 }
 
 
@@ -227,7 +236,7 @@ svg g:focus-visible,
 
 
 /* =========================================
-   INICIO
+   INICIO TEXT
    ========================================= */
 
 .paw-home-label {
@@ -282,29 +291,50 @@ svg g:focus-visible,
 }
 
 
-/* Slightly closer to main paw */
+/* =========================================
+   TOE POSITIONS
+   ========================================= */
 
-.paw-ayuda .toe {
+.paw-explorar .toe {
   transform:
     translate(-7px, -10px);
 }
 
 
-.paw-participa .toe {
+.paw-reportar .toe {
   transform:
     translate(7px, -10px);
 }
 
 
-.paw-reporta .toe {
+.paw-participa .toe {
   transform:
     translate(-11px, 1px);
 }
 
 
-.paw-nosotros .toe {
+.paw-ayuda .toe {
   transform:
     translate(11px, 1px);
+}
+
+
+/* =========================================
+   ACTIVE PAGE COLORS
+   ========================================= */
+
+body.page-explorar .paw-explorar .toe,
+body.page-reportar .paw-reportar .toe,
+body.page-participa .paw-participa .toe,
+body.page-ayuda .paw-ayuda .toe {
+  fill: #8a9e93;
+}
+
+
+/* Home page can use this later */
+
+body.page-inicio .paw-center {
+  fill: #8a9e93;
 }
 
 
@@ -347,7 +377,7 @@ svg g:focus-visible,
 
 
 /* =========================================
-   HOVER TEXT SWAP
+   HOVER TEXT
    ========================================= */
 
 .paw-item:hover .toe-word,
@@ -363,13 +393,21 @@ svg g:focus-visible,
 
 
 /* =========================================
-   TOE GROWTH ON HOVER
+   TOE HOVER
    ========================================= */
 
-.paw-ayuda:hover .toe,
-.paw-ayuda:focus-visible .toe {
+.paw-explorar:hover .toe,
+.paw-explorar:focus-visible .toe {
   transform:
     translate(-7px, -10px)
+    scale(1.13);
+}
+
+
+.paw-reportar:hover .toe,
+.paw-reportar:focus-visible .toe {
+  transform:
+    translate(7px, -10px)
     scale(1.13);
 }
 
@@ -377,21 +415,13 @@ svg g:focus-visible,
 .paw-participa:hover .toe,
 .paw-participa:focus-visible .toe {
   transform:
-    translate(7px, -10px)
-    scale(1.13);
-}
-
-
-.paw-reporta:hover .toe,
-.paw-reporta:focus-visible .toe {
-  transform:
     translate(-11px, 1px)
     scale(1.13);
 }
 
 
-.paw-nosotros:hover .toe,
-.paw-nosotros:focus-visible .toe {
+.paw-ayuda:hover .toe,
+.paw-ayuda:focus-visible .toe {
   transform:
     translate(11px, 1px)
     scale(1.13);
@@ -411,7 +441,7 @@ svg g:focus-visible,
 
 .paw-item:focus,
 .paw-item:focus-visible {
-  outline: none !important;
+  outline: none;
 }
 
 
@@ -452,25 +482,18 @@ svg g:focus-visible,
 
 /* =========================================
    FILTER BADGE
-
-   Compact two-line oval so most of the
-   visible badge sits over the real ArcGIS
-   filter control underneath.
    ========================================= */
 
 .pdb-filter-pill {
   position: absolute;
 
   /*
-    Shift toward photo side.
-    Adjust only this value if the real
-    ArcGIS funnel is slightly left/right.
+    Shifted slightly RIGHT from previous
+    placement to line up more closely
+    with the actual ArcGIS funnel.
   */
-  left: 45.5%;
+  left: 46.1%;
 
-  /*
-    Overlap the bottom of the teal header.
-  */
   top: -18px;
 
   transform:
@@ -510,10 +533,6 @@ svg g:focus-visible,
   box-shadow:
     0 3px 7px rgba(0, 0, 0, 0.3);
 
-  /*
-    The real ArcGIS filter below receives
-    the mouse click.
-  */
   pointer-events: none;
 }
 
@@ -574,9 +593,7 @@ svg g:focus-visible,
 
 
   .pdb-filter-pill {
-    left: 45.2%;
-
-    top: -17px;
+    left: 45.8%;
   }
 
 }
@@ -603,7 +620,8 @@ svg g:focus-visible,
 
   .toe,
   .toe-word,
-  .toe-hover-word {
+  .toe-hover-word,
+  .paw-center {
     transition: none;
   }
 
