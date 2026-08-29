@@ -72,11 +72,13 @@
   <header class="site-header">
 
     <div class="header-tagline">
+
       <p>
         Explora, encuentra y reporta
         <br>
         perros comunitarios en Cuenca
       </p>
+
     </div>
 
 
@@ -144,6 +146,7 @@
               />
 
               <text class="toe-word">
+
                 <textPath
                   href="#ayudaPath"
                   startOffset="50%"
@@ -151,13 +154,15 @@
                 >
                   Ayuda
                 </textPath>
+
               </text>
+
 
               <g class="toe-hover-word">
 
                 <text
                   x="123"
-                  y="104"
+                  y="101"
                   text-anchor="middle"
                 >
                   Cómo
@@ -165,7 +170,7 @@
 
                 <text
                   x="123"
-                  y="131"
+                  y="129"
                   text-anchor="middle"
                 >
                   usar
@@ -195,6 +200,7 @@
               />
 
               <text class="toe-word">
+
                 <textPath
                   href="#participaPath"
                   startOffset="50%"
@@ -202,13 +208,15 @@
                 >
                   Participa
                 </textPath>
+
               </text>
+
 
               <g class="toe-hover-word">
 
                 <text
                   x="237"
-                  y="104"
+                  y="101"
                   text-anchor="middle"
                 >
                   Participa
@@ -216,7 +224,7 @@
 
                 <text
                   x="237"
-                  y="131"
+                  y="129"
                   text-anchor="middle"
                 >
                   aquí
@@ -246,6 +254,7 @@
               />
 
               <text class="toe-word">
+
                 <textPath
                   href="#reportaPath"
                   startOffset="50%"
@@ -253,13 +262,15 @@
                 >
                   Reporta
                 </textPath>
+
               </text>
+
 
               <g class="toe-hover-word">
 
                 <text
                   x="53"
-                  y="173"
+                  y="171"
                   text-anchor="middle"
                 >
                   Reportar
@@ -267,7 +278,7 @@
 
                 <text
                   x="53"
-                  y="200"
+                  y="199"
                   text-anchor="middle"
                 >
                   perro
@@ -297,6 +308,7 @@
               />
 
               <text class="toe-word">
+
                 <textPath
                   href="#nosotrosPath"
                   startOffset="50%"
@@ -304,13 +316,15 @@
                 >
                   Nosotros
                 </textPath>
+
               </text>
+
 
               <g class="toe-hover-word">
 
                 <text
                   x="307"
-                  y="173"
+                  y="171"
                   text-anchor="middle"
                 >
                   Sobre
@@ -318,7 +332,7 @@
 
                 <text
                   x="307"
-                  y="200"
+                  y="199"
                   text-anchor="middle"
                 >
                   nosotros
@@ -396,13 +410,20 @@
 
     <div class="app-wrapper">
 
-      <button
-        class="filter-button"
-        type="button"
-        aria-label="Filtrar perros"
+      <!--
+        Click-through label.
+        It does not intercept the mouse,
+        so clicking it clicks the ArcGIS
+        filter underneath.
+      -->
+
+      <div
+        class="filter-cue"
+        aria-hidden="true"
       >
         Filtrar perros
-      </button>
+      </div>
+
 
       <iframe
         src="https://experience.arcgis.com/experience/e444a62bd78e417292dcc66910450bdf?draft=true&org=GaiaSpatial"
