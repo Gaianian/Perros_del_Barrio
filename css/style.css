@@ -10,6 +10,7 @@ html,
 body {
   width: 100%;
   height: 100%;
+
   margin: 0;
   padding: 0;
 }
@@ -28,7 +29,6 @@ body {
 
 /* =========================================
    HEADER
-   DESKTOP
    ========================================= */
 
 .site-header {
@@ -36,18 +36,18 @@ body {
 
   grid-template-columns:
     minmax(0, 1fr)
-    205px;
+    190px;
 
   align-items: center;
 
   width: 100%;
-  height: 118px;
+  height: 136px;
 
   padding:
     0
-    12px
+    10px
     0
-    18px;
+    20px;
 
   background: #2f6573;
   color: white;
@@ -66,9 +66,9 @@ body {
    ========================================= */
 
 .header-text {
-  min-width: 0;
-
   justify-self: start;
+
+  min-width: 0;
 
   text-align: left;
 }
@@ -85,13 +85,21 @@ body {
 
   font-variant: small-caps;
 
-  font-size: 2.55rem;
+  font-size: clamp(
+    2.6rem,
+    2.9vw,
+    3rem
+  );
 
   font-weight: 900;
 
-  line-height: 0.98;
+  line-height: 1;
 
-  letter-spacing: 0.15em;
+  letter-spacing: clamp(
+    0.12em,
+    0.55vw,
+    0.18em
+  );
 
   white-space: nowrap;
 
@@ -103,7 +111,7 @@ body {
 
 .header-text p {
   margin:
-    7px
+    8px
     0
     0;
 
@@ -113,11 +121,13 @@ body {
     "Dancing Script",
     cursive;
 
-  font-size: 1.3rem;
+  font-size: clamp(
+    1.3rem,
+    1.42vw,
+    1.55rem
+  );
 
   line-height: 1.08;
-
-  white-space: normal;
 }
 
 
@@ -146,15 +156,15 @@ body {
 .paw-menu {
   position: relative;
 
-  width: 195px;
-  height: 118px;
+  width: 185px;
+  height: 136px;
 
   overflow: visible;
 }
 
 
 /* =========================================
-   PAW SVG — CLOSED
+   CLOSED PAW
    ========================================= */
 
 .paw-menu-svg {
@@ -162,35 +172,33 @@ body {
 
   display: block;
 
-  width: 155px;
-  height: 146px;
+  width: 188px;
+  height: 177px;
 
-  right: 2px;
-  top: -12px;
+  right: -5px;
+  top: -13px;
 
   overflow: visible;
 
   transition:
-    transform 0.34s ease,
-    width 0.34s ease,
-    height 0.34s ease;
+    transform 0.32s ease,
+    width 0.32s ease,
+    height 0.32s ease;
 }
 
 
 /* =========================================
-   PAW SVG — OPEN
+   OPEN PAW
 
-   The old open menu was simply too small
-   for four labels around the toes.
+   Only a modest enlargement.
    ========================================= */
 
 .paw-menu.open .paw-menu-svg {
-  width: 245px;
-  height: 231px;
+  width: 205px;
+  height: 194px;
 
   transform:
-    translateX(-72px)
-    translateY(-5px);
+    translateX(-42px);
 }
 
 
@@ -231,7 +239,7 @@ body {
 
 
 /* =========================================
-   MENU LINES
+   MENU MARKS
    ========================================= */
 
 .paw-lines {
@@ -244,41 +252,6 @@ body {
   stroke-linecap: round;
 
   pointer-events: none;
-}
-
-
-/* =========================================
-   INICIO
-   ========================================= */
-
-.paw-home-link {
-  text-decoration: none;
-
-  cursor: pointer;
-}
-
-
-.paw-home-label {
-  fill: #f4f1e8;
-
-  font-family:
-    "Comic Sans MS",
-    cursive;
-
-  font-size: 25px;
-
-  font-weight: 700;
-
-  pointer-events: auto;
-
-  transition:
-    fill 0.2s ease;
-}
-
-
-.paw-home-link:hover .paw-home-label,
-.paw-home-link:focus-visible .paw-home-label {
-  fill: #8a9e93;
 }
 
 
@@ -325,11 +298,10 @@ body {
 
 
 /* =========================================
-   TOE LABELS
+   MENU TEXT
 
-   38px was far too large for these curved
-   paths. 25px allows the Spanish wording
-   to fit cleanly around the paw.
+   These labels use independent SVG positions
+   instead of competing curved paths.
    ========================================= */
 
 .toe-label {
@@ -340,8 +312,6 @@ body {
   font-family:
     "Comic Sans MS",
     cursive;
-
-  font-size: 25px;
 
   font-weight: 700;
 
@@ -356,10 +326,18 @@ body {
 }
 
 
-/* Separate smaller size for long labels */
-
-.toe-label-long {
+.toe-label-top {
   font-size: 22px;
+}
+
+
+.toe-label-side {
+  font-size: 21px;
+}
+
+
+.toe-label-side-long {
+  font-size: 17px;
 }
 
 
@@ -431,6 +409,41 @@ body {
 
 
 /* =========================================
+   INICIO
+   ========================================= */
+
+.paw-home-link {
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+
+.paw-home-label {
+  fill: #f4f1e8;
+
+  font-family:
+    "Comic Sans MS",
+    cursive;
+
+  font-size: 23px;
+
+  font-weight: 700;
+
+  pointer-events: auto;
+
+  transition:
+    fill 0.2s ease;
+}
+
+
+.paw-home-link:hover .paw-home-label,
+.paw-home-link:focus-visible .paw-home-label {
+  fill: #8a9e93;
+}
+
+
+/* =========================================
    ARCGIS APPLICATION
    ========================================= */
 
@@ -467,13 +480,15 @@ body {
 
 /* =========================================
    FILTER CUE
+
+   FULLY OPAQUE AT ALL TIMES.
    ========================================= */
 
 .filter-cue {
   position: absolute;
 
-  left: 46.5%;
-  top: 6px;
+  left: 46.4%;
+  top: 5px;
 
   transform:
     translateX(-50%);
@@ -481,14 +496,12 @@ body {
   z-index: 20;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
 
   pointer-events: none;
 
   opacity: 1;
-
-  transition:
-    opacity 0.45s ease;
 }
 
 
@@ -499,19 +512,13 @@ body {
     5px
     11px;
 
-  border-radius: 14px;
+  border-radius: 15px;
 
-  background:
-    rgba(
-      146,
-      122,
-      152,
-      0.97
-    );
+  background: #927a98;
 
-  color: white;
+  color: #ffffff;
 
-  font-size: 0.82rem;
+  font-size: 0.84rem;
 
   font-weight: 700;
 
@@ -525,23 +532,20 @@ body {
 
 
 .filter-cue-arrow {
-  margin-left: 5px;
+  margin-top: -1px;
 
   color: #927a98;
 
-  font-size: 1.15rem;
+  font-size: 1.2rem;
 
   font-weight: 900;
-}
 
-
-.filter-cue--quiet {
-  opacity: 0.38;
+  line-height: 1;
 }
 
 
 /* =========================================
-   MEDIUM DESKTOP / TABLET LANDSCAPE
+   MEDIUM WEB / TABLET LANDSCAPE
    ========================================= */
 
 @media (max-width: 1100px) and (min-width: 751px) {
@@ -549,57 +553,56 @@ body {
   .site-header {
     grid-template-columns:
       minmax(0, 1fr)
-      175px;
+      165px;
 
-    height: 112px;
+    height: 128px;
 
-    padding-left: 15px;
+    padding-left: 16px;
   }
 
 
   .header-text h1 {
-    font-size: 2.15rem;
+    font-size: 2.35rem;
 
     letter-spacing: 0.11em;
   }
 
 
   .header-text p {
-    font-size: 1.17rem;
+    font-size: 1.25rem;
   }
 
 
   .paw-menu {
-    width: 170px;
-    height: 112px;
+    width: 160px;
+    height: 128px;
   }
 
 
   .paw-menu-svg {
-    width: 145px;
-    height: 137px;
+    width: 170px;
+    height: 160px;
 
-    right: 0;
+    right: -4px;
+    top: -11px;
   }
 
 
   .paw-menu.open .paw-menu-svg {
-    width: 225px;
-    height: 213px;
+    width: 190px;
+    height: 179px;
 
     transform:
-      translateX(-68px)
-      translateY(-4px);
+      translateX(-40px);
   }
 
 }
 
 
 /* =========================================
-   PHONE / TABLET
+   PHONE / SMALL TABLET
 
-   YOUR EXISTING PHONE STRUCTURE IS LEFT
-   SEPARATE. WE ARE NOT REDESIGNING IT YET.
+   PRESERVING YOUR EXISTING PHONE STRUCTURE.
    ========================================= */
 
 @media (max-width: 750px) {
@@ -688,21 +691,6 @@ body {
   }
 
 
-  .toe-label {
-    font-size: 38px;
-  }
-
-
-  .toe-label-long {
-    font-size: 38px;
-  }
-
-
-  .paw-home-label {
-    font-size: 38px;
-  }
-
-
   .filter-cue {
     display: none;
   }
@@ -769,21 +757,6 @@ body {
       translateX(-34px);
   }
 
-
-  .toe-label {
-    font-size: 38px;
-  }
-
-
-  .toe-label-long {
-    font-size: 38px;
-  }
-
-
-  .paw-home-label {
-    font-size: 38px;
-  }
-
 }
 
 
@@ -796,8 +769,7 @@ body {
   .paw-menu-svg,
   .paw-center,
   .toe,
-  .toe-label,
-  .filter-cue {
+  .toe-label {
     transition: none;
   }
 
