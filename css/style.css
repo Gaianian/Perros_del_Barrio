@@ -32,29 +32,16 @@ body {
    ========================================= */
 
 .site-header {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    190px;
-
-  align-items: center;
+  position: relative;
 
   width: 100%;
-  height: 136px;
+  height: 165px;
 
-  padding:
-    0
-    10px
-    0
-    20px;
+  flex: 0 0 auto;
 
   background: #2f6573;
   color: white;
 
-  flex: 0 0 auto;
-
-  position: relative;
   z-index: 1000;
 
   overflow: visible;
@@ -62,19 +49,19 @@ body {
 
 
 /* =========================================
-   TITLE + TAGLINE
+   CENTERED TITLE
    ========================================= */
 
-.header-text {
-  justify-self: start;
+.site-title {
+  position: absolute;
 
-  min-width: 0;
+  top: 20px;
+  left: 50%;
 
-  text-align: left;
-}
+  transform: translateX(-50%);
 
+  width: auto;
 
-.header-text h1 {
   margin: 0;
 
   color: #997392;
@@ -86,22 +73,20 @@ body {
   font-variant: small-caps;
 
   font-size: clamp(
-    2.6rem,
-    2.9vw,
-    3rem
+    2.7rem,
+    3vw,
+    3.2rem
   );
 
   font-weight: 900;
 
   line-height: 1;
 
-  letter-spacing: clamp(
-    0.12em,
-    0.55vw,
-    0.18em
-  );
+  letter-spacing: 0.17em;
 
   white-space: nowrap;
+
+  text-align: center;
 
   text-shadow:
     2px 3px 4px rgba(20, 25, 27, 0.72),
@@ -109,11 +94,22 @@ body {
 }
 
 
-.header-text p {
-  margin:
-    8px
-    0
-    0;
+/* =========================================
+   LEFT TAGLINE
+   ========================================= */
+
+.header-tagline {
+  position: absolute;
+
+  left: 38px;
+  bottom: 20px;
+
+  text-align: left;
+}
+
+
+.header-tagline p {
+  margin: 0;
 
   color: #f4f1e8;
 
@@ -121,29 +117,24 @@ body {
     "Dancing Script",
     cursive;
 
-  font-size: clamp(
-    1.3rem,
-    1.42vw,
-    1.55rem
-  );
+  font-size: 1.45rem;
 
-  line-height: 1.08;
+  line-height: 1.12;
 }
 
 
 /* =========================================
-   MENU POSITION
+   MENU AREA
    ========================================= */
 
 .site-menu {
-  display: flex;
+  position: absolute;
 
-  justify-content: flex-end;
-  align-items: flex-start;
+  top: 0;
+  right: 32px;
 
-  height: 100%;
-
-  position: relative;
+  width: 210px;
+  height: 165px;
 
   overflow: visible;
 }
@@ -156,8 +147,8 @@ body {
 .paw-menu {
   position: relative;
 
-  width: 185px;
-  height: 136px;
+  width: 210px;
+  height: 165px;
 
   overflow: visible;
 }
@@ -172,33 +163,32 @@ body {
 
   display: block;
 
-  width: 188px;
-  height: 177px;
+  width: 176px;
+  height: 166px;
 
-  right: -5px;
-  top: -13px;
+  top: 2px;
+  right: 4px;
 
   overflow: visible;
 
   transition:
-    transform 0.32s ease,
     width 0.32s ease,
-    height 0.32s ease;
+    height 0.32s ease,
+    transform 0.32s ease;
 }
 
 
 /* =========================================
    OPEN PAW
-
-   Only a modest enlargement.
    ========================================= */
 
 .paw-menu.open .paw-menu-svg {
-  width: 205px;
-  height: 194px;
+  width: 218px;
+  height: 206px;
 
   transform:
-    translateX(-42px);
+    translateX(-44px)
+    translateY(-3px);
 }
 
 
@@ -239,7 +229,7 @@ body {
 
 
 /* =========================================
-   MENU MARKS
+   MENU LINES
    ========================================= */
 
 .paw-lines {
@@ -279,7 +269,7 @@ body {
   transform-origin: center;
 
   transform:
-    translateY(70px)
+    translateY(75px)
     scale(0.2);
 
   pointer-events: none;
@@ -298,50 +288,6 @@ body {
 
 
 /* =========================================
-   MENU TEXT
-
-   These labels use independent SVG positions
-   instead of competing curved paths.
-   ========================================= */
-
-.toe-label {
-  fill: #f4f1e8;
-
-  stroke: none;
-
-  font-family:
-    "Comic Sans MS",
-    cursive;
-
-  font-weight: 700;
-
-  letter-spacing: 0;
-
-  pointer-events: none;
-
-  opacity: 0;
-
-  transition:
-    opacity 0.25s ease;
-}
-
-
-.toe-label-top {
-  font-size: 22px;
-}
-
-
-.toe-label-side {
-  font-size: 21px;
-}
-
-
-.toe-label-side-long {
-  font-size: 17px;
-}
-
-
-/* =========================================
    OPEN TOES
    ========================================= */
 
@@ -356,32 +302,103 @@ body {
 }
 
 
-.paw-menu.open .toe-label {
+/* =========================================
+   ONE-WORD LABELS
+   ========================================= */
+
+.toe-word,
+.toe-hover-word {
+  fill: #f4f1e8;
+
+  stroke: none;
+
+  font-family:
+    "Comic Sans MS",
+    cursive;
+
+  font-weight: 700;
+
+  pointer-events: none;
+}
+
+
+.toe-word {
+  font-size: 20px;
+
   opacity: 1;
+
+  transition:
+    opacity 0.18s ease;
+}
+
+
+.toe-hover-word {
+  font-size: 15px;
+
+  opacity: 0;
+
+  transition:
+    opacity 0.18s ease;
 }
 
 
 /* =========================================
-   STAGGERED OPENING
+   SIDE LABEL ROTATION
    ========================================= */
 
-.paw-como .toe {
-  transition-delay: 0.02s;
+.toe-word-side-left {
+  transform:
+    rotate(-39deg);
+
+  transform-origin:
+    34px
+    120px;
 }
 
 
-.paw-participa .toe {
-  transition-delay: 0.07s;
+.toe-word-side-right {
+  transform:
+    rotate(39deg);
+
+  transform-origin:
+    326px
+    120px;
 }
 
 
-.paw-reportar .toe {
-  transition-delay: 0.12s;
+.toe-hover-left {
+  transform:
+    rotate(-39deg);
+
+  transform-origin:
+    29px
+    118px;
 }
 
 
-.paw-sobre .toe {
-  transition-delay: 0.17s;
+.toe-hover-right {
+  transform:
+    rotate(39deg);
+
+  transform-origin:
+    331px
+    118px;
+}
+
+
+/* =========================================
+   HOVER TEXT SWAP
+   ========================================= */
+
+.paw-menu.open .paw-item:hover .toe-word,
+.paw-menu.open .paw-item:focus-visible .toe-word {
+  opacity: 0;
+}
+
+
+.paw-menu.open .paw-item:hover .toe-hover-word,
+.paw-menu.open .paw-item:focus-visible .toe-hover-word {
+  opacity: 1;
 }
 
 
@@ -409,6 +426,30 @@ body {
 
 
 /* =========================================
+   STAGGERED OPENING
+   ========================================= */
+
+.paw-ayuda .toe {
+  transition-delay: 0.02s;
+}
+
+
+.paw-participa .toe {
+  transition-delay: 0.07s;
+}
+
+
+.paw-reporta .toe {
+  transition-delay: 0.12s;
+}
+
+
+.paw-nosotros .toe {
+  transition-delay: 0.17s;
+}
+
+
+/* =========================================
    INICIO
    ========================================= */
 
@@ -426,7 +467,7 @@ body {
     "Comic Sans MS",
     cursive;
 
-  font-size: 23px;
+  font-size: 22px;
 
   font-weight: 700;
 
@@ -480,15 +521,14 @@ body {
 
 /* =========================================
    FILTER CUE
-
-   FULLY OPAQUE AT ALL TIMES.
+   SOLID ORIGINAL STYLE
    ========================================= */
 
 .filter-cue {
   position: absolute;
 
-  left: 46.4%;
-  top: 5px;
+  left: 46.5%;
+  top: 7px;
 
   transform:
     translateX(-50%);
@@ -510,15 +550,16 @@ body {
 
   padding:
     5px
-    11px;
+    12px
+    6px;
 
-  border-radius: 15px;
+  border-radius: 16px;
 
   background: #927a98;
 
   color: #ffffff;
 
-  font-size: 0.84rem;
+  font-size: 0.88rem;
 
   font-weight: 700;
 
@@ -527,7 +568,7 @@ body {
   white-space: nowrap;
 
   box-shadow:
-    0 2px 5px rgba(0, 0, 0, 0.25);
+    0 2px 5px rgba(0, 0, 0, 0.24);
 }
 
 
@@ -536,7 +577,7 @@ body {
 
   color: #927a98;
 
-  font-size: 1.2rem;
+  font-size: 1.35rem;
 
   font-weight: 900;
 
@@ -545,55 +586,66 @@ body {
 
 
 /* =========================================
-   MEDIUM WEB / TABLET LANDSCAPE
+   MID-SIZE DESKTOP / TABLET LANDSCAPE
    ========================================= */
 
-@media (max-width: 1100px) and (min-width: 751px) {
+@media (max-width: 1150px) and (min-width: 751px) {
 
   .site-header {
-    grid-template-columns:
-      minmax(0, 1fr)
-      165px;
-
-    height: 128px;
-
-    padding-left: 16px;
+    height: 155px;
   }
 
 
-  .header-text h1 {
-    font-size: 2.35rem;
+  .site-title {
+    top: 19px;
 
-    letter-spacing: 0.11em;
+    font-size: 2.45rem;
+
+    letter-spacing: 0.13em;
   }
 
 
-  .header-text p {
-    font-size: 1.25rem;
+  .header-tagline {
+    left: 28px;
+    bottom: 18px;
+  }
+
+
+  .header-tagline p {
+    font-size: 1.3rem;
+  }
+
+
+  .site-menu {
+    right: 24px;
+
+    width: 190px;
+    height: 155px;
   }
 
 
   .paw-menu {
-    width: 160px;
-    height: 128px;
+    width: 190px;
+    height: 155px;
   }
 
 
   .paw-menu-svg {
-    width: 170px;
-    height: 160px;
+    width: 164px;
+    height: 155px;
 
-    right: -4px;
-    top: -11px;
+    top: 2px;
+    right: 2px;
   }
 
 
   .paw-menu.open .paw-menu-svg {
-    width: 190px;
-    height: 179px;
+    width: 205px;
+    height: 194px;
 
     transform:
-      translateX(-40px);
+      translateX(-42px)
+      translateY(-2px);
   }
 
 }
@@ -602,15 +654,19 @@ body {
 /* =========================================
    PHONE / SMALL TABLET
 
-   PRESERVING YOUR EXISTING PHONE STRUCTURE.
+   LEAVE PHONE STRUCTURE FOR LATER.
    ========================================= */
 
 @media (max-width: 750px) {
 
   .site-header {
+    display: grid;
+
     grid-template-columns:
       1fr
       74px;
+
+    align-items: center;
 
     height: 110px;
 
@@ -624,19 +680,16 @@ body {
   }
 
 
-  .header-text {
-    white-space: normal;
+  .site-title {
+    position: static;
 
-    text-align: left;
+    transform: none;
 
-    padding: 0;
-  }
+    width: auto;
 
+    margin: 0;
 
-  .header-text h1 {
     font-size: 1.5rem;
-
-    font-weight: 900;
 
     line-height: 1.05;
 
@@ -644,25 +697,33 @@ body {
 
     white-space: normal;
 
-    text-shadow:
-      2px 2px 3px rgba(20, 25, 27, 0.75),
-      0 1px 2px rgba(0, 0, 0, 0.55);
+    text-align: left;
   }
 
 
-  .header-text p {
-    margin-top: 5px;
+  .header-tagline {
+    position: absolute;
 
-    font-size: 1.15rem;
+    left: 12px;
+    bottom: 10px;
+  }
+
+
+  .header-tagline p {
+    font-size: 1rem;
 
     line-height: 1.05;
   }
 
 
   .site-menu {
-    justify-content: flex-end;
+    position: relative;
 
-    align-items: flex-start;
+    top: auto;
+    right: auto;
+
+    width: 74px;
+    height: 110px;
   }
 
 
@@ -677,7 +738,6 @@ body {
     height: 102px;
 
     right: -12px;
-
     top: -4px;
   }
 
@@ -719,17 +779,27 @@ body {
   }
 
 
-  .header-text h1 {
+  .site-title {
     font-size: 1.25rem;
-
-    font-weight: 900;
 
     letter-spacing: 0.04em;
   }
 
 
-  .header-text p {
-    font-size: 1rem;
+  .header-tagline {
+    left: 8px;
+    bottom: 9px;
+  }
+
+
+  .header-tagline p {
+    font-size: 0.92rem;
+  }
+
+
+  .site-menu {
+    width: 66px;
+    height: 105px;
   }
 
 
@@ -744,7 +814,6 @@ body {
     height: 94px;
 
     right: -12px;
-
     top: -3px;
   }
 
@@ -769,7 +838,8 @@ body {
   .paw-menu-svg,
   .paw-center,
   .toe,
-  .toe-label {
+  .toe-word,
+  .toe-hover-word {
     transition: none;
   }
 
