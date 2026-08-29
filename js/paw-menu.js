@@ -14,6 +14,10 @@ document.addEventListener(
     }
 
 
+    /* =========================================
+       SET MENU STATE
+       ========================================= */
+
     function setMenuState(open) {
 
       pawMenu.classList.toggle(
@@ -38,6 +42,10 @@ document.addEventListener(
     }
 
 
+    /* =========================================
+       TOGGLE MENU
+       ========================================= */
+
     function toggleMenu(event) {
 
       event.stopPropagation();
@@ -53,7 +61,7 @@ document.addEventListener(
 
 
     /* =========================================
-       OPEN / CLOSE PAW
+       CLICK MAIN PAW
        ========================================= */
 
     pawButton.addEventListener(
@@ -93,7 +101,7 @@ document.addEventListener(
 
 
     /* =========================================
-       CLICKING INSIDE MENU
+       CLICK INSIDE MENU
        ========================================= */
 
     pawMenu.addEventListener(
@@ -107,7 +115,7 @@ document.addEventListener(
 
 
     /* =========================================
-       CLICKING OUTSIDE MENU
+       CLICK OUTSIDE MENU
        ========================================= */
 
     document.addEventListener(
