@@ -73,6 +73,7 @@ body {
   text-align: left;
 }
 
+
 .header-tagline p {
   margin: 0;
 
@@ -155,7 +156,9 @@ body {
 }
 
 
-/* Slightly smaller than before */
+/* =========================================
+   PAW SIZE
+   ========================================= */
 
 .paw-menu-svg {
   position: absolute;
@@ -193,15 +196,6 @@ body {
     );
 
   outline: none;
-
-  transition:
-    fill 0.2s ease,
-    filter 0.2s ease;
-}
-
-
-.paw-center:hover {
-  fill: #927a98;
 }
 
 
@@ -288,12 +282,7 @@ svg g:focus-visible,
 }
 
 
-/* =========================================
-   TOE POSITIONS
-
-   Brought closer to the central paw,
-   but still clearly separated.
-   ========================================= */
+/* Slightly closer to main paw */
 
 .paw-ayuda .toe {
   transform:
@@ -374,7 +363,7 @@ svg g:focus-visible,
 
 
 /* =========================================
-   TOE HOVER GROWTH
+   TOE GROWTH ON HOVER
    ========================================= */
 
 .paw-ayuda:hover .toe,
@@ -462,62 +451,75 @@ svg g:focus-visible,
 
 
 /* =========================================
-   FILTER PILL
+   FILTER BADGE
 
-   Sits across header/app boundary.
-   Shifted left toward the photo panel.
-
-   IMPORTANT:
-   pointer-events:none lets the real
-   ArcGIS filter underneath receive
-   the mouse click.
+   Compact two-line oval so most of the
+   visible badge sits over the real ArcGIS
+   filter control underneath.
    ========================================= */
 
 .pdb-filter-pill {
   position: absolute;
 
-  left: 45.2%;
+  /*
+    Shift toward photo side.
+    Adjust only this value if the real
+    ArcGIS funnel is slightly left/right.
+  */
+  left: 45.5%;
 
   /*
-    Pull it upward so it overlaps
-    the bottom edge of the header.
+    Overlap the bottom of the teal header.
   */
-  top: -13px;
+  top: -18px;
 
   transform:
     translateX(-50%);
 
   z-index: 2000;
 
-  display: block;
+  width: 78px;
+  height: 58px;
 
-  padding:
-    8px
-    19px
-    9px;
+  display: flex;
+  flex-direction: column;
 
-  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
 
-  background: #927a98 !important;
+  gap: 1px;
 
-  color: #ffffff !important;
+  border-radius: 50%;
+
+  background: #927a98;
+
+  color: #ffffff;
 
   font-family:
     Arial,
     sans-serif;
 
-  font-size: 1rem;
+  font-size: 0.94rem;
 
   font-weight: 700;
 
-  line-height: 1;
+  line-height: 1.02;
 
-  white-space: nowrap;
+  text-align: center;
 
   box-shadow:
     0 3px 7px rgba(0, 0, 0, 0.3);
 
+  /*
+    The real ArcGIS filter below receives
+    the mouse click.
+  */
   pointer-events: none;
+}
+
+
+.pdb-filter-pill span {
+  display: block;
 }
 
 
@@ -572,9 +574,9 @@ svg g:focus-visible,
 
 
   .pdb-filter-pill {
-    left: 44.8%;
+    left: 45.2%;
 
-    top: -12px;
+    top: -17px;
   }
 
 }
