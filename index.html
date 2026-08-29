@@ -84,11 +84,20 @@
 
   <header class="site-header">
 
-    <div class="header-text">
+    <!-- =========================================
+         TITLE
+         ========================================= -->
 
-      <h1>
-        Perros del Barrio
-      </h1>
+    <h1 class="site-title">
+      Perros del Barrio
+    </h1>
+
+
+    <!-- =========================================
+         TAGLINE
+         ========================================= -->
+
+    <div class="header-tagline">
 
       <p>
         Explora, encuentra y reporta
@@ -98,6 +107,10 @@
 
     </div>
 
+
+    <!-- =========================================
+         PAW MENU
+         ========================================= -->
 
     <nav
       class="site-menu"
@@ -116,13 +129,15 @@
           aria-label="Menú principal"
         >
 
+
           <!-- =====================================
-               CÓMO USAR
+               AYUDA
+               hover: CÓMO USAR
                ===================================== -->
 
           <a
             href="#"
-            class="paw-item paw-como"
+            class="paw-item paw-ayuda"
             aria-label="Cómo usar"
           >
 
@@ -137,11 +152,19 @@
               />
 
               <text
-                class="toe-label toe-label-top"
-                x="130"
-                y="57"
+                class="toe-word"
+                x="135"
+                y="67"
                 text-anchor="middle"
-                transform="rotate(-10 130 57)"
+              >
+                Ayuda
+              </text>
+
+              <text
+                class="toe-hover-word"
+                x="135"
+                y="67"
+                text-anchor="middle"
               >
                 Cómo usar
               </text>
@@ -153,12 +176,13 @@
 
           <!-- =====================================
                PARTICIPA
+               hover: PARTICIPA AQUÍ
                ===================================== -->
 
           <a
             href="#"
             class="paw-item paw-participa"
-            aria-label="Participa"
+            aria-label="Participa aquí"
           >
 
             <g class="toe">
@@ -172,13 +196,21 @@
               />
 
               <text
-                class="toe-label toe-label-top"
-                x="230"
-                y="57"
+                class="toe-word"
+                x="225"
+                y="67"
                 text-anchor="middle"
-                transform="rotate(10 230 57)"
               >
                 Participa
+              </text>
+
+              <text
+                class="toe-hover-word"
+                x="225"
+                y="67"
+                text-anchor="middle"
+              >
+                Participa aquí
               </text>
 
             </g>
@@ -187,13 +219,14 @@
 
 
           <!-- =====================================
-               REPORTAR AVISTAMIENTO
+               REPORTA
+               hover: REPORTAR PERRO
                ===================================== -->
 
           <a
             href="#"
-            class="paw-item paw-reportar"
-            aria-label="Reportar avistamiento"
+            class="paw-item paw-reporta"
+            aria-label="Reportar perro"
           >
 
             <g class="toe">
@@ -207,23 +240,21 @@
               />
 
               <text
-                class="toe-label toe-label-side"
+                class="toe-word toe-word-side-left"
                 x="34"
-                y="106"
+                y="120"
                 text-anchor="middle"
-                transform="rotate(-38 34 106)"
               >
-                Reportar
+                Reporta
               </text>
 
               <text
-                class="toe-label toe-label-side-long"
-                x="18"
-                y="126"
+                class="toe-hover-word toe-hover-left"
+                x="29"
+                y="118"
                 text-anchor="middle"
-                transform="rotate(-38 18 126)"
               >
-                avistamiento
+                Reportar perro
               </text>
 
             </g>
@@ -232,12 +263,13 @@
 
 
           <!-- =====================================
-               SOBRE NOSOTROS
+               NOSOTROS
+               hover: SOBRE NOSOTROS
                ===================================== -->
 
           <a
             href="#"
-            class="paw-item paw-sobre"
+            class="paw-item paw-nosotros"
             aria-label="Sobre nosotros"
           >
 
@@ -252,23 +284,21 @@
               />
 
               <text
-                class="toe-label toe-label-side"
+                class="toe-word toe-word-side-right"
                 x="326"
-                y="106"
+                y="120"
                 text-anchor="middle"
-                transform="rotate(38 326 106)"
               >
-                Sobre
+                Nosotros
               </text>
 
               <text
-                class="toe-label toe-label-side"
-                x="340"
-                y="127"
+                class="toe-hover-word toe-hover-right"
+                x="331"
+                y="118"
                 text-anchor="middle"
-                transform="rotate(38 340 127)"
               >
-                nosotros
+                Sobre nosotros
               </text>
 
             </g>
@@ -343,7 +373,7 @@
             <text
               class="paw-home-label"
               x="180"
-              y="319"
+              y="318"
               text-anchor="middle"
             >
               Inicio
@@ -360,15 +390,21 @@
   </header>
 
 
+  <!-- =========================================
+       ARCGIS APPLICATION
+       ========================================= -->
+
   <main class="app-container">
 
     <div class="app-wrapper">
 
+      <!-- Original solid filter cue -->
+
       <div
         class="filter-cue"
-        id="filterCue"
         aria-hidden="true"
       >
+
         <span class="filter-cue-label">
           Filtrar perros
         </span>
@@ -376,6 +412,7 @@
         <span class="filter-cue-arrow">
           ↓
         </span>
+
       </div>
 
 
