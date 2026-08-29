@@ -38,11 +38,14 @@
     href="/Perros_del_Barrio/css/style.css"
   >
 
-  <meta property="og:title" content="Perros del Barrio">
+  <meta
+    property="og:title"
+    content="Perros del Barrio"
+  >
 
   <meta
     property="og:description"
-    content="Explora, encuentre y reporte perros comunitarios en Cuenca."
+    content="Explora, encuentra y reporta perros comunitarios en Cuenca."
   >
 
   <meta
@@ -50,19 +53,29 @@
     content="https://gaianian.github.io/Perros_del_Barrio/Preview.PNG"
   >
 
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta
+    property="og:image:width"
+    content="1200"
+  >
+
+  <meta
+    property="og:image:height"
+    content="630"
+  >
 
   <meta
     property="og:url"
     content="https://gaianian.github.io/Perros_del_Barrio/"
   >
 
-  <meta property="og:type" content="website">
+  <meta
+    property="og:type"
+    content="website"
+  >
 
   <meta
     name="description"
-    content="Encuentre y reporte perros comunitarios en Cuenca."
+    content="Explora, encuentra y reporta perros comunitarios en Cuenca."
   >
 </head>
 
@@ -71,7 +84,9 @@
 
   <header class="site-header">
 
-    <!-- TITLE + TAGLINE -->
+    <!-- ======================================
+         TITLE + TAGLINE
+         ====================================== -->
 
     <div class="header-text">
 
@@ -80,14 +95,17 @@
       </h1>
 
       <p>
-        Explora, encuentre y reporte <br>
+        Explora, encuentra y reporta
+        <br>
         perros comunitarios en Cuenca
       </p>
 
     </div>
 
 
-    <!-- PAW MENU -->
+    <!-- ======================================
+         PAW MENU
+         ====================================== -->
 
     <nav
       class="site-menu"
@@ -109,6 +127,7 @@
           <defs>
 
             <!-- CÓMO USAR -->
+
             <path
               id="comoPath"
               d="
@@ -117,7 +136,9 @@
               "
             />
 
+
             <!-- PARTICIPA -->
+
             <path
               id="participaPath"
               d="
@@ -126,7 +147,9 @@
               "
             />
 
+
             <!-- REPORTAR -->
+
             <path
               id="reportarPath"
               d="
@@ -135,7 +158,9 @@
               "
             />
 
+
             <!-- AVISTAMIENTO -->
+
             <path
               id="avistamientoPath"
               d="
@@ -144,7 +169,9 @@
               "
             />
 
+
             <!-- SOBRE -->
+
             <path
               id="sobrePath"
               d="
@@ -153,7 +180,9 @@
               "
             />
 
+
             <!-- NOSOTROS -->
+
             <path
               id="nosotrosPath"
               d="
@@ -162,7 +191,9 @@
               "
             />
 
+
             <!-- INICIO UNDER PAW -->
+
             <path
               id="inicioPath"
               d="
@@ -174,7 +205,9 @@
           </defs>
 
 
-          <!-- CÓMO USAR -->
+          <!-- ======================================
+               CÓMO USAR
+               ====================================== -->
 
           <a
             href="#"
@@ -209,7 +242,9 @@
           </a>
 
 
-          <!-- PARTICIPA -->
+          <!-- ======================================
+               PARTICIPA
+               ====================================== -->
 
           <a
             href="#"
@@ -244,7 +279,9 @@
           </a>
 
 
-          <!-- REPORTAR AVISTAMIENTO -->
+          <!-- ======================================
+               REPORTAR AVISTAMIENTO
+               ====================================== -->
 
           <a
             href="#"
@@ -291,7 +328,9 @@
           </a>
 
 
-          <!-- SOBRE NOSOTROS -->
+          <!-- ======================================
+               SOBRE NOSOTROS
+               ====================================== -->
 
           <a
             href="#"
@@ -338,7 +377,9 @@
           </a>
 
 
-          <!-- MAIN PAW PAD -->
+          <!-- ======================================
+               MAIN PAW PAD
+               ====================================== -->
 
           <g
             class="paw-center"
@@ -390,7 +431,9 @@
           </g>
 
 
-          <!-- INICIO -->
+          <!-- ======================================
+               INICIO
+               ====================================== -->
 
           <a
             href="index.html"
@@ -421,18 +464,55 @@
   </header>
 
 
+  <!-- ======================================
+       EXPERIENCE BUILDER APP
+       ====================================== -->
+
   <main class="app-container">
 
-    <iframe
-      src="https://experience.arcgis.com/experience/e444a62bd78e417292dcc66910450bdf?draft=true&org=GaiaSpatial"
-      allow="geolocation"
-      title="Aplicación Perros del Barrio"
-      allowfullscreen
-    >
-    </iframe>
+    <div class="app-wrapper">
+
+      <!--
+        Website-level visual cue for the filter
+        that exists inside the ArcGIS Experience Builder app.
+
+        The cue itself does not control the ArcGIS filter.
+        It simply makes the existing control easier to notice.
+      -->
+
+      <div
+        class="filter-cue"
+        id="filterCue"
+        aria-hidden="true"
+      >
+
+        <span class="filter-cue-label">
+          Filtrar perros
+        </span>
+
+        <span class="filter-cue-arrow">
+          ↓
+        </span>
+
+      </div>
+
+
+      <iframe
+        src="https://experience.arcgis.com/experience/e444a62bd78e417292dcc66910450bdf?draft=true&org=GaiaSpatial"
+        allow="geolocation"
+        title="Aplicación Perros del Barrio"
+        allowfullscreen
+      >
+      </iframe>
+
+    </div>
 
   </main>
 
+
+  <!-- ======================================
+       JAVASCRIPT
+       ====================================== -->
 
   <script src="/Perros_del_Barrio/js/paw-menu.js"></script>
 
