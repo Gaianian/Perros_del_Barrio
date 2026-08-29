@@ -10,7 +10,6 @@ html,
 body {
   width: 100%;
   height: 100%;
-
   margin: 0;
   padding: 0;
 }
@@ -29,6 +28,7 @@ body {
 
 /* =========================================
    HEADER
+   DESKTOP
    ========================================= */
 
 .site-header {
@@ -36,18 +36,18 @@ body {
 
   grid-template-columns:
     minmax(0, 1fr)
-    165px;
+    205px;
 
   align-items: center;
 
   width: 100%;
-  height: 132px;
+  height: 118px;
 
   padding:
     0
-    14px
+    12px
     0
-    22px;
+    18px;
 
   background: #2f6573;
   color: white;
@@ -66,13 +66,11 @@ body {
    ========================================= */
 
 .header-text {
-  justify-self: start;
-
   min-width: 0;
 
-  text-align: left;
+  justify-self: start;
 
-  white-space: nowrap;
+  text-align: left;
 }
 
 
@@ -87,21 +85,15 @@ body {
 
   font-variant: small-caps;
 
-  font-size: clamp(
-    2.25rem,
-    3.05vw,
-    3rem
-  );
+  font-size: 2.55rem;
 
   font-weight: 900;
 
-  line-height: 1;
+  line-height: 0.98;
 
-  letter-spacing: clamp(
-    0.10em,
-    0.55vw,
-    0.18em
-  );
+  letter-spacing: 0.15em;
+
+  white-space: nowrap;
 
   text-shadow:
     2px 3px 4px rgba(20, 25, 27, 0.72),
@@ -111,7 +103,7 @@ body {
 
 .header-text p {
   margin:
-    8px
+    7px
     0
     0;
 
@@ -121,13 +113,11 @@ body {
     "Dancing Script",
     cursive;
 
-  font-size: clamp(
-    1.18rem,
-    1.45vw,
-    1.55rem
-  );
+  font-size: 1.3rem;
 
   line-height: 1.08;
+
+  white-space: normal;
 }
 
 
@@ -156,15 +146,15 @@ body {
 .paw-menu {
   position: relative;
 
-  width: 160px;
-  height: 132px;
+  width: 195px;
+  height: 118px;
 
   overflow: visible;
 }
 
 
 /* =========================================
-   PAW SVG
+   PAW SVG — CLOSED
    ========================================= */
 
 .paw-menu-svg {
@@ -172,34 +162,35 @@ body {
 
   display: block;
 
-  width: 164px;
-  height: 155px;
+  width: 155px;
+  height: 146px;
 
-  right: -3px;
-  top: -9px;
+  right: 2px;
+  top: -12px;
 
   overflow: visible;
 
   transition:
-    transform 0.32s ease,
-    width 0.32s ease,
-    height 0.32s ease;
+    transform 0.34s ease,
+    width 0.34s ease,
+    height 0.34s ease;
 }
 
 
 /* =========================================
-   OPEN STATE
+   PAW SVG — OPEN
 
-   Keeps the same general behavior,
-   but slightly tighter than before.
+   The old open menu was simply too small
+   for four labels around the toes.
    ========================================= */
 
 .paw-menu.open .paw-menu-svg {
-  width: 184px;
-  height: 174px;
+  width: 245px;
+  height: 231px;
 
   transform:
-    translateX(-38px);
+    translateX(-72px)
+    translateY(-5px);
 }
 
 
@@ -240,7 +231,7 @@ body {
 
 
 /* =========================================
-   MENU MARKS
+   MENU LINES
    ========================================= */
 
 .paw-lines {
@@ -262,6 +253,7 @@ body {
 
 .paw-home-link {
   text-decoration: none;
+
   cursor: pointer;
 }
 
@@ -273,7 +265,7 @@ body {
     "Comic Sans MS",
     cursive;
 
-  font-size: 38px;
+  font-size: 25px;
 
   font-weight: 700;
 
@@ -314,8 +306,8 @@ body {
   transform-origin: center;
 
   transform:
-    translateY(80px)
-    scale(0.18);
+    translateY(70px)
+    scale(0.2);
 
   pointer-events: none;
 
@@ -334,6 +326,10 @@ body {
 
 /* =========================================
    TOE LABELS
+
+   38px was far too large for these curved
+   paths. 25px allows the Spanish wording
+   to fit cleanly around the paw.
    ========================================= */
 
 .toe-label {
@@ -345,7 +341,7 @@ body {
     "Comic Sans MS",
     cursive;
 
-  font-size: 38px;
+  font-size: 25px;
 
   font-weight: 700;
 
@@ -357,6 +353,13 @@ body {
 
   transition:
     opacity 0.25s ease;
+}
+
+
+/* Separate smaller size for long labels */
+
+.toe-label-long {
+  font-size: 22px;
 }
 
 
@@ -413,7 +416,7 @@ body {
   fill: #8a9e93;
 
   transform:
-    scale(1.08);
+    scale(1.06);
 
   filter:
     drop-shadow(
@@ -469,21 +472,15 @@ body {
 .filter-cue {
   position: absolute;
 
-  /*
-    This is aligned approximately with
-    the ArcGIS filter button shown in your screenshot.
-    Fine-tune left if needed after testing.
-  */
-
   left: 46.5%;
   top: 6px;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 
   z-index: 20;
 
   display: flex;
-  flex-direction: column;
   align-items: center;
 
   pointer-events: none;
@@ -500,21 +497,21 @@ body {
 
   padding:
     5px
-    12px
-    6px;
+    11px;
 
-  border-radius: 16px;
+  border-radius: 14px;
 
-  background: rgba(
-    146,
-    122,
-    152,
-    0.97
-  );
+  background:
+    rgba(
+      146,
+      122,
+      152,
+      0.97
+    );
 
-  color: #ffffff;
+  color: white;
 
-  font-size: 0.88rem;
+  font-size: 0.82rem;
 
   font-weight: 700;
 
@@ -523,20 +520,18 @@ body {
   white-space: nowrap;
 
   box-shadow:
-    0 2px 5px rgba(0, 0, 0, 0.24);
+    0 2px 5px rgba(0, 0, 0, 0.25);
 }
 
 
 .filter-cue-arrow {
-  margin-top: -1px;
+  margin-left: 5px;
 
   color: #927a98;
 
-  font-size: 1.35rem;
+  font-size: 1.15rem;
 
   font-weight: 900;
-
-  line-height: 1;
 }
 
 
@@ -546,82 +541,55 @@ body {
 
 
 /* =========================================
-   MID-SIZE DESKTOP / TABLET LANDSCAPE
+   MEDIUM DESKTOP / TABLET LANDSCAPE
    ========================================= */
 
-@media (max-width: 1150px) and (min-width: 751px) {
+@media (max-width: 1100px) and (min-width: 751px) {
 
   .site-header {
     grid-template-columns:
       minmax(0, 1fr)
-      145px;
+      175px;
 
-    height: 124px;
+    height: 112px;
 
-    padding:
-      0
-      10px
-      0
-      18px;
+    padding-left: 15px;
   }
 
 
   .header-text h1 {
-    font-size: clamp(
-      2rem,
-      3.25vw,
-      2.65rem
-    );
+    font-size: 2.15rem;
 
-    letter-spacing: clamp(
-      0.08em,
-      0.48vw,
-      0.14em
-    );
+    letter-spacing: 0.11em;
   }
 
 
   .header-text p {
-    margin-top: 7px;
-
-    font-size: clamp(
-      1.08rem,
-      1.55vw,
-      1.35rem
-    );
+    font-size: 1.17rem;
   }
 
 
   .paw-menu {
-    width: 142px;
-    height: 124px;
+    width: 170px;
+    height: 112px;
   }
 
 
   .paw-menu-svg {
-    width: 148px;
-    height: 140px;
+    width: 145px;
+    height: 137px;
 
-    right: -3px;
-    top: -7px;
+    right: 0;
   }
 
 
   .paw-menu.open .paw-menu-svg {
-    width: 166px;
-    height: 157px;
+    width: 225px;
+    height: 213px;
 
     transform:
-      translateX(-34px);
-  }
-
-
-  .filter-cue-label {
-    font-size: 0.82rem;
-
-    padding:
-      5px
-      10px;
+      translateX(-68px)
+      translateY(-4px);
   }
 
 }
@@ -629,7 +597,9 @@ body {
 
 /* =========================================
    PHONE / TABLET
-   EXISTING PHONE STRUCTURE PRESERVED
+
+   YOUR EXISTING PHONE STRUCTURE IS LEFT
+   SEPARATE. WE ARE NOT REDESIGNING IT YET.
    ========================================= */
 
 @media (max-width: 750px) {
@@ -668,6 +638,8 @@ body {
     line-height: 1.05;
 
     letter-spacing: 0.07em;
+
+    white-space: normal;
 
     text-shadow:
       2px 2px 3px rgba(20, 25, 27, 0.75),
@@ -721,15 +693,15 @@ body {
   }
 
 
-  .paw-home-label {
+  .toe-label-long {
     font-size: 38px;
   }
 
 
-  /*
-    Hide the new desktop filter cue on phones for now,
-    since your phone app structure is different.
-  */
+  .paw-home-label {
+    font-size: 38px;
+  }
+
 
   .filter-cue {
     display: none;
@@ -740,7 +712,6 @@ body {
 
 /* =========================================
    VERY SMALL PHONES
-   EXISTING STRUCTURE PRESERVED
    ========================================= */
 
 @media (max-width: 400px) {
@@ -800,6 +771,11 @@ body {
 
 
   .toe-label {
+    font-size: 38px;
+  }
+
+
+  .toe-label-long {
     font-size: 38px;
   }
 
