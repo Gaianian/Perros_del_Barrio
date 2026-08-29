@@ -71,6 +71,8 @@
 
   <header class="site-header">
 
+    <!-- TAGLINE -->
+
     <div class="header-tagline">
 
       <p>
@@ -82,10 +84,14 @@
     </div>
 
 
+    <!-- TITLE -->
+
     <h1 class="site-title">
       Perros del Barrio
     </h1>
 
+
+    <!-- PAW MENU -->
 
     <nav
       class="site-menu"
@@ -93,7 +99,7 @@
     >
 
       <div
-        class="paw-menu"
+        class="paw-menu open"
         id="pawMenu"
       >
 
@@ -352,8 +358,8 @@
             id="pawMenuButton"
             role="button"
             tabindex="0"
-            aria-expanded="false"
-            aria-label="Abrir menú"
+            aria-expanded="true"
+            aria-label="Menú principal"
           >
 
             <path
@@ -406,19 +412,20 @@
   </header>
 
 
+  <!-- APP -->
+
   <main class="app-container">
 
     <div class="app-wrapper">
 
       <!--
-        Click-through label.
-        It does not intercept the mouse,
-        so clicking it clicks the ArcGIS
-        filter underneath.
+        Decorative pill over the real ArcGIS filter.
+        pointer-events:none means the click goes through
+        to the actual ArcGIS control underneath.
       -->
 
       <div
-        class="filter-cue"
+        class="pdb-filter-pill"
         aria-hidden="true"
       >
         Filtrar perros
