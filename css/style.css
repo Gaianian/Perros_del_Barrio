@@ -35,7 +35,7 @@ body {
   position: relative;
 
   width: 100%;
-  height: 165px;
+  height: 180px;
 
   flex: 0 0 auto;
 
@@ -49,18 +49,20 @@ body {
 
 
 /* =========================================
-   CENTERED TITLE
+   TITLE
+
+   Horizontal center of entire header.
+   Vertical center of entire header.
    ========================================= */
 
 .site-title {
   position: absolute;
 
-  top: 20px;
   left: 50%;
+  top: 50%;
 
-  transform: translateX(-50%);
-
-  width: auto;
+  transform:
+    translate(-50%, -50%);
 
   margin: 0;
 
@@ -72,11 +74,7 @@ body {
 
   font-variant: small-caps;
 
-  font-size: clamp(
-    2.7rem,
-    3vw,
-    3.2rem
-  );
+  font-size: 3.55rem;
 
   font-weight: 900;
 
@@ -95,14 +93,20 @@ body {
 
 
 /* =========================================
-   LEFT TAGLINE
+   TAGLINE
+
+   Left aligned but vertically centered
+   within exactly the same header.
    ========================================= */
 
 .header-tagline {
   position: absolute;
 
-  left: 38px;
-  bottom: 20px;
+  left: 42px;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
 
   text-align: left;
 }
@@ -117,7 +121,7 @@ body {
     "Dancing Script",
     cursive;
 
-  font-size: 1.45rem;
+  font-size: 1.7rem;
 
   line-height: 1.12;
 }
@@ -125,16 +129,21 @@ body {
 
 /* =========================================
    MENU AREA
+
+   The whole paw area is vertically centered.
    ========================================= */
 
 .site-menu {
   position: absolute;
 
-  top: 0;
-  right: 32px;
+  right: 38px;
+  top: 50%;
 
-  width: 210px;
-  height: 165px;
+  transform:
+    translateY(-50%);
+
+  width: 225px;
+  height: 180px;
 
   overflow: visible;
 }
@@ -147,8 +156,8 @@ body {
 .paw-menu {
   position: relative;
 
-  width: 210px;
-  height: 165px;
+  width: 225px;
+  height: 180px;
 
   overflow: visible;
 }
@@ -156,6 +165,9 @@ body {
 
 /* =========================================
    CLOSED PAW
+
+   top: 50% + translateY(-50%) means the
+   actual SVG remains vertically centered.
    ========================================= */
 
 .paw-menu-svg {
@@ -163,11 +175,14 @@ body {
 
   display: block;
 
-  width: 176px;
-  height: 166px;
+  width: 180px;
+  height: 170px;
 
-  top: 2px;
-  right: 4px;
+  right: 2px;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
 
   overflow: visible;
 
@@ -180,15 +195,16 @@ body {
 
 /* =========================================
    OPEN PAW
+
+   Still vertically centered after enlarging.
    ========================================= */
 
 .paw-menu.open .paw-menu-svg {
-  width: 218px;
-  height: 206px;
+  width: 228px;
+  height: 215px;
 
   transform:
-    translateX(-44px)
-    translateY(-3px);
+    translate(-46px, -50%);
 }
 
 
@@ -246,6 +262,31 @@ body {
 
 
 /* =========================================
+   INICIO
+
+   ALWAYS VISIBLE.
+   ========================================= */
+
+.paw-home-label {
+  fill: #f4f1e8;
+
+  stroke: none;
+
+  font-family:
+    "Comic Sans MS",
+    cursive;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  pointer-events: none;
+
+  opacity: 1;
+}
+
+
+/* =========================================
    TOE LINKS
    ========================================= */
 
@@ -260,6 +301,8 @@ body {
 
 /* =========================================
    TOE SHAPES
+
+   Circular instead of narrow ellipses.
    ========================================= */
 
 .toe {
@@ -269,7 +312,7 @@ body {
   transform-origin: center;
 
   transform:
-    translateY(75px)
+    translateY(72px)
     scale(0.2);
 
   pointer-events: none;
@@ -303,7 +346,10 @@ body {
 
 
 /* =========================================
-   ONE-WORD LABELS
+   TOE TEXT
+
+   IMPORTANT:
+   Normal and hover text use the SAME size.
    ========================================= */
 
 .toe-word,
@@ -316,15 +362,19 @@ body {
     "Comic Sans MS",
     cursive;
 
+  font-size: 18px;
+
   font-weight: 700;
+
+  letter-spacing: 0;
 
   pointer-events: none;
 }
 
 
-.toe-word {
-  font-size: 20px;
+/* Normal curved one-word text */
 
+.toe-word {
   opacity: 1;
 
   transition:
@@ -332,9 +382,9 @@ body {
 }
 
 
-.toe-hover-word {
-  font-size: 15px;
+/* Two-line hover text */
 
+.toe-hover-word {
   opacity: 0;
 
   transition:
@@ -343,51 +393,10 @@ body {
 
 
 /* =========================================
-   SIDE LABEL ROTATION
-   ========================================= */
-
-.toe-word-side-left {
-  transform:
-    rotate(-39deg);
-
-  transform-origin:
-    34px
-    120px;
-}
-
-
-.toe-word-side-right {
-  transform:
-    rotate(39deg);
-
-  transform-origin:
-    326px
-    120px;
-}
-
-
-.toe-hover-left {
-  transform:
-    rotate(-39deg);
-
-  transform-origin:
-    29px
-    118px;
-}
-
-
-.toe-hover-right {
-  transform:
-    rotate(39deg);
-
-  transform-origin:
-    331px
-    118px;
-}
-
-
-/* =========================================
    HOVER TEXT SWAP
+
+   One word disappears.
+   Two full-size words appear, stacked.
    ========================================= */
 
 .paw-menu.open .paw-item:hover .toe-word,
@@ -450,41 +459,6 @@ body {
 
 
 /* =========================================
-   INICIO
-   ========================================= */
-
-.paw-home-link {
-  text-decoration: none;
-
-  cursor: pointer;
-}
-
-
-.paw-home-label {
-  fill: #f4f1e8;
-
-  font-family:
-    "Comic Sans MS",
-    cursive;
-
-  font-size: 22px;
-
-  font-weight: 700;
-
-  pointer-events: auto;
-
-  transition:
-    fill 0.2s ease;
-}
-
-
-.paw-home-link:hover .paw-home-label,
-.paw-home-link:focus-visible .paw-home-label {
-  fill: #8a9e93;
-}
-
-
-/* =========================================
    ARCGIS APPLICATION
    ========================================= */
 
@@ -521,7 +495,8 @@ body {
 
 /* =========================================
    FILTER CUE
-   SOLID ORIGINAL STYLE
+
+   Solid. No fade.
    ========================================= */
 
 .filter-cue {
@@ -586,66 +561,59 @@ body {
 
 
 /* =========================================
-   MID-SIZE DESKTOP / TABLET LANDSCAPE
+   MEDIUM DESKTOP / TABLET LANDSCAPE
    ========================================= */
 
 @media (max-width: 1150px) and (min-width: 751px) {
 
   .site-header {
-    height: 155px;
+    height: 170px;
   }
 
 
   .site-title {
-    top: 19px;
+    font-size: 2.9rem;
 
-    font-size: 2.45rem;
-
-    letter-spacing: 0.13em;
+    letter-spacing: 0.14em;
   }
 
 
   .header-tagline {
-    left: 28px;
-    bottom: 18px;
+    left: 30px;
   }
 
 
   .header-tagline p {
-    font-size: 1.3rem;
+    font-size: 1.45rem;
   }
 
 
   .site-menu {
-    right: 24px;
+    right: 25px;
 
-    width: 190px;
-    height: 155px;
+    width: 205px;
+    height: 170px;
   }
 
 
   .paw-menu {
-    width: 190px;
-    height: 155px;
+    width: 205px;
+    height: 170px;
   }
 
 
   .paw-menu-svg {
-    width: 164px;
-    height: 155px;
-
-    top: 2px;
-    right: 2px;
+    width: 170px;
+    height: 160px;
   }
 
 
   .paw-menu.open .paw-menu-svg {
-    width: 205px;
-    height: 194px;
+    width: 213px;
+    height: 201px;
 
     transform:
-      translateX(-42px)
-      translateY(-2px);
+      translate(-43px, -50%);
   }
 
 }
@@ -654,7 +622,7 @@ body {
 /* =========================================
    PHONE / SMALL TABLET
 
-   LEAVE PHONE STRUCTURE FOR LATER.
+   WE ARE NOT REDESIGNING THIS YET.
    ========================================= */
 
 @media (max-width: 750px) {
@@ -685,8 +653,6 @@ body {
 
     transform: none;
 
-    width: auto;
-
     margin: 0;
 
     font-size: 1.5rem;
@@ -705,7 +671,10 @@ body {
     position: absolute;
 
     left: 12px;
+    top: auto;
     bottom: 10px;
+
+    transform: none;
   }
 
 
@@ -719,8 +688,10 @@ body {
   .site-menu {
     position: relative;
 
-    top: auto;
     right: auto;
+    top: auto;
+
+    transform: none;
 
     width: 74px;
     height: 110px;
@@ -739,6 +710,8 @@ body {
 
     right: -12px;
     top: -4px;
+
+    transform: none;
   }
 
 
