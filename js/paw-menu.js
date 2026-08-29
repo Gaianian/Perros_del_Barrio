@@ -43,7 +43,7 @@ document.addEventListener(
 
 
     /* =========================================
-       TOGGLE MENU
+       TOGGLE
        ========================================= */
 
     function toggleMenu(event) {
@@ -71,7 +71,7 @@ document.addEventListener(
 
 
     /* =========================================
-       KEYBOARD CONTROL
+       KEYBOARD
        ========================================= */
 
     pawButton.addEventListener(
