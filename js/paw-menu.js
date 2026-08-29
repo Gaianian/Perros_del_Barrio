@@ -2,10 +2,6 @@ document.addEventListener(
   "DOMContentLoaded",
   function () {
 
-    /* =========================================
-       PAW MENU
-       ========================================= */
-
     const pawMenu =
       document.getElementById("pawMenu");
 
@@ -13,164 +9,133 @@ document.addEventListener(
       document.getElementById("pawMenuButton");
 
 
-    if (pawMenu && pawButton) {
+    if (!pawMenu || !pawButton) {
+      return;
+    }
 
-      function setMenuState(open) {
 
-        pawMenu.classList.toggle(
-          "open",
-          open
+    function setMenuState(open) {
+
+      pawMenu.classList.toggle(
+        "open",
+        open
+      );
+
+
+      pawButton.setAttribute(
+        "aria-expanded",
+        open ? "true" : "false"
+      );
+
+
+      pawButton.setAttribute(
+        "aria-label",
+        open
+          ? "Cerrar menú"
+          : "Abrir menú"
+      );
+
+    }
+
+
+    function toggleMenu(event) {
+
+      event.stopPropagation();
+
+      const isOpen =
+        pawMenu.classList.contains(
+          "open"
         );
 
-
-        pawButton.setAttribute(
-          "aria-expanded",
-          open ? "true" : "false"
-        );
-
-
-        pawButton.setAttribute(
-          "aria-label",
-          open
-            ? "Cerrar menú"
-            : "Abrir menú"
-        );
-
-      }
-
-
-      function toggleMenu(event) {
-
-        event.stopPropagation();
-
-        const isOpen =
-          pawMenu.classList.contains(
-            "open"
-          );
-
-        setMenuState(!isOpen);
-
-      }
-
-
-      /* -----------------------------------------
-         OPEN / CLOSE WITH MOUSE
-         ----------------------------------------- */
-
-      pawButton.addEventListener(
-        "click",
-        toggleMenu
-      );
-
-
-      /* -----------------------------------------
-         KEYBOARD CONTROL
-         ----------------------------------------- */
-
-      pawButton.addEventListener(
-        "keydown",
-        function (event) {
-
-          if (
-            event.key === "Enter" ||
-            event.key === " "
-          ) {
-
-            event.preventDefault();
-
-            toggleMenu(event);
-
-          }
-
-
-          if (event.key === "Escape") {
-
-            setMenuState(false);
-
-          }
-
-        }
-      );
-
-
-      /* -----------------------------------------
-         DO NOT CLOSE WHEN CLICKING INSIDE MENU
-         ----------------------------------------- */
-
-      pawMenu.addEventListener(
-        "click",
-        function (event) {
-
-          event.stopPropagation();
-
-        }
-      );
-
-
-      /* -----------------------------------------
-         CLOSE WHEN CLICKING ELSEWHERE
-         ----------------------------------------- */
-
-      document.addEventListener(
-        "click",
-        function () {
-
-          setMenuState(false);
-
-        }
-      );
-
-
-      /* -----------------------------------------
-         CLOSE WITH ESCAPE
-         ----------------------------------------- */
-
-      document.addEventListener(
-        "keydown",
-        function (event) {
-
-          if (event.key === "Escape") {
-
-            setMenuState(false);
-
-          }
-
-        }
-      );
+      setMenuState(!isOpen);
 
     }
 
 
     /* =========================================
-       FILTER CUE
+       OPEN / CLOSE PAW
        ========================================= */
 
-    const filterCue =
-      document.getElementById("filterCue");
+    pawButton.addEventListener(
+      "click",
+      toggleMenu
+    );
 
 
-    if (filterCue) {
+    /* =========================================
+       KEYBOARD CONTROL
+       ========================================= */
 
-      /*
-        The filter cue begins fully visible.
+    pawButton.addEventListener(
+      "keydown",
+      function (event) {
 
-        After 7 seconds it becomes quieter so it
-        continues to identify the filter without
-        competing visually with the application.
-      */
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
 
-      window.setTimeout(
-        function () {
+          event.preventDefault();
 
-          filterCue.classList.add(
-            "filter-cue--quiet"
-          );
+          toggleMenu(event);
 
-        },
-        7000
-      );
+        }
 
-    }
+
+        if (event.key === "Escape") {
+
+          setMenuState(false);
+
+        }
+
+      }
+    );
+
+
+    /* =========================================
+       CLICKING INSIDE MENU
+       ========================================= */
+
+    pawMenu.addEventListener(
+      "click",
+      function (event) {
+
+        event.stopPropagation();
+
+      }
+    );
+
+
+    /* =========================================
+       CLICKING OUTSIDE MENU
+       ========================================= */
+
+    document.addEventListener(
+      "click",
+      function () {
+
+        setMenuState(false);
+
+      }
+    );
+
+
+    /* =========================================
+       ESCAPE CLOSES MENU
+       ========================================= */
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (event.key === "Escape") {
+
+          setMenuState(false);
+
+        }
+
+      }
+    );
 
   }
 );
