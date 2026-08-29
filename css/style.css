@@ -126,7 +126,8 @@ body {
 
 
 /* =========================================
-   MENU COLUMN
+   DESKTOP PAW MENU
+   ALWAYS OPEN
    ========================================= */
 
 .site-menu {
@@ -154,50 +155,21 @@ body {
 }
 
 
-/* =========================================
-   PAW SVG — CLOSED
-
-   The visible main paw occupies the lower
-   portion of the SVG, so closed state is
-   intentionally shifted upward to visually
-   center the actual paw.
-   ========================================= */
-
 .paw-menu-svg {
   position: absolute;
 
   display: block;
 
-  width: 220px;
-  height: 191px;
+  width: 270px;
+  height: 234px;
 
   right: 0;
   top: 50%;
 
   transform:
-    translateY(-62%);
+    translateY(-50%);
 
   overflow: visible;
-
-  transition:
-    width 0.34s ease,
-    height 0.34s ease,
-    transform 0.34s ease;
-}
-
-
-/* =========================================
-   OPEN PAW
-
-   Whole open paw/toe group is centered.
-   ========================================= */
-
-.paw-menu.open .paw-menu-svg {
-  width: 270px;
-  height: 234px;
-
-  transform:
-    translate(-48px, -50%);
 }
 
 
@@ -208,7 +180,7 @@ body {
 .paw-center {
   fill: #927a98;
 
-  cursor: pointer;
+  cursor: default;
 
   transform-box: fill-box;
   transform-origin: center;
@@ -227,12 +199,7 @@ body {
 
 
 .paw-center:hover {
-  fill: #04768a;
-
-  filter:
-    drop-shadow(
-      0 6px 9px rgba(0, 0, 0, 0.45)
-    );
+  fill: #927a98;
 }
 
 
@@ -265,7 +232,6 @@ svg g:focus-visible,
 
 /* =========================================
    INICIO
-   ALWAYS VISIBLE
    ========================================= */
 
 .paw-home-label {
@@ -280,8 +246,6 @@ svg g:focus-visible,
   font-weight: 700;
 
   pointer-events: none;
-
-  opacity: 1;
 }
 
 
@@ -300,19 +264,16 @@ svg g:focus-visible,
 
 /* =========================================
    TOES
+   ALWAYS VISIBLE ON DESKTOP
    ========================================= */
 
 .toe {
-  opacity: 0;
+  opacity: 1;
 
   transform-box: fill-box;
   transform-origin: center;
 
-  transform:
-    translateY(60px)
-    scale(0.2);
-
-  pointer-events: none;
+  pointer-events: auto;
 
   filter:
     drop-shadow(
@@ -320,49 +281,35 @@ svg g:focus-visible,
     );
 
   transition:
-    transform 0.38s ease,
-    opacity 0.22s ease,
+    transform 0.25s ease,
     fill 0.2s ease,
     filter 0.2s ease;
 }
 
 
-.paw-menu.open .toe {
-  opacity: 1;
+/* Push toes outward */
 
-  pointer-events: auto;
+.paw-ayuda .toe {
+  transform:
+    translate(-12px, -17px);
 }
 
 
-/* =========================================
-   OPEN TOE POSITIONS
-   ========================================= */
-
-.paw-menu.open .paw-ayuda .toe {
+.paw-participa .toe {
   transform:
-    translate(-12px, -17px)
-    scale(1);
+    translate(12px, -17px);
 }
 
 
-.paw-menu.open .paw-participa .toe {
+.paw-reporta .toe {
   transform:
-    translate(12px, -17px)
-    scale(1);
+    translate(-19px, 2px);
 }
 
 
-.paw-menu.open .paw-reporta .toe {
+.paw-nosotros .toe {
   transform:
-    translate(-19px, 2px)
-    scale(1);
-}
-
-
-.paw-menu.open .paw-nosotros .toe {
-  transform:
-    translate(19px, 2px)
-    scale(1);
+    translate(19px, 2px);
 }
 
 
@@ -405,59 +352,59 @@ svg g:focus-visible,
 
 
 /* =========================================
-   HOVER TEXT
+   HOVER TEXT SWAP
    ========================================= */
 
-.paw-menu.open .paw-item:hover .toe-word,
-.paw-menu.open .paw-item:focus-visible .toe-word {
+.paw-item:hover .toe-word,
+.paw-item:focus-visible .toe-word {
   opacity: 0;
 }
 
 
-.paw-menu.open .paw-item:hover .toe-hover-word,
-.paw-menu.open .paw-item:focus-visible .toe-hover-word {
+.paw-item:hover .toe-hover-word,
+.paw-item:focus-visible .toe-hover-word {
   opacity: 1;
 }
 
 
 /* =========================================
-   HOVER TOE GROWTH
+   TOE GROWTH ON HOVER
    ========================================= */
 
-.paw-menu.open .paw-ayuda:hover .toe,
-.paw-menu.open .paw-ayuda:focus-visible .toe {
+.paw-ayuda:hover .toe,
+.paw-ayuda:focus-visible .toe {
   transform:
     translate(-12px, -17px)
     scale(1.15);
 }
 
 
-.paw-menu.open .paw-participa:hover .toe,
-.paw-menu.open .paw-participa:focus-visible .toe {
+.paw-participa:hover .toe,
+.paw-participa:focus-visible .toe {
   transform:
     translate(12px, -17px)
     scale(1.15);
 }
 
 
-.paw-menu.open .paw-reporta:hover .toe,
-.paw-menu.open .paw-reporta:focus-visible .toe {
+.paw-reporta:hover .toe,
+.paw-reporta:focus-visible .toe {
   transform:
     translate(-19px, 2px)
     scale(1.15);
 }
 
 
-.paw-menu.open .paw-nosotros:hover .toe,
-.paw-menu.open .paw-nosotros:focus-visible .toe {
+.paw-nosotros:hover .toe,
+.paw-nosotros:focus-visible .toe {
   transform:
     translate(19px, 2px)
     scale(1.15);
 }
 
 
-.paw-menu.open .paw-item:hover .toe,
-.paw-menu.open .paw-item:focus-visible .toe {
+.paw-item:hover .toe,
+.paw-item:focus-visible .toe {
   fill: #8a9e93;
 
   filter:
@@ -470,27 +417,6 @@ svg g:focus-visible,
 .paw-item:focus,
 .paw-item:focus-visible {
   outline: none !important;
-}
-
-
-/* =========================================
-   STAGGERED OPENING
-   ========================================= */
-
-.paw-ayuda .toe {
-  transition-delay: 0.02s;
-}
-
-.paw-participa .toe {
-  transition-delay: 0.07s;
-}
-
-.paw-reporta .toe {
-  transition-delay: 0.12s;
-}
-
-.paw-nosotros .toe {
-  transition-delay: 0.17s;
 }
 
 
@@ -531,40 +457,38 @@ svg g:focus-visible,
 
 /* =========================================
    FILTER PILL
-
-   Clicks pass through this directly to
-   the real ArcGIS filter underneath.
    ========================================= */
 
-.filter-cue {
+.pdb-filter-pill {
   position: absolute;
 
-  left: 46.8%;
-
-  /*
-    Slightly higher than before.
-  */
-  top: -5px;
+  left: 46.7%;
+  top: -9px;
 
   transform:
     translateX(-50%);
 
-  z-index: 30;
+  z-index: 100;
+
+  display: block;
 
   padding:
-    7px
-    17px
-    8px;
+    8px
+    18px
+    9px;
 
-  border-radius: 18px;
+  border-radius: 20px;
 
-  background: #927a98;
+  background-color: #927a98 !important;
 
-  color: #ffffff;
+  color: #ffffff !important;
 
-  font-family: Arial, sans-serif;
+  font-family:
+    Arial,
+    sans-serif;
 
   font-size: 1rem;
+
   font-weight: 700;
 
   line-height: 1;
@@ -572,19 +496,18 @@ svg g:focus-visible,
   white-space: nowrap;
 
   box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.26);
+    0 3px 7px rgba(0, 0, 0, 0.3);
 
   /*
-    CRITICAL:
-    Clicking the visible pill actually
-    clicks the ArcGIS control underneath.
+    The underlying ArcGIS filter
+    receives the click.
   */
   pointer-events: none;
 }
 
 
 /* =========================================
-   MID-SIZE WEB
+   MID-SIZE DESKTOP
    ========================================= */
 
 @media (max-width: 1250px) and (min-width: 751px) {
@@ -628,32 +551,23 @@ svg g:focus-visible,
 
 
   .paw-menu-svg {
-    width: 205px;
-    height: 178px;
-
-    transform:
-      translateY(-62%);
-  }
-
-
-  .paw-menu.open .paw-menu-svg {
     width: 250px;
     height: 217px;
-
-    transform:
-      translate(-43px, -50%);
   }
 
 }
 
 
 /* =========================================
-   PHONE — LATER
+   PHONE
+
+   CLOSED/OPEN BEHAVIOR CAN BE DEALT WITH
+   SEPARATELY WHEN WE WORK ON PHONE.
    ========================================= */
 
 @media (max-width: 750px) {
 
-  .filter-cue {
+  .pdb-filter-pill {
     display: none;
   }
 
@@ -666,8 +580,6 @@ svg g:focus-visible,
 
 @media (prefers-reduced-motion: reduce) {
 
-  .paw-menu-svg,
-  .paw-center,
   .toe,
   .toe-word,
   .toe-hover-word {
