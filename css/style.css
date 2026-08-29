@@ -1,3 +1,7 @@
+/* =========================================
+   GLOBAL
+   ========================================= */
+
 * {
   box-sizing: border-box;
 }
@@ -6,6 +10,7 @@ html,
 body {
   width: 100%;
   height: 100%;
+
   margin: 0;
   padding: 0;
 }
@@ -13,13 +18,18 @@ body {
 body {
   display: flex;
   flex-direction: column;
+
   font-family: Arial, sans-serif;
+
   background: #f5f5f5;
+
   overflow-x: hidden;
 }
 
 
-/* HEADER */
+/* =========================================
+   HEADER
+   ========================================= */
 
 .site-header {
   display: grid;
@@ -50,12 +60,16 @@ body {
 }
 
 
-/* TAGLINE */
+/* =========================================
+   TAGLINE
+   ========================================= */
 
 .header-tagline {
   grid-column: 1;
+
   justify-self: start;
   align-self: center;
+
   text-align: left;
 }
 
@@ -69,11 +83,14 @@ body {
     cursive;
 
   font-size: 1.8rem;
+
   line-height: 1.15;
 }
 
 
-/* TITLE */
+/* =========================================
+   TITLE
+   ========================================= */
 
 .site-title {
   grid-column: 2;
@@ -95,9 +112,11 @@ body {
   font-weight: 900;
 
   line-height: 1;
+
   letter-spacing: 0.17em;
 
   white-space: nowrap;
+
   text-align: center;
 
   text-shadow:
@@ -106,7 +125,9 @@ body {
 }
 
 
-/* MENU */
+/* =========================================
+   MENU COLUMN
+   ========================================= */
 
 .site-menu {
   grid-column: 3;
@@ -114,39 +135,47 @@ body {
   justify-self: end;
   align-self: center;
 
-  width: 285px;
+  width: 300px;
   height: 190px;
 
   position: relative;
 
   overflow: visible;
 }
+
 
 .paw-menu {
   position: relative;
 
-  width: 285px;
+  width: 300px;
   height: 190px;
 
   overflow: visible;
 }
 
 
-/* PAW SVG */
+/* =========================================
+   PAW SVG — CLOSED
+
+   The visible main paw occupies the lower
+   portion of the SVG, so closed state is
+   intentionally shifted upward to visually
+   center the actual paw.
+   ========================================= */
 
 .paw-menu-svg {
   position: absolute;
 
   display: block;
 
-  width: 205px;
-  height: 178px;
+  width: 220px;
+  height: 191px;
 
   right: 0;
   top: 50%;
 
   transform:
-    translateY(-50%);
+    translateY(-62%);
 
   overflow: visible;
 
@@ -156,16 +185,25 @@ body {
     transform 0.34s ease;
 }
 
+
+/* =========================================
+   OPEN PAW
+
+   Whole open paw/toe group is centered.
+   ========================================= */
+
 .paw-menu.open .paw-menu-svg {
-  width: 265px;
-  height: 230px;
+  width: 270px;
+  height: 234px;
 
   transform:
     translate(-48px, -50%);
 }
 
 
-/* MAIN PAW */
+/* =========================================
+   MAIN PAW
+   ========================================= */
 
 .paw-center {
   fill: #927a98;
@@ -187,6 +225,7 @@ body {
     filter 0.2s ease;
 }
 
+
 .paw-center:hover {
   fill: #04768a;
 
@@ -195,6 +234,7 @@ body {
       0 6px 9px rgba(0, 0, 0, 0.45)
     );
 }
+
 
 .paw-center:focus,
 .paw-center:focus-visible,
@@ -206,20 +246,27 @@ svg g:focus-visible,
 }
 
 
-/* PAW LINES */
+/* =========================================
+   PAW LINES
+   ========================================= */
 
 .paw-lines {
   fill: none;
 
   stroke: #ffffff;
+
   stroke-width: 6;
+
   stroke-linecap: round;
 
   pointer-events: none;
 }
 
 
-/* INICIO */
+/* =========================================
+   INICIO
+   ALWAYS VISIBLE
+   ========================================= */
 
 .paw-home-label {
   fill: #f4f1e8;
@@ -229,6 +276,7 @@ svg g:focus-visible,
     cursive;
 
   font-size: 21px;
+
   font-weight: 700;
 
   pointer-events: none;
@@ -237,7 +285,9 @@ svg g:focus-visible,
 }
 
 
-/* TOE LINKS */
+/* =========================================
+   TOE LINKS
+   ========================================= */
 
 .paw-item {
   fill: #927a98;
@@ -248,7 +298,9 @@ svg g:focus-visible,
 }
 
 
-/* TOES */
+/* =========================================
+   TOES
+   ========================================= */
 
 .toe {
   opacity: 0;
@@ -274,13 +326,17 @@ svg g:focus-visible,
     filter 0.2s ease;
 }
 
+
 .paw-menu.open .toe {
   opacity: 1;
+
   pointer-events: auto;
 }
 
 
-/* PUSH TOES OUTWARD */
+/* =========================================
+   OPEN TOE POSITIONS
+   ========================================= */
 
 .paw-menu.open .paw-ayuda .toe {
   transform:
@@ -288,17 +344,20 @@ svg g:focus-visible,
     scale(1);
 }
 
+
 .paw-menu.open .paw-participa .toe {
   transform:
     translate(12px, -17px)
     scale(1);
 }
 
+
 .paw-menu.open .paw-reporta .toe {
   transform:
     translate(-19px, 2px)
     scale(1);
 }
+
 
 .paw-menu.open .paw-nosotros .toe {
   transform:
@@ -307,7 +366,9 @@ svg g:focus-visible,
 }
 
 
-/* TOE TEXT */
+/* =========================================
+   TOE TEXT
+   ========================================= */
 
 .toe-word,
 .toe-hover-word {
@@ -320,10 +381,12 @@ svg g:focus-visible,
     cursive;
 
   font-size: 19px;
+
   font-weight: 700;
 
   pointer-events: none;
 }
+
 
 .toe-word {
   opacity: 1;
@@ -331,6 +394,7 @@ svg g:focus-visible,
   transition:
     opacity 0.18s ease;
 }
+
 
 .toe-hover-word {
   opacity: 0;
@@ -340,12 +404,15 @@ svg g:focus-visible,
 }
 
 
-/* HOVER TEXT */
+/* =========================================
+   HOVER TEXT
+   ========================================= */
 
 .paw-menu.open .paw-item:hover .toe-word,
 .paw-menu.open .paw-item:focus-visible .toe-word {
   opacity: 0;
 }
+
 
 .paw-menu.open .paw-item:hover .toe-hover-word,
 .paw-menu.open .paw-item:focus-visible .toe-hover-word {
@@ -353,7 +420,9 @@ svg g:focus-visible,
 }
 
 
-/* HOVER TOE GROWTH */
+/* =========================================
+   HOVER TOE GROWTH
+   ========================================= */
 
 .paw-menu.open .paw-ayuda:hover .toe,
 .paw-menu.open .paw-ayuda:focus-visible .toe {
@@ -362,12 +431,14 @@ svg g:focus-visible,
     scale(1.15);
 }
 
+
 .paw-menu.open .paw-participa:hover .toe,
 .paw-menu.open .paw-participa:focus-visible .toe {
   transform:
     translate(12px, -17px)
     scale(1.15);
 }
+
 
 .paw-menu.open .paw-reporta:hover .toe,
 .paw-menu.open .paw-reporta:focus-visible .toe {
@@ -376,12 +447,14 @@ svg g:focus-visible,
     scale(1.15);
 }
 
+
 .paw-menu.open .paw-nosotros:hover .toe,
 .paw-menu.open .paw-nosotros:focus-visible .toe {
   transform:
     translate(19px, 2px)
     scale(1.15);
 }
+
 
 .paw-menu.open .paw-item:hover .toe,
 .paw-menu.open .paw-item:focus-visible .toe {
@@ -393,13 +466,16 @@ svg g:focus-visible,
     );
 }
 
+
 .paw-item:focus,
 .paw-item:focus-visible {
   outline: none !important;
 }
 
 
-/* STAGGER */
+/* =========================================
+   STAGGERED OPENING
+   ========================================= */
 
 .paw-ayuda .toe {
   transition-delay: 0.02s;
@@ -418,7 +494,9 @@ svg g:focus-visible,
 }
 
 
-/* ARCGIS */
+/* =========================================
+   ARCGIS APPLICATION
+   ========================================= */
 
 .app-container {
   flex: 1 1 auto;
@@ -430,6 +508,7 @@ svg g:focus-visible,
   position: relative;
 }
 
+
 .app-wrapper {
   position: relative;
 
@@ -438,6 +517,7 @@ svg g:focus-visible,
 
   min-height: 0;
 }
+
 
 .app-container iframe {
   display: block;
@@ -449,53 +529,63 @@ svg g:focus-visible,
 }
 
 
-/* FILTER BUTTON */
+/* =========================================
+   FILTER PILL
 
-.filter-button {
+   Clicks pass through this directly to
+   the real ArcGIS filter underneath.
+   ========================================= */
+
+.filter-cue {
   position: absolute;
 
   left: 46.8%;
-  top: 4px;
+
+  /*
+    Slightly higher than before.
+  */
+  top: -5px;
 
   transform:
     translateX(-50%);
 
   z-index: 30;
 
-  min-width: 132px;
-
   padding:
-    8px
-    16px;
+    7px
+    17px
+    8px;
 
-  border: none;
-  border-radius: 8px;
+  border-radius: 18px;
 
   background: #927a98;
+
   color: #ffffff;
 
   font-family: Arial, sans-serif;
 
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 700;
 
   line-height: 1;
 
-  cursor: pointer;
+  white-space: nowrap;
 
   box-shadow:
-    0 3px 7px rgba(0, 0, 0, 0.28);
+    0 2px 6px rgba(0, 0, 0, 0.26);
+
+  /*
+    CRITICAL:
+    Clicking the visible pill actually
+    clicks the ArcGIS control underneath.
+  */
+  pointer-events: none;
 }
 
-.filter-button:hover,
-.filter-button:focus-visible {
-  background: #7f6886;
 
-  outline: none;
-}
-
-
-/* MID SIZE */
+/* =========================================
+   MID-SIZE WEB
+   ========================================= */
 
 @media (max-width: 1250px) and (min-width: 751px) {
 
@@ -512,33 +602,43 @@ svg g:focus-visible,
       28px;
   }
 
+
   .site-title {
     font-size: 3rem;
+
     letter-spacing: 0.13em;
   }
+
 
   .header-tagline p {
     font-size: 1.5rem;
   }
 
+
   .site-menu {
-    width: 245px;
+    width: 260px;
     height: 180px;
   }
+
 
   .paw-menu {
-    width: 245px;
+    width: 260px;
     height: 180px;
   }
 
+
   .paw-menu-svg {
-    width: 190px;
-    height: 165px;
+    width: 205px;
+    height: 178px;
+
+    transform:
+      translateY(-62%);
   }
 
+
   .paw-menu.open .paw-menu-svg {
-    width: 245px;
-    height: 213px;
+    width: 250px;
+    height: 217px;
 
     transform:
       translate(-43px, -50%);
@@ -547,18 +647,22 @@ svg g:focus-visible,
 }
 
 
-/* PHONE LATER */
+/* =========================================
+   PHONE — LATER
+   ========================================= */
 
 @media (max-width: 750px) {
 
-  .filter-button {
+  .filter-cue {
     display: none;
   }
 
 }
 
 
-/* REDUCED MOTION */
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
