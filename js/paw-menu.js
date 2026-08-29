@@ -9,112 +9,49 @@ document.addEventListener(
       document.getElementById("pawMenuButton");
 
 
-    if (!pawMenu || !pawButton) {
+    if (!pawMenu) {
       return;
     }
 
 
-    function setMenuState(open) {
+    /* =========================================
+       DESKTOP
 
-      pawMenu.classList.toggle(
-        "open",
-        open
-      );
+       Keep paw permanently open.
+       ========================================= */
+
+    function setDesktopMenu() {
+
+      if (window.innerWidth > 750) {
+
+        pawMenu.classList.add("open");
 
 
-      pawButton.setAttribute(
-        "aria-expanded",
-        open ? "true" : "false"
-      );
+        if (pawButton) {
 
+          pawButton.setAttribute(
+            "aria-expanded",
+            "true"
+          );
 
-      pawButton.setAttribute(
-        "aria-label",
-        open
-          ? "Cerrar menú"
-          : "Abrir menú"
-      );
+          pawButton.setAttribute(
+            "aria-label",
+            "Menú principal"
+          );
+
+        }
+
+      }
 
     }
 
 
-    function toggleMenu(event) {
-
-      event.stopPropagation();
-
-      const isOpen =
-        pawMenu.classList.contains(
-          "open"
-        );
-
-      setMenuState(!isOpen);
-
-    }
+    setDesktopMenu();
 
 
-    pawButton.addEventListener(
-      "click",
-      toggleMenu
-    );
-
-
-    pawButton.addEventListener(
-      "keydown",
-      function (event) {
-
-        if (
-          event.key === "Enter" ||
-          event.key === " "
-        ) {
-
-          event.preventDefault();
-
-          toggleMenu(event);
-
-        }
-
-
-        if (event.key === "Escape") {
-
-          setMenuState(false);
-
-        }
-
-      }
-    );
-
-
-    pawMenu.addEventListener(
-      "click",
-      function (event) {
-
-        event.stopPropagation();
-
-      }
-    );
-
-
-    document.addEventListener(
-      "click",
-      function () {
-
-        setMenuState(false);
-
-      }
-    );
-
-
-    document.addEventListener(
-      "keydown",
-      function (event) {
-
-        if (event.key === "Escape") {
-
-          setMenuState(false);
-
-        }
-
-      }
+    window.addEventListener(
+      "resize",
+      setDesktopMenu
     );
 
   }
