@@ -1,7 +1,3 @@
-/* =========================================
-   GLOBAL
-   ========================================= */
-
 * {
   box-sizing: border-box;
 }
@@ -10,7 +6,6 @@ html,
 body {
   width: 100%;
   height: 100%;
-
   margin: 0;
   padding: 0;
 }
@@ -18,20 +13,13 @@ body {
 body {
   display: flex;
   flex-direction: column;
-
   font-family: Arial, sans-serif;
-
   background: #f5f5f5;
-
   overflow-x: hidden;
 }
 
 
-/* =========================================
-   HEADER
-
-   TRUE THREE-COLUMN VERTICAL CENTERING
-   ========================================= */
+/* HEADER */
 
 .site-header {
   display: grid;
@@ -62,19 +50,14 @@ body {
 }
 
 
-/* =========================================
-   TAGLINE
-   ========================================= */
+/* TAGLINE */
 
 .header-tagline {
   grid-column: 1;
-
   justify-self: start;
   align-self: center;
-
   text-align: left;
 }
-
 
 .header-tagline p {
   margin: 0;
@@ -86,14 +69,11 @@ body {
     cursive;
 
   font-size: 1.8rem;
-
   line-height: 1.15;
 }
 
 
-/* =========================================
-   TITLE
-   ========================================= */
+/* TITLE */
 
 .site-title {
   grid-column: 2;
@@ -112,15 +92,12 @@ body {
   font-variant: small-caps;
 
   font-size: 3.75rem;
-
   font-weight: 900;
 
   line-height: 1;
-
   letter-spacing: 0.17em;
 
   white-space: nowrap;
-
   text-align: center;
 
   text-shadow:
@@ -129,9 +106,7 @@ body {
 }
 
 
-/* =========================================
-   MENU COLUMN
-   ========================================= */
+/* MENU */
 
 .site-menu {
   grid-column: 3;
@@ -147,11 +122,6 @@ body {
   overflow: visible;
 }
 
-
-/* =========================================
-   PAW CONTAINER
-   ========================================= */
-
 .paw-menu {
   position: relative;
 
@@ -162,9 +132,7 @@ body {
 }
 
 
-/* =========================================
-   CLOSED PAW
-   ========================================= */
+/* PAW SVG */
 
 .paw-menu-svg {
   position: absolute;
@@ -188,14 +156,6 @@ body {
     transform 0.34s ease;
 }
 
-
-/* =========================================
-   OPEN PAW
-
-   Larger AND moved inward.
-   Main paw remains vertically centered.
-   ========================================= */
-
 .paw-menu.open .paw-menu-svg {
   width: 265px;
   height: 230px;
@@ -205,9 +165,7 @@ body {
 }
 
 
-/* =========================================
-   MAIN PAW PAD
-   ========================================= */
+/* MAIN PAW */
 
 .paw-center {
   fill: #927a98;
@@ -229,25 +187,6 @@ body {
     filter 0.2s ease;
 }
 
-
-/* Remove browser square completely */
-
-.paw-center:focus,
-.paw-center:focus-visible,
-.paw-center:active,
-svg g:focus,
-svg g:focus-visible {
-  outline: none !important;
-}
-
-
-/* Chrome / SVG focus rectangle */
-
-.paw-menu-svg *:focus {
-  outline: none !important;
-}
-
-
 .paw-center:hover {
   fill: #04768a;
 
@@ -257,29 +196,30 @@ svg g:focus-visible {
     );
 }
 
+.paw-center:focus,
+.paw-center:focus-visible,
+.paw-center:active,
+svg g:focus,
+svg g:focus-visible,
+.paw-menu-svg *:focus {
+  outline: none !important;
+}
 
-/* =========================================
-   MENU LINES
-   ========================================= */
+
+/* PAW LINES */
 
 .paw-lines {
   fill: none;
 
   stroke: #ffffff;
-
   stroke-width: 6;
-
   stroke-linecap: round;
 
   pointer-events: none;
 }
 
 
-/* =========================================
-   INICIO
-
-   OPEN + CLOSED
-   ========================================= */
+/* INICIO */
 
 .paw-home-label {
   fill: #f4f1e8;
@@ -289,7 +229,6 @@ svg g:focus-visible {
     cursive;
 
   font-size: 21px;
-
   font-weight: 700;
 
   pointer-events: none;
@@ -298,9 +237,7 @@ svg g:focus-visible {
 }
 
 
-/* =========================================
-   TOE LINKS
-   ========================================= */
+/* TOE LINKS */
 
 .paw-item {
   fill: #927a98;
@@ -311,9 +248,7 @@ svg g:focus-visible {
 }
 
 
-/* =========================================
-   TOES
-   ========================================= */
+/* TOES */
 
 .toe {
   opacity: 0;
@@ -339,20 +274,13 @@ svg g:focus-visible {
     filter 0.2s ease;
 }
 
-
-/* =========================================
-   MOVE TOES AWAY FROM MAIN PAW
-   WHEN OPEN
-   ========================================= */
-
 .paw-menu.open .toe {
   opacity: 1;
-
   pointer-events: auto;
 }
 
 
-/* upper left */
+/* PUSH TOES OUTWARD */
 
 .paw-menu.open .paw-ayuda .toe {
   transform:
@@ -360,26 +288,17 @@ svg g:focus-visible {
     scale(1);
 }
 
-
-/* upper right */
-
 .paw-menu.open .paw-participa .toe {
   transform:
     translate(12px, -17px)
     scale(1);
 }
 
-
-/* left */
-
 .paw-menu.open .paw-reporta .toe {
   transform:
     translate(-19px, 2px)
     scale(1);
 }
-
-
-/* right */
 
 .paw-menu.open .paw-nosotros .toe {
   transform:
@@ -388,9 +307,7 @@ svg g:focus-visible {
 }
 
 
-/* =========================================
-   TOE TEXT
-   ========================================= */
+/* TOE TEXT */
 
 .toe-word,
 .toe-hover-word {
@@ -403,12 +320,10 @@ svg g:focus-visible {
     cursive;
 
   font-size: 19px;
-
   font-weight: 700;
 
   pointer-events: none;
 }
-
 
 .toe-word {
   opacity: 1;
@@ -416,7 +331,6 @@ svg g:focus-visible {
   transition:
     opacity 0.18s ease;
 }
-
 
 .toe-hover-word {
   opacity: 0;
@@ -426,15 +340,12 @@ svg g:focus-visible {
 }
 
 
-/* =========================================
-   HOVER LABEL SWAP
-   ========================================= */
+/* HOVER TEXT */
 
 .paw-menu.open .paw-item:hover .toe-word,
 .paw-menu.open .paw-item:focus-visible .toe-word {
   opacity: 0;
 }
-
 
 .paw-menu.open .paw-item:hover .toe-hover-word,
 .paw-menu.open .paw-item:focus-visible .toe-hover-word {
@@ -442,44 +353,35 @@ svg g:focus-visible {
 }
 
 
-/* =========================================
-   TOE GROWTH ON HOVER
-
-   Keep each toe's outward position while
-   enlarging it.
-   ========================================= */
+/* HOVER TOE GROWTH */
 
 .paw-menu.open .paw-ayuda:hover .toe,
 .paw-menu.open .paw-ayuda:focus-visible .toe {
   transform:
     translate(-12px, -17px)
-    scale(1.13);
+    scale(1.15);
 }
-
 
 .paw-menu.open .paw-participa:hover .toe,
 .paw-menu.open .paw-participa:focus-visible .toe {
   transform:
     translate(12px, -17px)
-    scale(1.13);
+    scale(1.15);
 }
-
 
 .paw-menu.open .paw-reporta:hover .toe,
 .paw-menu.open .paw-reporta:focus-visible .toe {
   transform:
     translate(-19px, 2px)
-    scale(1.13);
+    scale(1.15);
 }
-
 
 .paw-menu.open .paw-nosotros:hover .toe,
 .paw-menu.open .paw-nosotros:focus-visible .toe {
   transform:
     translate(19px, 2px)
-    scale(1.13);
+    scale(1.15);
 }
-
 
 .paw-menu.open .paw-item:hover .toe,
 .paw-menu.open .paw-item:focus-visible .toe {
@@ -491,40 +393,32 @@ svg g:focus-visible {
     );
 }
 
-
 .paw-item:focus,
 .paw-item:focus-visible {
   outline: none !important;
 }
 
 
-/* =========================================
-   STAGGERED OPENING
-   ========================================= */
+/* STAGGER */
 
 .paw-ayuda .toe {
   transition-delay: 0.02s;
 }
 
-
 .paw-participa .toe {
   transition-delay: 0.07s;
 }
 
-
 .paw-reporta .toe {
   transition-delay: 0.12s;
 }
-
 
 .paw-nosotros .toe {
   transition-delay: 0.17s;
 }
 
 
-/* =========================================
-   ARCGIS APPLICATION
-   ========================================= */
+/* ARCGIS */
 
 .app-container {
   flex: 1 1 auto;
@@ -536,7 +430,6 @@ svg g:focus-visible {
   position: relative;
 }
 
-
 .app-wrapper {
   position: relative;
 
@@ -545,7 +438,6 @@ svg g:focus-visible {
 
   min-height: 0;
 }
-
 
 .app-container iframe {
   display: block;
@@ -557,72 +449,53 @@ svg g:focus-visible {
 }
 
 
-/* =========================================
-   FILTER
-   ========================================= */
+/* FILTER BUTTON */
 
-.filter-cue {
+.filter-button {
   position: absolute;
 
-  left: 46.5%;
-  top: 7px;
+  left: 46.8%;
+  top: 4px;
 
   transform:
     translateX(-50%);
 
-  z-index: 20;
+  z-index: 30;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  min-width: 132px;
 
-  pointer-events: none;
-
-  opacity: 1;
-}
-
-
-.filter-cue-label {
   padding:
-    5px
-    12px
-    6px;
+    8px
+    16px;
 
-  border-radius: 16px;
+  border: none;
+  border-radius: 8px;
 
   background: #927a98;
-
   color: #ffffff;
 
-  font-size: 0.88rem;
+  font-family: Arial, sans-serif;
 
+  font-size: 0.95rem;
   font-weight: 700;
 
   line-height: 1;
 
-  white-space: nowrap;
+  cursor: pointer;
 
   box-shadow:
-    0 2px 5px rgba(0, 0, 0, 0.24);
+    0 3px 7px rgba(0, 0, 0, 0.28);
+}
+
+.filter-button:hover,
+.filter-button:focus-visible {
+  background: #7f6886;
+
+  outline: none;
 }
 
 
-.filter-cue-arrow {
-  margin-top: -1px;
-
-  color: #927a98;
-
-  font-size: 1.35rem;
-
-  font-weight: 900;
-
-  line-height: 1;
-}
-
-
-/* =========================================
-   MID-SIZE WEB
-   ========================================= */
+/* MID SIZE */
 
 @media (max-width: 1250px) and (min-width: 751px) {
 
@@ -639,36 +512,29 @@ svg g:focus-visible {
       28px;
   }
 
-
   .site-title {
     font-size: 3rem;
-
     letter-spacing: 0.13em;
   }
-
 
   .header-tagline p {
     font-size: 1.5rem;
   }
-
 
   .site-menu {
     width: 245px;
     height: 180px;
   }
 
-
   .paw-menu {
     width: 245px;
     height: 180px;
   }
 
-
   .paw-menu-svg {
     width: 190px;
     height: 165px;
   }
-
 
   .paw-menu.open .paw-menu-svg {
     width: 245px;
@@ -681,22 +547,18 @@ svg g:focus-visible {
 }
 
 
-/* =========================================
-   PHONE — LEAVE FOR LATER
-   ========================================= */
+/* PHONE LATER */
 
 @media (max-width: 750px) {
 
-  .filter-cue {
+  .filter-button {
     display: none;
   }
 
 }
 
 
-/* =========================================
-   REDUCED MOTION
-   ========================================= */
+/* REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
 
