@@ -22,6 +22,8 @@ body {
   font-family: Arial, sans-serif;
 
   background: #f5f5f5;
+
+  overflow-x: hidden;
 }
 
 
@@ -33,19 +35,19 @@ body {
   display: grid;
 
   grid-template-columns:
-    1fr
-    190px;
+    minmax(0, 1fr)
+    165px;
 
   align-items: center;
 
   width: 100%;
-  height: 140px;
+  height: 132px;
 
   padding:
     0
-    10px
+    14px
     0
-    28px;
+    22px;
 
   background: #2f6573;
   color: white;
@@ -66,6 +68,8 @@ body {
 .header-text {
   justify-self: start;
 
+  min-width: 0;
+
   text-align: left;
 
   white-space: nowrap;
@@ -83,13 +87,21 @@ body {
 
   font-variant: small-caps;
 
-  font-size: 3rem;
+  font-size: clamp(
+    2.25rem,
+    3.05vw,
+    3rem
+  );
 
   font-weight: 900;
 
-  line-height: 1.05;
+  line-height: 1;
 
-  letter-spacing: 0.18em;
+  letter-spacing: clamp(
+    0.10em,
+    0.55vw,
+    0.18em
+  );
 
   text-shadow:
     2px 3px 4px rgba(20, 25, 27, 0.72),
@@ -109,7 +121,13 @@ body {
     "Dancing Script",
     cursive;
 
-  font-size: 1.55rem;
+  font-size: clamp(
+    1.18rem,
+    1.45vw,
+    1.55rem
+  );
+
+  line-height: 1.08;
 }
 
 
@@ -138,8 +156,8 @@ body {
 .paw-menu {
   position: relative;
 
-  width: 185px;
-  height: 138px;
+  width: 160px;
+  height: 132px;
 
   overflow: visible;
 }
@@ -154,11 +172,11 @@ body {
 
   display: block;
 
-  width: 188px;
-  height: 177px;
+  width: 164px;
+  height: 155px;
 
-  right: -6px;
-  top: -13px;
+  right: -3px;
+  top: -9px;
 
   overflow: visible;
 
@@ -172,16 +190,16 @@ body {
 /* =========================================
    OPEN STATE
 
-   Move only about half as far left
-   and enlarge slightly.
+   Keeps the same general behavior,
+   but slightly tighter than before.
    ========================================= */
 
 .paw-menu.open .paw-menu-svg {
-  width: 205px;
-  height: 193px;
+  width: 184px;
+  height: 174px;
 
   transform:
-    translateX(-43px);
+    translateX(-38px);
 }
 
 
@@ -419,6 +437,18 @@ body {
   width: 100%;
 
   min-height: 0;
+
+  position: relative;
+}
+
+
+.app-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 0;
 }
 
 
@@ -433,7 +463,173 @@ body {
 
 
 /* =========================================
+   FILTER CUE
+   ========================================= */
+
+.filter-cue {
+  position: absolute;
+
+  /*
+    This is aligned approximately with
+    the ArcGIS filter button shown in your screenshot.
+    Fine-tune left if needed after testing.
+  */
+
+  left: 46.5%;
+  top: 6px;
+
+  transform: translateX(-50%);
+
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  pointer-events: none;
+
+  opacity: 1;
+
+  transition:
+    opacity 0.45s ease;
+}
+
+
+.filter-cue-label {
+  display: inline-block;
+
+  padding:
+    5px
+    12px
+    6px;
+
+  border-radius: 16px;
+
+  background: rgba(
+    146,
+    122,
+    152,
+    0.97
+  );
+
+  color: #ffffff;
+
+  font-size: 0.88rem;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.24);
+}
+
+
+.filter-cue-arrow {
+  margin-top: -1px;
+
+  color: #927a98;
+
+  font-size: 1.35rem;
+
+  font-weight: 900;
+
+  line-height: 1;
+}
+
+
+.filter-cue--quiet {
+  opacity: 0.38;
+}
+
+
+/* =========================================
+   MID-SIZE DESKTOP / TABLET LANDSCAPE
+   ========================================= */
+
+@media (max-width: 1150px) and (min-width: 751px) {
+
+  .site-header {
+    grid-template-columns:
+      minmax(0, 1fr)
+      145px;
+
+    height: 124px;
+
+    padding:
+      0
+      10px
+      0
+      18px;
+  }
+
+
+  .header-text h1 {
+    font-size: clamp(
+      2rem,
+      3.25vw,
+      2.65rem
+    );
+
+    letter-spacing: clamp(
+      0.08em,
+      0.48vw,
+      0.14em
+    );
+  }
+
+
+  .header-text p {
+    margin-top: 7px;
+
+    font-size: clamp(
+      1.08rem,
+      1.55vw,
+      1.35rem
+    );
+  }
+
+
+  .paw-menu {
+    width: 142px;
+    height: 124px;
+  }
+
+
+  .paw-menu-svg {
+    width: 148px;
+    height: 140px;
+
+    right: -3px;
+    top: -7px;
+  }
+
+
+  .paw-menu.open .paw-menu-svg {
+    width: 166px;
+    height: 157px;
+
+    transform:
+      translateX(-34px);
+  }
+
+
+  .filter-cue-label {
+    font-size: 0.82rem;
+
+    padding:
+      5px
+      10px;
+  }
+
+}
+
+
+/* =========================================
    PHONE / TABLET
+   EXISTING PHONE STRUCTURE PRESERVED
    ========================================= */
 
 @media (max-width: 750px) {
@@ -495,8 +691,6 @@ body {
   }
 
 
-  /* slightly larger closed paw */
-
   .paw-menu {
     width: 70px;
     height: 94px;
@@ -512,9 +706,6 @@ body {
     top: -4px;
   }
 
-
-  /* opened paw slightly larger,
-     but only moves half as far left */
 
   .paw-menu.open .paw-menu-svg {
     width: 122px;
@@ -534,11 +725,22 @@ body {
     font-size: 38px;
   }
 
+
+  /*
+    Hide the new desktop filter cue on phones for now,
+    since your phone app structure is different.
+  */
+
+  .filter-cue {
+    display: none;
+  }
+
 }
 
 
 /* =========================================
    VERY SMALL PHONES
+   EXISTING STRUCTURE PRESERVED
    ========================================= */
 
 @media (max-width: 400px) {
@@ -618,7 +820,8 @@ body {
   .paw-menu-svg,
   .paw-center,
   .toe,
-  .toe-label {
+  .toe-label,
+  .filter-cue {
     transition: none;
   }
 
