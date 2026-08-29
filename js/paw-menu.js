@@ -14,10 +14,6 @@ document.addEventListener(
     }
 
 
-    /* =========================================
-       SET MENU STATE
-       ========================================= */
-
     function setMenuState(open) {
 
       pawMenu.classList.toggle(
@@ -42,10 +38,6 @@ document.addEventListener(
     }
 
 
-    /* =========================================
-       TOGGLE
-       ========================================= */
-
     function toggleMenu(event) {
 
       event.stopPropagation();
@@ -60,19 +52,11 @@ document.addEventListener(
     }
 
 
-    /* =========================================
-       CLICK MAIN PAW
-       ========================================= */
-
     pawButton.addEventListener(
       "click",
       toggleMenu
     );
 
-
-    /* =========================================
-       KEYBOARD
-       ========================================= */
 
     pawButton.addEventListener(
       "keydown",
@@ -100,10 +84,6 @@ document.addEventListener(
     );
 
 
-    /* =========================================
-       CLICK INSIDE MENU
-       ========================================= */
-
     pawMenu.addEventListener(
       "click",
       function (event) {
@@ -114,10 +94,6 @@ document.addEventListener(
     );
 
 
-    /* =========================================
-       CLICK OUTSIDE MENU
-       ========================================= */
-
     document.addEventListener(
       "click",
       function () {
@@ -127,10 +103,6 @@ document.addEventListener(
       }
     );
 
-
-    /* =========================================
-       ESCAPE CLOSES MENU
-       ========================================= */
 
     document.addEventListener(
       "keydown",
