@@ -9,7 +9,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Perros del Barrio</title>
+  <title>Explorar | Perros del Barrio</title>
 
   <link
     rel="icon"
@@ -65,7 +65,7 @@
 
   <meta
     property="og:url"
-    content="https://gaianian.github.io/Perros_del_Barrio/"
+    content="https://gaianian.github.io/Perros_del_Barrio/explorar.html"
   >
 
   <meta
@@ -75,16 +75,14 @@
 
   <meta
     name="description"
-    content="Explora, encuentra y reporta perros comunitarios en Cuenca."
+    content="Explora perros comunitarios en Cuenca."
   >
 </head>
 
 
-<body>
+<body class="page-explorar">
 
   <header class="site-header">
-
-    <!-- TAGLINE -->
 
     <div class="header-tagline">
 
@@ -97,14 +95,10 @@
     </div>
 
 
-    <!-- TITLE -->
-
     <h1 class="site-title">
       Perros del Barrio
     </h1>
 
-
-    <!-- DESKTOP PAW MENU -->
 
     <nav
       class="site-menu"
@@ -126,34 +120,34 @@
           <defs>
 
             <path
-              id="ayudaPath"
+              id="explorarPath"
               d="M77 105 Q123 74 169 105"
             />
 
             <path
-              id="participaPath"
+              id="reportarPath"
               d="M191 105 Q237 74 283 105"
             />
 
             <path
-              id="reportaPath"
+              id="participaPath"
               d="M10 180 Q53 145 96 176"
             />
 
             <path
-              id="nosotrosPath"
+              id="ayudaPath"
               d="M264 176 Q307 145 350 180"
             />
 
           </defs>
 
 
-          <!-- AYUDA -->
+          <!-- EXPLORAR -->
 
           <a
-            href="#"
-            class="paw-item paw-ayuda"
-            aria-label="Cómo usar"
+            href="explorar.html"
+            class="paw-item paw-explorar"
+            aria-label="Explorar perros"
           >
 
             <g class="toe">
@@ -167,11 +161,11 @@
               <text class="toe-word">
 
                 <textPath
-                  href="#ayudaPath"
+                  href="#explorarPath"
                   startOffset="50%"
                   text-anchor="middle"
                 >
-                  Ayuda
+                  Explorar
                 </textPath>
 
               </text>
@@ -184,7 +178,7 @@
                   y="101"
                   text-anchor="middle"
                 >
-                  Cómo
+                  Explorar
                 </text>
 
                 <text
@@ -192,7 +186,61 @@
                   y="129"
                   text-anchor="middle"
                 >
-                  usar
+                  perros
+                </text>
+
+              </g>
+
+            </g>
+
+          </a>
+
+
+          <!-- REPORTAR -->
+
+          <a
+            href="reportar.html"
+            class="paw-item paw-reportar"
+            aria-label="Reportar perro"
+          >
+
+            <g class="toe">
+
+              <circle
+                cx="237"
+                cy="105"
+                r="44"
+              />
+
+              <text class="toe-word">
+
+                <textPath
+                  href="#reportarPath"
+                  startOffset="50%"
+                  text-anchor="middle"
+                >
+                  Reportar
+                </textPath>
+
+              </text>
+
+
+              <g class="toe-hover-word">
+
+                <text
+                  x="237"
+                  y="101"
+                  text-anchor="middle"
+                >
+                  Reportar
+                </text>
+
+                <text
+                  x="237"
+                  y="129"
+                  text-anchor="middle"
+                >
+                  perro
                 </text>
 
               </g>
@@ -205,7 +253,7 @@
           <!-- PARTICIPA -->
 
           <a
-            href="#"
+            href="participa.html"
             class="paw-item paw-participa"
             aria-label="Participa aquí"
           >
@@ -213,8 +261,8 @@
             <g class="toe">
 
               <circle
-                cx="237"
-                cy="105"
+                cx="53"
+                cy="175"
                 r="44"
               />
 
@@ -234,16 +282,16 @@
               <g class="toe-hover-word">
 
                 <text
-                  x="237"
-                  y="101"
+                  x="53"
+                  y="171"
                   text-anchor="middle"
                 >
                   Participa
                 </text>
 
                 <text
-                  x="237"
-                  y="129"
+                  x="53"
+                  y="199"
                   text-anchor="middle"
                 >
                   aquí
@@ -256,66 +304,12 @@
           </a>
 
 
-          <!-- REPORTA -->
+          <!-- AYUDA -->
 
           <a
-            href="#"
-            class="paw-item paw-reporta"
-            aria-label="Reportar perro"
-          >
-
-            <g class="toe">
-
-              <circle
-                cx="53"
-                cy="175"
-                r="44"
-              />
-
-              <text class="toe-word">
-
-                <textPath
-                  href="#reportaPath"
-                  startOffset="50%"
-                  text-anchor="middle"
-                >
-                  Reporta
-                </textPath>
-
-              </text>
-
-
-              <g class="toe-hover-word">
-
-                <text
-                  x="53"
-                  y="171"
-                  text-anchor="middle"
-                >
-                  Reportar
-                </text>
-
-                <text
-                  x="53"
-                  y="199"
-                  text-anchor="middle"
-                >
-                  perro
-                </text>
-
-              </g>
-
-            </g>
-
-          </a>
-
-
-          <!-- NOSOTROS -->
-
-          <a
-            href="#"
-            class="paw-item paw-nosotros"
-            aria-label="Sobre nosotros"
+            href="ayuda.html"
+            class="paw-item paw-ayuda"
+            aria-label="Cómo usar"
           >
 
             <g class="toe">
@@ -329,11 +323,11 @@
               <text class="toe-word">
 
                 <textPath
-                  href="#nosotrosPath"
+                  href="#ayudaPath"
                   startOffset="50%"
                   text-anchor="middle"
                 >
-                  Nosotros
+                  Ayuda
                 </textPath>
 
               </text>
@@ -346,7 +340,7 @@
                   y="171"
                   text-anchor="middle"
                 >
-                  Sobre
+                  Cómo
                 </text>
 
                 <text
@@ -354,7 +348,7 @@
                   y="199"
                   text-anchor="middle"
                 >
-                  nosotros
+                  usar
                 </text>
 
               </g>
@@ -364,57 +358,58 @@
           </a>
 
 
-          <!-- MAIN PAW -->
+          <!-- INICIO -->
 
-          <g
-            class="paw-center"
-            id="pawMenuButton"
-            role="button"
-            tabindex="0"
-            aria-expanded="true"
-            aria-label="Menú principal"
+          <a
+            href="index.html"
+            class="paw-home-link"
+            aria-label="Inicio"
           >
 
-            <path
-              d="
-                M95 241
-                C96 192 122 154 151 140
-                C168 132 192 132 209 140
-                C238 154 264 192 265 241
-                C266 273 242 289 216 281
-                C194 274 166 274 144 281
-                C118 289 94 273 95 241
-                Z
-              "
-            />
-
-            <g class="paw-lines">
+            <g class="paw-center">
 
               <path
-                d="M141 190 Q180 176 219 190"
+                d="
+                  M95 241
+                  C96 192 122 154 151 140
+                  C168 132 192 132 209 140
+                  C238 154 264 192 265 241
+                  C266 273 242 289 216 281
+                  C194 274 166 274 144 281
+                  C118 289 94 273 95 241
+                  Z
+                "
               />
 
-              <path
-                d="M136 211 Q180 195 224 211"
-              />
+              <g class="paw-lines">
 
-              <path
-                d="M143 232 Q180 219 217 232"
-              />
+                <path
+                  d="M141 190 Q180 176 219 190"
+                />
+
+                <path
+                  d="M136 211 Q180 195 224 211"
+                />
+
+                <path
+                  d="M143 232 Q180 219 217 232"
+                />
+
+              </g>
+
+
+              <text
+                class="paw-home-label"
+                x="180"
+                y="265"
+                text-anchor="middle"
+              >
+                Inicio
+              </text>
 
             </g>
 
-
-            <text
-              class="paw-home-label"
-              x="180"
-              y="265"
-              text-anchor="middle"
-            >
-              Inicio
-            </text>
-
-          </g>
+          </a>
 
         </svg>
 
@@ -425,18 +420,9 @@
   </header>
 
 
-  <!-- APP -->
-
   <main class="app-container">
 
     <div class="app-wrapper">
-
-      <!--
-        Visible badge over the real ArcGIS filter.
-
-        Because pointer-events is disabled in CSS,
-        clicks pass through to the ArcGIS control below.
-      -->
 
       <div
         class="pdb-filter-pill"
