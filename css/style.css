@@ -29,19 +29,33 @@ body {
 
 /* =========================================
    HEADER
+
+   TRUE THREE-COLUMN VERTICAL CENTERING
    ========================================= */
 
 .site-header {
-  position: relative;
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 1fr)
+    auto
+    minmax(300px, 1fr);
+
+  align-items: center;
 
   width: 100%;
-  height: 180px;
+  height: 190px;
 
-  flex: 0 0 auto;
+  padding:
+    0
+    38px;
 
   background: #2f6573;
   color: white;
 
+  flex: 0 0 auto;
+
+  position: relative;
   z-index: 1000;
 
   overflow: visible;
@@ -49,20 +63,43 @@ body {
 
 
 /* =========================================
-   TITLE
+   TAGLINE
+   ========================================= */
 
-   Horizontal center of entire header.
-   Vertical center of entire header.
+.header-tagline {
+  grid-column: 1;
+
+  justify-self: start;
+  align-self: center;
+
+  text-align: left;
+}
+
+
+.header-tagline p {
+  margin: 0;
+
+  color: #f4f1e8;
+
+  font-family:
+    "Dancing Script",
+    cursive;
+
+  font-size: 1.8rem;
+
+  line-height: 1.15;
+}
+
+
+/* =========================================
+   TITLE
    ========================================= */
 
 .site-title {
-  position: absolute;
+  grid-column: 2;
 
-  left: 50%;
-  top: 50%;
-
-  transform:
-    translate(-50%, -50%);
+  justify-self: center;
+  align-self: center;
 
   margin: 0;
 
@@ -74,7 +111,7 @@ body {
 
   font-variant: small-caps;
 
-  font-size: 3.55rem;
+  font-size: 3.75rem;
 
   font-weight: 900;
 
@@ -93,57 +130,19 @@ body {
 
 
 /* =========================================
-   TAGLINE
-
-   Left aligned but vertically centered
-   within exactly the same header.
-   ========================================= */
-
-.header-tagline {
-  position: absolute;
-
-  left: 42px;
-  top: 50%;
-
-  transform:
-    translateY(-50%);
-
-  text-align: left;
-}
-
-
-.header-tagline p {
-  margin: 0;
-
-  color: #f4f1e8;
-
-  font-family:
-    "Dancing Script",
-    cursive;
-
-  font-size: 1.7rem;
-
-  line-height: 1.12;
-}
-
-
-/* =========================================
-   MENU AREA
-
-   The whole paw area is vertically centered.
+   MENU COLUMN
    ========================================= */
 
 .site-menu {
-  position: absolute;
+  grid-column: 3;
 
-  right: 38px;
-  top: 50%;
+  justify-self: end;
+  align-self: center;
 
-  transform:
-    translateY(-50%);
+  width: 285px;
+  height: 190px;
 
-  width: 225px;
-  height: 180px;
+  position: relative;
 
   overflow: visible;
 }
@@ -156,8 +155,8 @@ body {
 .paw-menu {
   position: relative;
 
-  width: 225px;
-  height: 180px;
+  width: 285px;
+  height: 190px;
 
   overflow: visible;
 }
@@ -165,9 +164,6 @@ body {
 
 /* =========================================
    CLOSED PAW
-
-   top: 50% + translateY(-50%) means the
-   actual SVG remains vertically centered.
    ========================================= */
 
 .paw-menu-svg {
@@ -175,10 +171,10 @@ body {
 
   display: block;
 
-  width: 180px;
-  height: 170px;
+  width: 205px;
+  height: 178px;
 
-  right: 2px;
+  right: 0;
   top: 50%;
 
   transform:
@@ -187,24 +183,25 @@ body {
   overflow: visible;
 
   transition:
-    width 0.32s ease,
-    height 0.32s ease,
-    transform 0.32s ease;
+    width 0.34s ease,
+    height 0.34s ease,
+    transform 0.34s ease;
 }
 
 
 /* =========================================
    OPEN PAW
 
-   Still vertically centered after enlarging.
+   Larger AND moved inward.
+   Main paw remains vertically centered.
    ========================================= */
 
 .paw-menu.open .paw-menu-svg {
-  width: 228px;
-  height: 215px;
+  width: 265px;
+  height: 230px;
 
   transform:
-    translate(-46px, -50%);
+    translate(-48px, -50%);
 }
 
 
@@ -225,22 +222,39 @@ body {
       0 4px 6px rgba(0, 0, 0, 0.35)
     );
 
+  outline: none;
+
   transition:
     fill 0.2s ease,
     filter 0.2s ease;
 }
 
 
-.paw-center:hover,
-.paw-center:focus-visible {
+/* Remove browser square completely */
+
+.paw-center:focus,
+.paw-center:focus-visible,
+.paw-center:active,
+svg g:focus,
+svg g:focus-visible {
+  outline: none !important;
+}
+
+
+/* Chrome / SVG focus rectangle */
+
+.paw-menu-svg *:focus {
+  outline: none !important;
+}
+
+
+.paw-center:hover {
   fill: #04768a;
 
   filter:
     drop-shadow(
       0 6px 9px rgba(0, 0, 0, 0.45)
     );
-
-  outline: none;
 }
 
 
@@ -264,19 +278,17 @@ body {
 /* =========================================
    INICIO
 
-   ALWAYS VISIBLE.
+   OPEN + CLOSED
    ========================================= */
 
 .paw-home-label {
   fill: #f4f1e8;
 
-  stroke: none;
-
   font-family:
     "Comic Sans MS",
     cursive;
 
-  font-size: 20px;
+  font-size: 21px;
 
   font-weight: 700;
 
@@ -300,9 +312,7 @@ body {
 
 
 /* =========================================
-   TOE SHAPES
-
-   Circular instead of narrow ellipses.
+   TOES
    ========================================= */
 
 .toe {
@@ -312,7 +322,7 @@ body {
   transform-origin: center;
 
   transform:
-    translateY(72px)
+    translateY(60px)
     scale(0.2);
 
   pointer-events: none;
@@ -323,7 +333,7 @@ body {
     );
 
   transition:
-    transform 0.36s ease,
+    transform 0.38s ease,
     opacity 0.22s ease,
     fill 0.2s ease,
     filter 0.2s ease;
@@ -331,25 +341,55 @@ body {
 
 
 /* =========================================
-   OPEN TOES
+   MOVE TOES AWAY FROM MAIN PAW
+   WHEN OPEN
    ========================================= */
 
 .paw-menu.open .toe {
   opacity: 1;
 
-  transform:
-    translateY(0)
-    scale(1);
-
   pointer-events: auto;
+}
+
+
+/* upper left */
+
+.paw-menu.open .paw-ayuda .toe {
+  transform:
+    translate(-12px, -17px)
+    scale(1);
+}
+
+
+/* upper right */
+
+.paw-menu.open .paw-participa .toe {
+  transform:
+    translate(12px, -17px)
+    scale(1);
+}
+
+
+/* left */
+
+.paw-menu.open .paw-reporta .toe {
+  transform:
+    translate(-19px, 2px)
+    scale(1);
+}
+
+
+/* right */
+
+.paw-menu.open .paw-nosotros .toe {
+  transform:
+    translate(19px, 2px)
+    scale(1);
 }
 
 
 /* =========================================
    TOE TEXT
-
-   IMPORTANT:
-   Normal and hover text use the SAME size.
    ========================================= */
 
 .toe-word,
@@ -362,17 +402,13 @@ body {
     "Comic Sans MS",
     cursive;
 
-  font-size: 18px;
+  font-size: 19px;
 
   font-weight: 700;
-
-  letter-spacing: 0;
 
   pointer-events: none;
 }
 
-
-/* Normal curved one-word text */
 
 .toe-word {
   opacity: 1;
@@ -381,8 +417,6 @@ body {
     opacity 0.18s ease;
 }
 
-
-/* Two-line hover text */
 
 .toe-hover-word {
   opacity: 0;
@@ -393,10 +427,7 @@ body {
 
 
 /* =========================================
-   HOVER TEXT SWAP
-
-   One word disappears.
-   Two full-size words appear, stacked.
+   HOVER LABEL SWAP
    ========================================= */
 
 .paw-menu.open .paw-item:hover .toe-word,
@@ -412,25 +443,58 @@ body {
 
 
 /* =========================================
-   TOE HOVER
+   TOE GROWTH ON HOVER
+
+   Keep each toe's outward position while
+   enlarging it.
    ========================================= */
+
+.paw-menu.open .paw-ayuda:hover .toe,
+.paw-menu.open .paw-ayuda:focus-visible .toe {
+  transform:
+    translate(-12px, -17px)
+    scale(1.13);
+}
+
+
+.paw-menu.open .paw-participa:hover .toe,
+.paw-menu.open .paw-participa:focus-visible .toe {
+  transform:
+    translate(12px, -17px)
+    scale(1.13);
+}
+
+
+.paw-menu.open .paw-reporta:hover .toe,
+.paw-menu.open .paw-reporta:focus-visible .toe {
+  transform:
+    translate(-19px, 2px)
+    scale(1.13);
+}
+
+
+.paw-menu.open .paw-nosotros:hover .toe,
+.paw-menu.open .paw-nosotros:focus-visible .toe {
+  transform:
+    translate(19px, 2px)
+    scale(1.13);
+}
+
 
 .paw-menu.open .paw-item:hover .toe,
 .paw-menu.open .paw-item:focus-visible .toe {
   fill: #8a9e93;
 
-  transform:
-    scale(1.06);
-
   filter:
     drop-shadow(
-      0 6px 9px rgba(0, 0, 0, 0.42)
+      0 7px 10px rgba(0, 0, 0, 0.45)
     );
 }
 
 
+.paw-item:focus,
 .paw-item:focus-visible {
-  outline: none;
+  outline: none !important;
 }
 
 
@@ -494,9 +558,7 @@ body {
 
 
 /* =========================================
-   FILTER CUE
-
-   Solid. No fade.
+   FILTER
    ========================================= */
 
 .filter-cue {
@@ -521,8 +583,6 @@ body {
 
 
 .filter-cue-label {
-  display: inline-block;
-
   padding:
     5px
     12px
@@ -561,56 +621,58 @@ body {
 
 
 /* =========================================
-   MEDIUM DESKTOP / TABLET LANDSCAPE
+   MID-SIZE WEB
    ========================================= */
 
-@media (max-width: 1150px) and (min-width: 751px) {
+@media (max-width: 1250px) and (min-width: 751px) {
 
   .site-header {
-    height: 170px;
+    grid-template-columns:
+      minmax(250px, 1fr)
+      auto
+      minmax(250px, 1fr);
+
+    height: 180px;
+
+    padding:
+      0
+      28px;
   }
 
 
   .site-title {
-    font-size: 2.9rem;
+    font-size: 3rem;
 
-    letter-spacing: 0.14em;
-  }
-
-
-  .header-tagline {
-    left: 30px;
+    letter-spacing: 0.13em;
   }
 
 
   .header-tagline p {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
   }
 
 
   .site-menu {
-    right: 25px;
-
-    width: 205px;
-    height: 170px;
+    width: 245px;
+    height: 180px;
   }
 
 
   .paw-menu {
-    width: 205px;
-    height: 170px;
+    width: 245px;
+    height: 180px;
   }
 
 
   .paw-menu-svg {
-    width: 170px;
-    height: 160px;
+    width: 190px;
+    height: 165px;
   }
 
 
   .paw-menu.open .paw-menu-svg {
-    width: 213px;
-    height: 201px;
+    width: 245px;
+    height: 213px;
 
     transform:
       translate(-43px, -50%);
@@ -620,183 +682,13 @@ body {
 
 
 /* =========================================
-   PHONE / SMALL TABLET
-
-   WE ARE NOT REDESIGNING THIS YET.
+   PHONE — LEAVE FOR LATER
    ========================================= */
 
 @media (max-width: 750px) {
 
-  .site-header {
-    display: grid;
-
-    grid-template-columns:
-      1fr
-      74px;
-
-    align-items: center;
-
-    height: 110px;
-
-    gap: 2px;
-
-    padding:
-      0
-      1px
-      0
-      12px;
-  }
-
-
-  .site-title {
-    position: static;
-
-    transform: none;
-
-    margin: 0;
-
-    font-size: 1.5rem;
-
-    line-height: 1.05;
-
-    letter-spacing: 0.07em;
-
-    white-space: normal;
-
-    text-align: left;
-  }
-
-
-  .header-tagline {
-    position: absolute;
-
-    left: 12px;
-    top: auto;
-    bottom: 10px;
-
-    transform: none;
-  }
-
-
-  .header-tagline p {
-    font-size: 1rem;
-
-    line-height: 1.05;
-  }
-
-
-  .site-menu {
-    position: relative;
-
-    right: auto;
-    top: auto;
-
-    transform: none;
-
-    width: 74px;
-    height: 110px;
-  }
-
-
-  .paw-menu {
-    width: 70px;
-    height: 94px;
-  }
-
-
-  .paw-menu-svg {
-    width: 108px;
-    height: 102px;
-
-    right: -12px;
-    top: -4px;
-
-    transform: none;
-  }
-
-
-  .paw-menu.open .paw-menu-svg {
-    width: 122px;
-    height: 115px;
-
-    transform:
-      translateX(-38px);
-  }
-
-
   .filter-cue {
     display: none;
-  }
-
-}
-
-
-/* =========================================
-   VERY SMALL PHONES
-   ========================================= */
-
-@media (max-width: 400px) {
-
-  .site-header {
-    grid-template-columns:
-      1fr
-      66px;
-
-    height: 105px;
-
-    padding:
-      0
-      0
-      0
-      8px;
-  }
-
-
-  .site-title {
-    font-size: 1.25rem;
-
-    letter-spacing: 0.04em;
-  }
-
-
-  .header-tagline {
-    left: 8px;
-    bottom: 9px;
-  }
-
-
-  .header-tagline p {
-    font-size: 0.92rem;
-  }
-
-
-  .site-menu {
-    width: 66px;
-    height: 105px;
-  }
-
-
-  .paw-menu {
-    width: 64px;
-    height: 88px;
-  }
-
-
-  .paw-menu-svg {
-    width: 100px;
-    height: 94px;
-
-    right: -12px;
-    top: -3px;
-  }
-
-
-  .paw-menu.open .paw-menu-svg {
-    width: 114px;
-    height: 107px;
-
-    transform:
-      translateX(-34px);
   }
 
 }
