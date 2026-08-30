@@ -595,11 +595,11 @@ body.page-inicio .paw-center {
   }
 
   .paw-menu-svg {
-    width: 146px;
-    height: 134px;
+    width: 150px;
+    height: 140px;
 
-    right: -10px;
-    top: 4px;
+    right: -1px;
+    top: 2px;
 
     transform: none;
   }
@@ -631,8 +631,8 @@ body.page-inicio .paw-center {
 
   .toe-word,
   .toe-hover-word {
-    font-size: 22px;
-    font-weight: 800;
+    font-size: 25px;
+    font-weight: 900;
   }
 
   .toe-hover-word {
@@ -640,8 +640,8 @@ body.page-inicio .paw-center {
   }
 
   .paw-home-label {
-    font-size: 23px;
-    font-weight: 800;
+    font-size: 25px;
+    font-weight: 900;
   }
 
   /* No mobile hover color changes.
