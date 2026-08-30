@@ -10,7 +10,6 @@ html,
 body {
   width: 100%;
   height: 100%;
-
   margin: 0;
   padding: 0;
 }
@@ -20,7 +19,6 @@ body {
   flex-direction: column;
 
   font-family: Arial, sans-serif;
-
   background: #f5f5f5;
 
   overflow-x: hidden;
@@ -28,7 +26,7 @@ body {
 
 
 /* =========================================
-   HEADER
+   DESKTOP HEADER
    ========================================= */
 
 .site-header {
@@ -60,9 +58,7 @@ body {
 }
 
 
-/* =========================================
-   TAGLINE
-   ========================================= */
+/* TAGLINE */
 
 .header-tagline {
   grid-column: 1;
@@ -72,7 +68,6 @@ body {
 
   text-align: left;
 }
-
 
 .header-tagline p {
   margin: 0;
@@ -84,14 +79,11 @@ body {
     cursive;
 
   font-size: 1.8rem;
-
   line-height: 1.15;
 }
 
 
-/* =========================================
-   TITLE
-   ========================================= */
+/* TITLE */
 
 .site-title {
   grid-column: 2;
@@ -113,7 +105,6 @@ body {
   font-weight: 900;
 
   line-height: 1;
-
   letter-spacing: 0.17em;
 
   white-space: nowrap;
@@ -127,7 +118,7 @@ body {
 
 
 /* =========================================
-   PAW MENU
+   DESKTOP PAW MENU
    ========================================= */
 
 .site-menu {
@@ -144,7 +135,6 @@ body {
   overflow: visible;
 }
 
-
 .paw-menu {
   position: relative;
 
@@ -153,7 +143,6 @@ body {
 
   overflow: visible;
 }
-
 
 .paw-menu-svg {
   position: absolute;
@@ -179,10 +168,8 @@ body {
 
 .paw-home-link {
   text-decoration: none;
-
   cursor: pointer;
 }
-
 
 .paw-center {
   fill: #927a98;
@@ -200,7 +187,6 @@ body {
     filter 0.2s ease;
 }
 
-
 .paw-home-link:hover .paw-center,
 .paw-home-link:focus-visible .paw-center {
   fill: #8a9e93;
@@ -211,33 +197,28 @@ body {
     );
 }
 
-
 .paw-home-link:focus,
-.paw-home-link:focus-visible {
+.paw-home-link:focus-visible,
+.paw-center:focus,
+.paw-center:focus-visible {
   outline: none;
 }
 
 
-/* =========================================
-   PAW LINES
-   ========================================= */
+/* PAW LINES */
 
 .paw-lines {
   fill: none;
 
   stroke: #ffffff;
-
   stroke-width: 6;
-
   stroke-linecap: round;
 
   pointer-events: none;
 }
 
 
-/* =========================================
-   INICIO TEXT
-   ========================================= */
+/* INICIO */
 
 .paw-home-label {
   fill: #f4f1e8;
@@ -247,7 +228,6 @@ body {
     cursive;
 
   font-size: 21px;
-
   font-weight: 700;
 
   pointer-events: none;
@@ -266,18 +246,9 @@ body {
   text-decoration: none;
 }
 
-
-/* =========================================
-   TOES
-   ========================================= */
-
 .toe {
-  opacity: 1;
-
   transform-box: fill-box;
   transform-origin: center;
-
-  pointer-events: auto;
 
   filter:
     drop-shadow(
@@ -286,41 +257,48 @@ body {
 
   transition:
     transform 0.25s ease,
+    opacity 0.22s ease,
     fill 0.2s ease,
     filter 0.2s ease;
 }
 
 
 /* =========================================
-   TOE POSITIONS
+   DESKTOP = ALWAYS OPEN
    ========================================= */
 
-.paw-explorar .toe {
-  transform:
-    translate(-7px, -10px);
-}
+@media (min-width: 751px) {
 
+  .toe {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-.paw-reportar .toe {
-  transform:
-    translate(7px, -10px);
-}
+  .paw-explorar .toe {
+    transform:
+      translate(-7px, -10px);
+  }
 
+  .paw-reportar .toe {
+    transform:
+      translate(7px, -10px);
+  }
 
-.paw-participa .toe {
-  transform:
-    translate(-11px, 1px);
-}
+  .paw-participa .toe {
+    transform:
+      translate(-11px, 1px);
+  }
 
+  .paw-ayuda .toe {
+    transform:
+      translate(11px, 1px);
+  }
 
-.paw-ayuda .toe {
-  transform:
-    translate(11px, 1px);
 }
 
 
 /* =========================================
-   ACTIVE PAGE COLORS
+   ACTIVE PAGE
    ========================================= */
 
 body.page-explorar .paw-explorar .toe,
@@ -329,9 +307,6 @@ body.page-participa .paw-participa .toe,
 body.page-ayuda .paw-ayuda .toe {
   fill: #8a9e93;
 }
-
-
-/* Home page can use this later */
 
 body.page-inicio .paw-center {
   fill: #8a9e93;
@@ -353,12 +328,10 @@ body.page-inicio .paw-center {
     cursive;
 
   font-size: 19px;
-
   font-weight: 700;
 
   pointer-events: none;
 }
-
 
 .toe-word {
   opacity: 1;
@@ -367,7 +340,6 @@ body.page-inicio .paw-center {
     opacity 0.18s ease;
 }
 
-
 .toe-hover-word {
   opacity: 0;
 
@@ -375,16 +347,10 @@ body.page-inicio .paw-center {
     opacity 0.18s ease;
 }
 
-
-/* =========================================
-   HOVER TEXT
-   ========================================= */
-
 .paw-item:hover .toe-word,
 .paw-item:focus-visible .toe-word {
   opacity: 0;
 }
-
 
 .paw-item:hover .toe-hover-word,
 .paw-item:focus-visible .toe-hover-word {
@@ -392,61 +358,53 @@ body.page-inicio .paw-center {
 }
 
 
-/* =========================================
-   TOE HOVER
-   ========================================= */
+/* DESKTOP HOVER */
 
-.paw-explorar:hover .toe,
-.paw-explorar:focus-visible .toe {
-  transform:
-    translate(-7px, -10px)
-    scale(1.13);
-}
+@media (min-width: 751px) {
 
+  .paw-explorar:hover .toe,
+  .paw-explorar:focus-visible .toe {
+    transform:
+      translate(-7px, -10px)
+      scale(1.13);
+  }
 
-.paw-reportar:hover .toe,
-.paw-reportar:focus-visible .toe {
-  transform:
-    translate(7px, -10px)
-    scale(1.13);
-}
+  .paw-reportar:hover .toe,
+  .paw-reportar:focus-visible .toe {
+    transform:
+      translate(7px, -10px)
+      scale(1.13);
+  }
 
+  .paw-participa:hover .toe,
+  .paw-participa:focus-visible .toe {
+    transform:
+      translate(-11px, 1px)
+      scale(1.13);
+  }
 
-.paw-participa:hover .toe,
-.paw-participa:focus-visible .toe {
-  transform:
-    translate(-11px, 1px)
-    scale(1.13);
-}
+  .paw-ayuda:hover .toe,
+  .paw-ayuda:focus-visible .toe {
+    transform:
+      translate(11px, 1px)
+      scale(1.13);
+  }
 
+  .paw-item:hover .toe,
+  .paw-item:focus-visible .toe {
+    fill: #8a9e93;
 
-.paw-ayuda:hover .toe,
-.paw-ayuda:focus-visible .toe {
-  transform:
-    translate(11px, 1px)
-    scale(1.13);
-}
+    filter:
+      drop-shadow(
+        0 7px 10px rgba(0, 0, 0, 0.45)
+      );
+  }
 
-
-.paw-item:hover .toe,
-.paw-item:focus-visible .toe {
-  fill: #8a9e93;
-
-  filter:
-    drop-shadow(
-      0 7px 10px rgba(0, 0, 0, 0.45)
-    );
-}
-
-
-.paw-item:focus,
-.paw-item:focus-visible {
-  outline: none;
 }
 
 
 /* =========================================
-   ARCGIS APPLICATION
+   APP
    ========================================= */
 
 .app-container {
@@ -459,7 +417,6 @@ body.page-inicio .paw-center {
   position: relative;
 }
 
-
 .app-wrapper {
   position: relative;
 
@@ -468,7 +425,6 @@ body.page-inicio .paw-center {
 
   min-height: 0;
 }
-
 
 .app-container iframe {
   display: block;
@@ -481,19 +437,13 @@ body.page-inicio .paw-center {
 
 
 /* =========================================
-   FILTER BADGE
+   DESKTOP FILTER BADGE
    ========================================= */
 
 .pdb-filter-pill {
   position: absolute;
 
-  /*
-    Shifted slightly RIGHT from previous
-    placement to line up more closely
-    with the actual ArcGIS funnel.
-  */
   left: 46.1%;
-
   top: -18px;
 
   transform:
@@ -515,7 +465,6 @@ body.page-inicio .paw-center {
   border-radius: 50%;
 
   background: #927a98;
-
   color: #ffffff;
 
   font-family:
@@ -523,7 +472,6 @@ body.page-inicio .paw-center {
     sans-serif;
 
   font-size: 0.94rem;
-
   font-weight: 700;
 
   line-height: 1.02;
@@ -536,77 +484,324 @@ body.page-inicio .paw-center {
   pointer-events: none;
 }
 
-
 .pdb-filter-pill span {
   display: block;
 }
 
 
 /* =========================================
-   MID-SIZE DESKTOP
+   MOBILE
+   RESTORE OLD COMPACT STRUCTURE
    ========================================= */
 
-@media (max-width: 1250px) and (min-width: 751px) {
+@media (max-width: 750px) {
 
-  .site-header {
-    grid-template-columns:
-      minmax(250px, 1fr)
-      auto
-      minmax(250px, 1fr);
-
-    height: 180px;
-
-    padding:
-      0
-      28px;
+  body {
+    overflow-x: hidden;
   }
 
 
-  .site-title {
-    font-size: 3rem;
+  .site-header {
+    display: grid;
 
-    letter-spacing: 0.13em;
+    grid-template-columns:
+      minmax(0, 1fr)
+      74px;
+
+    align-items: center;
+
+    width: 100%;
+    height: 110px;
+
+    gap: 2px;
+
+    padding:
+      0
+      1px
+      0
+      12px;
+
+    overflow: visible;
+  }
+
+
+  /* On mobile the title goes back into
+     the left content area */
+
+  .site-title {
+    grid-column: 1;
+
+    grid-row: 1;
+
+    position: static;
+
+    justify-self: start;
+    align-self: start;
+
+    margin:
+      19px
+      0
+      0;
+
+    font-size: 1.5rem;
+    font-weight: 900;
+
+    line-height: 1.05;
+
+    letter-spacing: 0.07em;
+
+    white-space: normal;
+
+    text-align: left;
+
+    z-index: 2;
+  }
+
+
+  .header-tagline {
+    grid-column: 1;
+
+    grid-row: 1;
+
+    justify-self: start;
+    align-self: end;
+
+    margin-bottom: 10px;
+
+    text-align: left;
+
+    z-index: 1;
   }
 
 
   .header-tagline p {
-    font-size: 1.5rem;
+    margin: 0;
+
+    font-size: 1.05rem;
+
+    line-height: 1.05;
   }
 
 
   .site-menu {
-    width: 250px;
-    height: 180px;
+    grid-column: 2;
+    grid-row: 1;
+
+    justify-self: end;
+    align-self: start;
+
+    width: 74px;
+    height: 110px;
+
+    position: relative;
+
+    overflow: visible;
   }
 
 
   .paw-menu {
-    width: 250px;
-    height: 180px;
+    position: relative;
+
+    width: 70px;
+    height: 94px;
+
+    overflow: visible;
   }
 
 
   .paw-menu-svg {
-    width: 238px;
-    height: 206px;
+    position: absolute;
+
+    width: 108px;
+    height: 102px;
+
+    right: -12px;
+    top: -4px;
+
+    transform: none;
+
+    overflow: visible;
+
+    transition:
+      width 0.32s ease,
+      height 0.32s ease,
+      transform 0.32s ease;
   }
 
 
+  /* PHONE CLOSED STATE */
+
+  .toe {
+    opacity: 0;
+
+    transform:
+      translateY(72px)
+      scale(0.2);
+
+    pointer-events: none;
+  }
+
+
+  /* PHONE OPEN STATE */
+
+  .paw-menu.open .paw-menu-svg {
+    width: 122px;
+    height: 115px;
+
+    transform:
+      translateX(-38px);
+  }
+
+
+  .paw-menu.open .toe {
+    opacity: 1;
+
+    pointer-events: auto;
+  }
+
+
+  .paw-menu.open .paw-explorar .toe {
+    transform:
+      translate(-7px, -10px)
+      scale(1);
+  }
+
+  .paw-menu.open .paw-reportar .toe {
+    transform:
+      translate(7px, -10px)
+      scale(1);
+  }
+
+  .paw-menu.open .paw-participa .toe {
+    transform:
+      translate(-11px, 1px)
+      scale(1);
+  }
+
+  .paw-menu.open .paw-ayuda .toe {
+    transform:
+      translate(11px, 1px)
+      scale(1);
+  }
+
+
+  .toe-word,
+  .toe-hover-word {
+    font-size: 19px;
+  }
+
+
+  .paw-home-label {
+    font-size: 21px;
+  }
+
+
+  /* Hide desktop filter enhancement */
+
   .pdb-filter-pill {
-    left: 45.8%;
+    display: none;
+  }
+
+
+  /* Let the embedded Experience Builder
+     use the remaining screen normally */
+
+  .app-container {
+    flex: 1 1 auto;
+
+    width: 100%;
+
+    min-width: 0;
+    min-height: 0;
+  }
+
+
+  .app-wrapper {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
+    min-height: 0;
+  }
+
+
+  .app-container iframe {
+    width: 100%;
+    height: 100%;
+
+    min-width: 0;
   }
 
 }
 
 
 /* =========================================
-   PHONE
+   VERY SMALL PHONES
    ========================================= */
 
-@media (max-width: 750px) {
+@media (max-width: 400px) {
 
-  .pdb-filter-pill {
-    display: none;
+  .site-header {
+    grid-template-columns:
+      minmax(0, 1fr)
+      66px;
+
+    height: 105px;
+
+    padding:
+      0
+      0
+      0
+      8px;
+  }
+
+
+  .site-title {
+    margin-top: 18px;
+
+    font-size: 1.25rem;
+
+    letter-spacing: 0.04em;
+  }
+
+
+  .header-tagline {
+    margin-bottom: 9px;
+  }
+
+
+  .header-tagline p {
+    font-size: 0.92rem;
+  }
+
+
+  .site-menu {
+    width: 66px;
+    height: 105px;
+  }
+
+
+  .paw-menu {
+    width: 64px;
+    height: 88px;
+  }
+
+
+  .paw-menu-svg {
+    width: 100px;
+    height: 94px;
+
+    right: -12px;
+    top: -3px;
+  }
+
+
+  .paw-menu.open .paw-menu-svg {
+    width: 114px;
+    height: 107px;
+
+    transform:
+      translateX(-34px);
   }
 
 }
@@ -618,6 +813,7 @@ body.page-inicio .paw-center {
 
 @media (prefers-reduced-motion: reduce) {
 
+  .paw-menu-svg,
   .toe,
   .toe-word,
   .toe-hover-word,
