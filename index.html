@@ -85,20 +85,16 @@
   <header class="site-header">
 
     <div class="header-tagline">
-
       <p>
         Explora, encuentra y reporta
         <br>
         perros comunitarios en Cuenca
       </p>
-
     </div>
-
 
     <h1 class="site-title">
       Perros del Barrio
     </h1>
-
 
     <nav
       class="site-menu"
@@ -106,7 +102,7 @@
     >
 
       <div
-        class="paw-menu open"
+        class="paw-menu"
         id="pawMenu"
       >
 
@@ -170,7 +166,6 @@
 
               </text>
 
-
               <g class="toe-hover-word">
 
                 <text
@@ -223,7 +218,6 @@
                 </textPath>
 
               </text>
-
 
               <g class="toe-hover-word">
 
@@ -278,7 +272,6 @@
 
               </text>
 
-
               <g class="toe-hover-word">
 
                 <text
@@ -332,7 +325,6 @@
 
               </text>
 
-
               <g class="toe-hover-word">
 
                 <text
@@ -366,7 +358,14 @@
             aria-label="Inicio"
           >
 
-            <g class="paw-center">
+            <g
+              class="paw-center"
+              id="pawMenuButton"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-label="Abrir menú"
+            >
 
               <path
                 d="
@@ -396,7 +395,6 @@
                 />
 
               </g>
-
 
               <text
                 class="paw-home-label"
@@ -429,13 +427,8 @@
         aria-hidden="true"
       >
 
-        <span>
-          Filtrar
-        </span>
-
-        <span>
-          perros
-        </span>
+        <span>Filtrar</span>
+        <span>perros</span>
 
       </div>
 
