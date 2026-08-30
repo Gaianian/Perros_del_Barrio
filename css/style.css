@@ -549,7 +549,7 @@ body.page-inicio .paw-center {
     justify-self: center;
     align-self: end;
 
-    margin: 8px 0 2px;
+    margin: 4px 0 2px;
 
     font-size: 2rem;
     font-weight: 900;
@@ -570,7 +570,7 @@ body.page-inicio .paw-center {
 
     text-align: center;
 
-    margin: 0;
+    margin: -4;
   }
 
   .header-tagline p {
@@ -641,12 +641,16 @@ body.page-inicio .paw-center {
     opacity: 0;
   }
 
-  .paw-home-label {
-    font-size: 30px;
-    font-weight: 1000;
-    text-shadow:
-    1px 2px 2px rgba(0, 0, 0, 0.75);
-  }
+.paw-home-label {
+  font-family: "Comic Sans MS", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+
+  fill: #f4f1e8;
+
+  filter:
+    drop-shadow(1px 2px 1.5px rgba(0, 0, 0, 0.8));
+}
 
   /* No mobile hover color changes.
      Only the active page remains green. */
