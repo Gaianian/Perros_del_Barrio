@@ -549,10 +549,10 @@ body.page-inicio .paw-center {
     justify-self: center;
     align-self: end;
 
-    margin: 4px 0 2px;
+    margin: 0px 0 2px;
 
     font-size: 2rem;
-    font-weight: 900;
+    font-weight: 1000;
 
     line-height: 1.02;
     letter-spacing: 0.07em;
@@ -570,7 +570,7 @@ body.page-inicio .paw-center {
 
     text-align: center;
 
-    margin: -4;
+    margin: -8;
   }
 
   .header-tagline p {
@@ -631,8 +631,8 @@ body.page-inicio .paw-center {
 
   .toe-word,
   .toe-hover-word {
-    font-size: 30px;
-    font-weight: 1000;
+    font-size: 28px;
+    font-weight: 900;
     font-family: "Comic Sans MS", sans-serif;
     font-style: normal;
 
@@ -647,13 +647,13 @@ body.page-inicio .paw-center {
 .paw-home-label {
   font-family: "Comic Sans MS", sans-serif;
   font-style: normal;
-  font-size: 30px;
-  font-weight: 1000;
+  font-size: 28px;
+  font-weight: 900;
 
   fill: #f4f1e8;
 
   filter:
-    drop-shadow(1px 2px 1.5px rgba(0, 0, 0, 0.8));
+    drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.75));
 }
 
   /* No mobile hover color changes.
