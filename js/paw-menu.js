@@ -9,50 +9,230 @@ document.addEventListener(
       document.getElementById("pawMenuButton");
 
 
-    if (!pawMenu) {
+    if (!pawMenu || !pawButton) {
       return;
     }
 
 
-    /* =========================================
-       DESKTOP
-
-       Keep paw permanently open.
-       ========================================= */
-
-    function setDesktopMenu() {
-
-      if (window.innerWidth > 750) {
-
-        pawMenu.classList.add("open");
+    const MOBILE_MAX = 750;
 
 
-        if (pawButton) {
+    function isMobile() {
 
-          pawButton.setAttribute(
-            "aria-expanded",
-            "true"
-          );
+      return window.innerWidth <= MOBILE_MAX;
 
-          pawButton.setAttribute(
-            "aria-label",
-            "Menú principal"
-          );
+    }
 
-        }
+
+    function setMenuState(open) {
+
+      pawMenu.classList.toggle(
+        "open",
+        open
+      );
+
+
+      pawButton.setAttribute(
+        "aria-expanded",
+        open ? "true" : "false"
+      );
+
+
+      if (isMobile()) {
+
+        pawButton.setAttribute(
+          "aria-label",
+          open
+            ? "Cerrar menú"
+            : "Abrir menú"
+        );
+
+      } else {
+
+        pawButton.setAttribute(
+          "aria-label",
+          "Menú principal"
+        );
 
       }
 
     }
 
 
-    setDesktopMenu();
+    function applyResponsiveState() {
+
+      if (isMobile()) {
+
+        /*
+          Phone starts closed.
+        */
+
+        setMenuState(false);
+
+      } else {
+
+        /*
+          Desktop always open.
+        */
+
+        setMenuState(true);
+
+      }
+
+    }
+
+
+    function toggleMobileMenu(event) {
+
+      if (!isMobile()) {
+        return;
+      }
+
+
+      event.preventDefault();
+      event.stopPropagation();
+
+
+      const isOpen =
+        pawMenu.classList.contains(
+          "open"
+        );
+
+
+      setMenuState(!isOpen);
+
+    }
+
+
+    /*
+      On phone, tapping the central paw
+      opens/closes the menu.
+
+      On desktop it remains permanently open.
+    */
+
+    pawButton.addEventListener(
+      "click",
+      toggleMobileMenu
+    );
+
+
+    pawButton.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (!isMobile()) {
+          return;
+        }
+
+
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+
+          event.preventDefault();
+          event.stopPropagation();
+
+          const isOpen =
+            pawMenu.classList.contains(
+              "open"
+            );
+
+          setMenuState(!isOpen);
+
+        }
+
+
+        if (event.key === "Escape") {
+
+          setMenuState(false);
+
+        }
+
+      }
+    );
+
+
+    /*
+      Clicking elsewhere closes only
+      the phone menu.
+    */
+
+    document.addEventListener(
+      "click",
+      function (event) {
+
+        if (!isMobile()) {
+          return;
+        }
+
+
+        if (
+          !pawMenu.contains(
+            event.target
+          )
+        ) {
+
+          setMenuState(false);
+
+        }
+
+      }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      function (event) {
+
+        if (
+          isMobile() &&
+          event.key === "Escape"
+        ) {
+
+          setMenuState(false);
+
+        }
+
+      }
+    );
+
+
+    /*
+      Re-evaluate only when crossing
+      between desktop and mobile.
+    */
+
+    let previousMobileState =
+      isMobile();
 
 
     window.addEventListener(
       "resize",
-      setDesktopMenu
+      function () {
+
+        const currentMobileState =
+          isMobile();
+
+
+        if (
+          currentMobileState !==
+          previousMobileState
+        ) {
+
+          previousMobileState =
+            currentMobileState;
+
+          applyResponsiveState();
+
+        }
+
+      }
     );
+
+
+    applyResponsiveState();
 
   }
 );
